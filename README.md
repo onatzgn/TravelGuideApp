@@ -1,6 +1,7 @@
 Application:
 
 Özellikler:
+
 -Anasayfa’da seçilen şehire göre içerik çıkarılacak.
 
 -İnsanlar gezdikleri yerler hakkında journal oluşturacaklar.(Rota mekanları eklenecek, kendi yazılarını ekleyebilecekler, başka insanlar bu journal’ı beğenebilecek, journaldaki mekanlar kaydedilebilecek)
@@ -19,6 +20,7 @@ Application:
 AR ve Kamera Etkileşimleri:
 
 Özellikler:
+
 -Tanınan mekan anlatılacak.(Sesli,Yazılı) Mekan tarihlere göre anlatılacak. Hangi tarihte ne yaşadı gösterilecek.
 
 -İlgili tarihin olduğu zamanlardan fotoğraf kullanıcıya gösterilecek. Ekran ikiye ayrılacak bir tarafta kamera görüntüsü diğer tarafta tarihi fotoğraf olacak.
@@ -37,6 +39,7 @@ AR ve Kamera Etkileşimleri:
 Backend:
 
 Özellikler:
+
 -Sosyal ağ etkileşimleri ve veritabanı
 
 
@@ -44,6 +47,7 @@ Backend:
 Kullanıcılar
 
 Kayıtlı Üyeler:
+
 -Rotalar oluşturup, seyahat günlükleri yazabilecekler. Başka insanların yazdığı rotaları kendileri okuyacak ve keşfedecekler.
 
 -Başka üyeler ile takipleşebilecekler.
@@ -55,6 +59,7 @@ Kayıtlı Üyeler:
 -Kamerayı kullanıp tarihi eserleri keşfedip bilgi alabilecekler.
 
 Adminler:
+
 -Uygulamadaki CNN ve AR içeriklerini yönetebilecekler.
 
 -İnteraktif noktaları ve etiketlerini ekleyip düzenleyebilecekler.
