@@ -43,7 +43,7 @@ Adminler:
 -İnteraktif noktaları ve etiketlerini ekleyip düzenleyebilecekler.
 -Tarihi mekanların fotoğraflarının veri setlerini düzenleyip, testlerini yapacaklar.
 
-[Group 1000004626.pdf](https://github.com/user-attachments/files/19180557/Group.1000004626.pdf)
 
+![Group 1000004626](https://github.com/user-attachments/assets/5b6167f1-f260-46d0-b703-5a8ae4112037)
 
 
