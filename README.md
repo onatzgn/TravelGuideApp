@@ -1,6 +1,6 @@
-Application:
+# **Application:**
 
-Özellikler:
+## **Özellikler:**
 
 -Anasayfa’da seçilen şehire göre içerik çıkarılacak.
 
@@ -17,9 +17,9 @@ Application:
 -MapKit Entegrasyonu
 
 
-AR ve Kamera Etkileşimleri:
+# **AR ve Kamera Etkileşimleri:**
 
-Özellikler:
+## **Özellikler:**
 
 -Tanınan mekan anlatılacak.(Sesli,Yazılı) Mekan tarihlere göre anlatılacak. Hangi tarihte ne yaşadı gösterilecek.
 
@@ -36,17 +36,17 @@ AR ve Kamera Etkileşimleri:
 -Müze veya açık alanlarda belirli eserler AR ile dijital olarak ekrana getirilip, 360 derece döndürülerek incelenebilir. Bu objeler o mekanla ilgili objeler olacak. örnek kaşıkçı elması-topkapı sarayı
 
 
-Backend:
+# **Backend:**
 
-Özellikler:
+## **Özellikler:**
 
 -Sosyal ağ etkileşimleri ve veritabanı
 
 
 
-Kullanıcılar
+# **Kullanıcılar**
 
-Kayıtlı Üyeler:
+## **Kayıtlı Üyeler:**
 
 -Rotalar oluşturup, seyahat günlükleri yazabilecekler. Başka insanların yazdığı rotaları kendileri okuyacak ve keşfedecekler.
 
@@ -58,7 +58,7 @@ Kayıtlı Üyeler:
 
 -Kamerayı kullanıp tarihi eserleri keşfedip bilgi alabilecekler.
 
-Adminler:
+## **Adminler:**
 
 -Uygulamadaki CNN ve AR içeriklerini yönetebilecekler.
 
