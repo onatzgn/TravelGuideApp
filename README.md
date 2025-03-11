@@ -33,15 +33,22 @@ Kullanıcılar
 
 Kayıtlı Üyeler:
 -Rotalar oluşturup, seyahat günlükleri yazabilecekler. Başka insanların yazdığı rotaları kendileri okuyacak ve keşfedecekler.
+
 -Başka üyeler ile takipleşebilecekler.
+
 -Gezerek rozet toplayıp, profillerinde sergileyebilecekler.
+
 -Tarihi mekanların olduğu yerlere fotoğraf veya yorum bırakabilecekler.
+
 -Kamerayı kullanıp tarihi eserleri keşfedip bilgi alabilecekler.
 
 Adminler:
 -Uygulamadaki CNN ve AR içeriklerini yönetebilecekler.
+
 -İnteraktif noktaları ve etiketlerini ekleyip düzenleyebilecekler.
+
 -Tarihi mekanların fotoğraflarının veri setlerini düzenleyip, testlerini yapacaklar.
+
 
 
 ![Group 1000004626](https://github.com/user-attachments/assets/5b6167f1-f260-46d0-b703-5a8ae4112037)
