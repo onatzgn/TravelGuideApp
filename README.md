@@ -1,5 +1,7 @@
 # **Application:**
 
+![Group 1000004626](https://github.com/user-attachments/assets/5b6167f1-f260-46d0-b703-5a8ae4112037)
+
 ## **Features:**
 
 -	Content will be displayed on the homepage based on the selected city.
@@ -216,6 +218,6 @@
 
 
 
-![Group 1000004626](https://github.com/user-attachments/assets/5b6167f1-f260-46d0-b703-5a8ae4112037)
+
 
 
