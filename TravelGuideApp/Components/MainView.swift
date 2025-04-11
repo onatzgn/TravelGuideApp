@@ -26,6 +26,12 @@ struct MainView: View {
                 }
         }
         .accentColor(Color("MainColor"))
+        .onAppear {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
     }
 }
 
