@@ -11,6 +11,10 @@ class CameraViewModel: NSObject, ObservableObject {
     // Fotoğraf çıkışı
     private let photoOutput = AVCapturePhotoOutput()
     
+    private let classifier = ImageClassifier()
+    
+    var onClassificationResult: ((String) -> Void)?
+
     override init() {
         super.init()
         configure()
@@ -57,6 +61,27 @@ class CameraViewModel: NSObject, ObservableObject {
         settings.flashMode = .auto
         photoOutput.capturePhoto(with: settings, delegate: self)
     }
+
+    // Fotoğrafı kaydetme fonksiyonu
+    private func saveImage(image: UIImage, fileName: String) {
+        let resized = UIGraphicsImageRenderer(size: CGSize(width: 224, height: 224)).image { _ in
+            image.draw(in: CGRect(x: 0, y: 0, width: 224, height: 224))
+        }
+        
+        if let data = resized.jpegData(compressionQuality: 1.0) {
+            let filePath = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
+            do {
+                try data.write(to: filePath)
+                print("Fotoğraf kaydedildi: \(filePath)")
+            } catch {
+                print("Fotoğraf kaydedilirken hata oluştu: \(error.localizedDescription)")
+            }
+        }
+
+        // Galeriye de kaydet
+        UIImageWriteToSavedPhotosAlbum(resized, nil, nil, nil)
+        print("📸 Dönüştürülmüş fotoğraf galeriyi kaydedildi.")
+    }
 }
 
 extension CameraViewModel: AVCapturePhotoCaptureDelegate {
@@ -69,11 +94,42 @@ extension CameraViewModel: AVCapturePhotoCaptureDelegate {
             return
         }
         
-        guard let imageData = photo.fileDataRepresentation() else { return }
-        // Bu data ile UIImage oluşturup kaydedebilirsin:
-        let image = UIImage(data: imageData)
+        guard let imageData = photo.fileDataRepresentation() else {
+            print("Fotoğraf verisi alınamadı")
+            return
+        }
+        guard let image = UIImage(data: imageData) else {
+            print("UIImage oluşturulamadı")
+            return
+        }
         
-        // Burada ister galeriye kaydet, ister UIKit/SwiftUI ile paylaş
-        print("Fotoğraf çekildi, boyutu: \(imageData.count) byte")
+        // Görseli modele uygun şekilde 224x224 boyutuna getir
+        let targetSize = CGSize(width: 224, height: 224)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1  // Ölçek sabitleniyor
+        let renderer = UIGraphicsImageRenderer(size: targetSize, format: format)
+        let paddedImage = renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+        
+        print("📸 Fotoğraf çekildi: \(imageData.count) byte")
+        
+        // Fotoğrafı kaydet
+        self.saveImage(image: image, fileName: "captured_image.jpg")
+        
+        // 📏 paddedImage boyutu: \(paddedImage.size)
+        print("📏 paddedImage boyutu: \(paddedImage.size)")
+        
+        // 📷 Fotoğraf adı: captured_image.jpg
+        classifier.classify(image: paddedImage, imageName: "captured_image.jpg") { label, confidence in
+            print("📷 \(photo.resolvedSettings.uniqueID): Tahmin = \(label), Güven = \(confidence * 100)%")
+            DispatchQueue.main.async {
+                self.onClassificationResult?(label)
+            }
+        }
+        
+        // 2. Dönüşüm işlemi (boyutlandırma vs) fotoğraf kaydettikten sonra
+        self.saveImage(image: paddedImage, fileName: "transformed_image.jpg")
+        print("Dönüştürülmüş fotoğraf kaydedildi.")
     }
 }

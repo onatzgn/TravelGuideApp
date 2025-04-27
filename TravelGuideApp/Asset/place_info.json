@@ -1,181 +1,631 @@
 [
-  {
-    "label": "alman_cesmesi",
-    "title": "Alman Çeşmesi",
-    "history": [
-      {
-        "year": "1901",
-        "title": "Hediye Edildi",
-        "description": "Alman İmparatoru II. Wilhelm tarafından Osmanlı’ya hediye edilmiştir."
-      }
-    ]
-  },
-  {
-    "label": "ayasofya",
-    "title": "Ayasofya",
-    "history": [
-      {
-        "year": "537",
-        "title": "İnşa Edildi",
-        "description": "Doğu Roma İmparatoru I. Justinianus tarafından kilise olarak inşa edildi."
-      },
-      {
-        "year": "1453",
-        "title": "Camiye Dönüştürüldü",
-        "description": "İstanbul’un fethinden sonra cami olarak kullanılmaya başlandı."
-      },
-      {
-        "year": "1935",
-        "title": "Müze Oldu",
-        "description": "Atatürk’ün emriyle müzeye dönüştürüldü."
-      },
-      {
-        "year": "2020",
-        "title": "Tekrar Cami",
-        "description": "2020 yılında tekrar cami olarak ibadete açıldı."
-      }
-    ]
-  },
-  {
-    "label": "bozdogan_kemeri",
-    "title": "Bozdoğan Kemeri",
-    "history": [
-      {
-        "year": "375",
-        "title": "İnşa Edildi",
-        "description": "Roma İmparatorluğu döneminde su kemeri olarak inşa edildi."
-      }
-    ]
-  },
-  {
-    "label": "cemberlitas",
-    "title": "Çemberlitaş",
-    "history": [
-      {
-        "year": "330",
-        "title": "Konstantin Sütunu",
-        "description": "İmparator I. Konstantin tarafından dikilmiştir."
-      }
-    ]
-  },
-  {
-    "label": "dikilitas",
-    "title": "Dikilitaş",
-    "history": [
-      {
-        "year": "1450 BC",
-        "title": "Mısır’da Yapıldı",
-        "description": "III. Tutmosis adına Mısır’da yapılmış ve sonra İstanbul’a getirilmiştir."
-      }
-    ]
-  },
-  {
-    "label": "galata_kulesi",
-    "title": "Galata Kulesi",
-    "history": [
-      {
-        "year": "1348",
-        "title": "İnşa Edildi",
-        "description": "Cenevizliler tarafından savunma kulesi olarak inşa edildi."
-      },
-      {
-        "year": "1632",
-        "title": "Hezarfen Uçuşu",
-        "description": "Hezarfen Ahmet Çelebi kuleden Üsküdar’a kadar uçmuştur."
-      }
-    ]
-  },
-  {
-    "label": "kadikoy_boga_heykeli",
-    "title": "Kadıköy Boğa Heykeli",
-    "history": [
-      {
-        "year": "1864",
-        "title": "Fransa’da Yapıldı",
-        "description": "Heykel Fransa’da yapıldı ve sonradan Türkiye’ye getirildi."
-      }
-    ]
-  },
-  {
-    "label": "kiz_kulesi",
-    "title": "Kız Kulesi",
-    "history": [
-      {
-        "year": "408 BC",
-        "title": "İlk Kullanım",
-        "description": "Gümrük istasyonu ve deniz feneri olarak kullanılmıştır."
-      }
-    ]
-  },
-  {
-    "label": "medusa",
-    "title": "Yerebatan Sarnıcı - Medusa",
-    "history": [
-      {
-        "year": "6. yy",
-        "title": "İnşa Edildi",
-        "description": "Bizans döneminde büyük su sarnıcı olarak yapılmıştır. Medusa başları taban taşlarında yer alır."
-      }
-    ]
-  },
-  {
-    "label": "ortakoy_cami",
-    "title": "Ortaköy Camii",
-    "history": [
-      {
-        "year": "1856",
-        "title": "İnşa Edildi",
-        "description": "Abdülmecid döneminde Nigoğos Balyan tarafından yapılmıştır."
-      }
-    ]
-  },
-  {
-    "label": "sultanahmet",
-    "title": "Sultanahmet Camii",
-    "history": [
-      {
-        "year": "1616",
-        "title": "İbadete Açıldı",
-        "description": "Sedefkâr Mehmet Ağa tarafından tamamlanmıştır. 6 minareli olması ile ünlüdür."
-      }
-    ]
-  },
-  {
-    "label": "taksim_cumhuriyet_aniti",
-    "title": "Taksim Cumhuriyet Anıtı",
-    "history": [
-      {
-        "year": "1928",
-        "title": "Tamamlandı",
-        "description": "Cumhuriyetin ilanını simgeleyen anıt Pietro Canonica tarafından yapılmıştır."
-      }
-    ]
-  },
-  {
-    "label": "topkapi_sarayi",
-    "title": "Topkapı Sarayı",
-    "history": [
-      {
-        "year": "1478",
-        "title": "Kullanıma Açıldı",
-        "description": "Fatih Sultan Mehmet tarafından yaptırılmıştır, Osmanlı’nın idare merkezi olmuştur."
-      },
-      {
-        "year": "1924",
-        "title": "Müze Oldu",
-        "description": "Cumhuriyet döneminde müze olarak açılmıştır."
-      }
-    ]
-  },
-  {
-    "label": "yilanli_sutun",
-    "title": "Yılanlı Sütun",
-    "history": [
-      {
-        "year": "479 BC",
-        "title": "Delphi Anıtı",
-        "description": "Perslere karşı kazanılan zaferi simgeleyen antik Yunan anıtıdır. İstanbul'a Bizans döneminde getirilmiştir."
-      }
-    ]
-  }
+    {
+      "label": "alman_cesmesi",
+      "title": "Alman Çeşmesi",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Dostluk ve Gösterişin Yadigârı",
+        "description": "Sultanahmet Meydanı’nda, Ayasofya’nın hemen karşısında parlayan sekizgen bir yapı görürsünüz: **Alman Çeşmesi**. Yeşil kubbesiyle dikkat çeken bu zarif çeşme, yalnızca bir su kaynağı değil; Osmanlı-Alman dostluğunun zarif bir nişanesidir. Hem Batı’nın mimari süslemelerini hem de Osmanlı'nın hat sanatını birleştiren bu yapı, 20. yüzyıl başı İstanbul'unun diplomatik zarafetini simgeler. Bugün hâlâ gölgesinde dinlenenler, çeşmenin altın mozaiklerine bakarken tarihle iç içe bir an yaşar."
+        },
+        {
+          "year": "1898",
+          "title": "II. Wilhelm İstanbul’a Geldi",
+          "description": "1898 yılında Alman İmparatoru II. Wilhelm, Osmanlı İmparatorluğu’na ikinci ziyaretini gerçekleştirdi. Bu ziyaret, yalnızca diplomatik ilişkileri değil, aynı zamanda kültürel yakınlaşmayı da pekiştirdi. II. Wilhelm, İstanbul’a hayran kalmıştı; özellikle de Sultanahmet Meydanı’nın tarihî atmosferine. Dönemin padişahı II. Abdülhamid ile gerçekleştirdiği görüşmeler, iki imparatorluğu birbirine daha da yakınlaştırdı."
+        },
+        {
+          "year": "1901",
+          "title": "Çeşme Hediye Edildi",
+          "description": "Bu önemli ziyaretin hatırasını ölümsüzleştirmek isteyen II. Wilhelm, Osmanlı’ya dostluğun simgesi olarak bir çeşme hediye etmeye karar verdi. Alman mimarisinin zarafetini taşıyan bu yapı, Almanya'da özel olarak tasarlandı ve ince işçilikle inşa edildi. Ardından sökülerek tek tek parçalar hâlinde İstanbul’a gönderildi. Her parçası özenle paketlenmişti; adeta bir sanat eseri taşınıyordu."
+        },
+        {
+          "year": "1901",
+          "title": "Sultanahmet Meydanı’na Yerleştirildi",
+          "description": "Çeşme, İstanbul’un kalbi sayılan Sultanahmet Meydanı’na yerleştirildiğinde halk büyük bir merakla etrafını sarmıştı. Kubbesini taşıyan yeşil sütunlar, iç kısmındaki mozaik süslemeler ve Alman kartal arması ile dikkat çeken bu çeşme, yalnızca bir su kaynağı değil; aynı zamanda iki imparatorluğun tarihsel dostluğunun bir nişanesi hâline geldi. Rivayet edilir ki, çeşmenin altında zamanında II. Wilhelm'in adıyla kazılmış özel bir kutlama mesajı da bulunmaktaydı."
+        }
+      ]
+    },
+    {
+      "label": "ayasofya",
+      "title": "Ayasofya Camii",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Zamanın Ötesinde Bir Mabed",
+        "description": "Ayasofya, İstanbul’un kalbinde göğe yükselen ve binlerce yıllık tarihiyle zamanın katmanlarını üst üste yığan bir mimarlık harikasıdır. Bugün hâlâ görenleri büyüleyen bu yapı, hem Hristiyan hem de İslam dünyası için kutsal bir mekân olma özelliğini taşır. Kubbesiyle gökyüzünü, mozaikleriyle geçmişi, minareleriyle bugünü kucaklar. İster secde eden bir mümin olun, ister tarihi merak eden bir gezgin; Ayasofya sizi susturur ve derin bir hayranlıkla baş başa bırakır."
+        },
+        {
+          "year": "537",
+          "title": "İnşa Edildi",
+          "description": "İmparator I. Justinianus’un emriyle yalnızca Konstantinopolis’in değil, tüm Hristiyan dünyasının kalbi olacak bir mabet inşa edildi: Ayasofya. 10.000 işçinin çalıştığı bu muazzam yapı sadece beş yılda tamamlandı. Dönemin en büyük kubbesine sahipti ve öylesine etkileyiciydi ki, Justinianus açılışta 'Süleyman, seni geçtim!' diyerek Kudüs’teki Süleyman Mabedi’ne meydan okudu. Kubbesi o kadar büyüktü ki, gökyüzüne asılı bir kubbe olarak tasvir edilirdi."
+        },
+        {
+          "year": "1204",
+          "title": "Haçlılar Tarafından Yağmalandı",
+          "description": "Dördüncü Haçlı Seferi’nde Latinler, dost bildikleri toprakları işgal etti. İstanbul talan edildi, Ayasofya ise bu yağmanın sembolü hâline geldi. Altın mozaikler söküldü, kutsal emanetler Batı’ya kaçırıldı. Ayasofya, bir süre Katolik katedrali olarak kullanıldı. Sessizce akan gözyaşlarının tanığı oldu o yıllarda."
+        },
+        {
+          "year": "1261",
+          "title": "Bizans Tarafından Geri Alındı",
+          "description": "1261’de Bizanslılar şehri yeniden ele geçirdi. Ayasofya, tekrar Ortodoks kilisesi olarak eski işlevine döndü. Ancak içerdiği tahribat öyle büyüktü ki, onarımları yıllar sürdü. Yine de görkeminden ödün vermedi; bir kez daha imparatorların taç giydiği kutsal mekân hâline geldi."
+        },
+        {
+          "year": "1453",
+          "title": "Camiye Dönüştürüldü",
+          "description": "Fatih Sultan Mehmet, İstanbul’u fethettiğinde doğruca Ayasofya’ya yürüdü. Secdeye vardı ve onu camiye dönüştürdüğünü ilan etti. Hristiyan freskleri sıvayla kaplandı, bir mihrap ve minber eklendi. Ayasofya artık İslam dünyasının yeni göz bebeğiydi. Fetihten sonra kentin ilk cuma namazı da burada kılındı. Bu an, İstanbul’un yeni kimliğinin simgesiydi."
+        },
+        {
+          "year": "1847",
+          "title": "Restorasyon",
+          "description": "Sultan Abdülmecid döneminde, İsviçreli Fossati kardeşler Ayasofya’yı kapsamlı bir restorasyondan geçirdi. Yapının yorgun taşları temizlendi, kubbesi güçlendirildi, eski mozaikler dikkatle ortaya çıkarıldı. Bu restorasyon hem yapının ibadet kimliğini korudu hem de tarihî ihtişamını görünür kıldı. Hatta bazı mozaikler ilk kez Batılı gözler tarafından belgelenmiş oldu."
+        },
+        {
+          "year": "1935",
+          "title": "Müze Oldu",
+          "description": "Mustafa Kemal Atatürk’ün kararıyla Ayasofya, tüm inançlara açık bir kültür mirası olarak müzeye dönüştürüldü. Artık hem İslamî öğeler hem de Hristiyan mozaikleri birlikte görülebiliyordu. Bu dönüşüm, yapının evrensel mirasını vurgulayan sembolik bir adımdı. Ayasofya, doğu ile batının, geçmiş ile geleceğin buluşma noktası hâline geldi."
+        },
+        {
+          "year": "2020",
+          "title": "Tekrar Cami",
+          "description": "2020’de alınan Danıştay kararıyla Ayasofya, yeniden cami statüsüne kavuştu. Ancak tarihî ve kültürel önemi nedeniyle ziyarete açık kalmaya devam etti. Günümüzde hem bir ibadethane hem de geçmişin sessiz tanığı olarak ayakta duruyor. İçeride namaz kılan bir ziyaretçi ile mozaiklere hayran hayran bakan bir turistin aynı anda bulunması, Ayasofya’nın çok katmanlı kimliğini yansıtır."
+        }
+      ]
+    },
+    {
+      "label": "bozdogan_kemeri",
+      "title": "Bozdoğan Kemeri",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Tarihi Siluetin Parçası",
+        "description": "Fatih semtinin kalbinde yükselen Bozdoğan Kemeri, İstanbul’un eşsiz tarihî manzarasına zamansız bir zarafet katıyor. Günümüzde ışıklandırılmış haliyle hem yerli halkın hem turistlerin ilgisini çekiyor. Arabalar altından geçerken, yukarıda Roma’dan kalma taşlar duruyor; bir nehir gibi zamanı birbirine bağlıyor. İstanbul’un yaşayan tarihine göz kırpan bir abide gibi..."
+        },
+        {
+          "year": "375",
+          "title": "İnşa Edildi",
+          "description": "Roma İmparatoru Valens tarafından inşa ettirilen Bozdoğan Kemeri, yalnızca bir mühendislik harikası değil, aynı zamanda İstanbul’un kalbine hayat taşıyan antik bir damar gibiydi. Uzaklardaki Belgrad Ormanı’ndan gelen suları, kilometreler boyunca şehre ulaştırmak için tasarlanmış dev bir su kemeri sisteminin parçasıydı. Toplam uzunluğu 1 kilometreyi aşan bu görkemli yapı, İstanbul’un yüzyıllarca süren su ihtiyacını karşılamada başrol oynadı."
+        },
+        {
+          "year": "476",
+          "title": "Batı Roma’nın Yıkılışı",
+          "description": "Batı Roma çökerken, Doğu Roma (Bizans) parlamaya devam etti. İstanbul, Doğu Roma'nın başkenti olarak gelişmeye devam ederken Bozdoğan Kemeri, imparatorluk saraylarının, hamamların ve çeşmelerin can suyu olmaya devam etti. Yüzyıllar boyunca bu kemer, kentin altyapısının bel kemiği olarak hizmet verdi."
+        },
+        {
+          "year": "726",
+          "title": "İkonoklazm Dönemi",
+          "description": "Bizans’ın dini çalkantılarla dolu ikonoklazm döneminde kemer bir kez daha elden geçirildi. Dönemin dini anlayışı doğrultusunda figüratif süslemelerin bir kısmı kaldırıldı. Ancak yapının asıl işlevi hiç kesintiye uğramadı; su taşımaya devam etti."
+        },
+        {
+          "year": "1204",
+          "title": "Latin İşgali ve İhmal",
+          "description": "Dördüncü Haçlı Seferi’nin ardından İstanbul, Latin işgali altına girdi. Şehir büyük bir yıkıma uğradı ve Bozdoğan Kemeri de bu dönemde bakımsız kaldı. Bazı bölümleri zarar gördü, ama ayakta kaldı. Bu, onun ne kadar sağlam temellere oturduğunun kanıtıydı."
+        },
+        {
+          "year": "1453",
+          "title": "Osmanlı Dönemi Başladı",
+          "description": "Fatih Sultan Mehmet’in İstanbul’u fethetmesiyle kemer Osmanlı topraklarına katıldı. Fatih, su yollarının önemini çok iyi biliyordu ve bu kadim yapının restorasyonunu başlattı. Kemer, Osmanlı döneminde de şehre su taşıyan sistemin ayrılmaz bir parçası oldu."
+        },
+        {
+          "year": "1696",
+          "title": "Suyolcular Tarafından Onarıldı",
+          "description": "III. Ahmet döneminde, Osmanlı’nın geleneksel altyapı ustaları olan suyolcular kemeri titizlikle onardı. Etrafındaki su yolları yeniden düzenlendi. Bu dönem, Bozdoğan Kemeri’nin su taşıdığı son aktif yıllar olarak kayda geçti. Yüzyıllık hizmetine rağmen hala dimdik ayaktaydı."
+        },
+        {
+          "year": "19. yüzyıl",
+          "title": "İşlevini Yitirdi",
+          "description": "Modern su sistemlerinin gelişmesiyle birlikte kemer işlevini yitirse de, kimliği silinmedi. Artık su taşımasa da, şehrin siluetine kazınmış bir anıt hâline geldi. İstanbul’un geçmişine tanıklık eden bu taşlar, yüzyıllar boyunca hem Bizanslıların hem de Osmanlıların izlerini taşıdı."
+        }
+      ]
+    },
+    {
+      "label": "cemberlitas",
+      "title": "Çemberlitaş",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Kültürel Miras",
+        "description": "Bugün Çemberlitaş, İstanbul’un göbeğinde hâlâ tüm heybetiyle yükseliyor. Etrafı her gün binlerce insanın geçtiği canlı bir merkez; ama ona dikkatli bakıldığında, yüzlerce yıllık bir imparatorluğun ve ardı sıra gelen medeniyetlerin izleri okunabiliyor. Geceleri ışıklarla aydınlanan bu antik sütun, geçmişin bugüne uzanan sessiz tanığı olarak İstanbul’un tarih sahnesinde yerini koruyor."
+        },
+        {
+          "year": "330",
+          "title": "İnşa Edildi",
+          "description": "Roma İmparatoru I. Konstantin, yeni başkent Constantinopolis’in kuruluşunu simgelemek için, kentin tam kalbine görkemli bir sütun diktirdi. 35 metre yüksekliğindeki bu anıtın tepesine yerleştirilen Apollo suretindeki heykel aslında imparatorun kendi figürüydü; böylece Konstantin hem tanrısallığını hem de iktidarını simgelemiş oluyordu. Bu sütun, o dönemin imparatorluk gücünü temsil eden en çarpıcı sembollerinden biriydi."
+        },
+        {
+          "year": "400’ler",
+          "title": "Doğal Afetler",
+          "description": "Yüzyıllar boyunca İstanbul'u vuran depremler ve sert fırtınalar, sütunu da es geçmedi. Tepedeki devasa heykelin parçaları zamanla yerinden koparak düştü. Orijinal yapının görkemi azalmaya başladı ama sütun ayakta kaldı; çünkü artık sadece bir anıt değil, zamanla direnen bir simgeydi."
+        },
+        {
+          "year": "1100’ler",
+          "title": "Bizans Restorasyonları",
+          "description": "Bizans döneminde sütun, halkın gözünde hâlâ büyük bir anlam taşıyordu. Yıkılmasını önlemek amacıyla sütunun çevresine bronz halkalar eklendi. Bu halkalar ona 'Çemberli Taş' adını kazandırdı. O günden sonra halk arasında bu isimle anılmaya başlandı ve zamanla sütun, efsanelerle iç içe geçmiş bir anıt hâline geldi."
+        },
+        {
+          "year": "1453",
+          "title": "İstanbul’un Fethi",
+          "description": "Fatih Sultan Mehmet İstanbul’a girdiğinde karşılaştığı yapılardan biri de bu kadim sütundu. Osmanlılar, tarihî önemi nedeniyle sütunu korumaya karar verdi. Zamanla çevresi düzenlenerek bir meydan hâline getirildi. Sütun artık hem Bizans'ın hem Osmanlı'nın ortak mirasıydı."
+        },
+        {
+          "year": "1779",
+          "title": "Yangın ve Onarım",
+          "description": "Sultanahmet çevresinde çıkan büyük bir yangın, sütunun etrafındaki yapılara zarar verdi. Yangından sonra Sultan I. Abdülhamid'in emriyle sütunun çevresi temizlendi ve meydan yeniden düzenlendi. Bu olay, yapının hem halk hem devlet tarafından ne kadar önemsendiğinin bir göstergesiydi."
+        },
+        {
+          "year": "1865",
+          "title": "Modern Onarım",
+          "description": "Osmanlı'nın son dönemlerinde, şehir modernleşirken tarihi yapılar da elden geçiriliyordu. Bu kapsamda Çemberlitaş temizlendi, mermer kaidesi güçlendirildi. Artık sadece bir anıt değil, İstanbul’un modern kimliğiyle bütünleşmiş tarihî bir simge olarak görülüyordu."
+        }
+      ]
+    },
+    {
+      "label": "dikilitas",
+      "title": "Dikilitaş",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Ayakta Kalan En Eski Anıtlardan",
+        "description": "Bugün Sultanahmet Meydanı’nda hâlâ gökyüzüne uzanan bu taş, yaklaşık 3500 yıllık geçmişiyle İstanbul’un en eski anıtı olma unvanını taşıyor. Zamanın yıkıcılığına rağmen hâlâ ilk günkü gibi keskin ve dimdik ayakta. Onu her gören, aynı soruyu sorar: 'Nasıl oldu da bu kadar yıl dayanabildi?' Cevabı basit — çünkü bu taş, yalnızca bir anıt değil; medeniyetlerin mühür vurduğu bir zaman tanığıdır."
+        },
+        {
+          "year": "1450 BC",
+          "title": "Mısır’da Dikildi",
+          "description": "Bugün İstanbul’un göbeğinde yükselen bu anıt, aslında binlerce kilometre ötede, Mısır’ın kalbinde doğdu. M.Ö. 15. yüzyılda Firavun III. Thutmose tarafından, Karnak Tapınağı’nın önüne dikildi. 30 metreyi aşkın yüksekliğiyle gökyüzüne uzanıyor, yüzeyine işlenmiş hiyeroglif yazılarla firavunun savaş zaferlerini, fethettiği toprakları ve tanrılara adadığı hediyeleri anlatıyordu. Bu taş sadece bir heykel değil; bir gücün, bir uygarlığın dikilmiş destanıdır."
+        },
+        {
+          "year": "4. yüzyıl",
+          "title": "İskenderiye'ye Taşındı",
+          "description": "Yüzyıllar sonra Roma İmparatoru Constantius II, bu dev anıtı Roma'nın doğu başkenti Konstantinopolis'e taşımaya karar verdi. Ancak ilk adım olarak taş İskenderiye’ye götürüldü. Burada, deniz yolculuğuna hazırlanırken uzun yıllar bekletildi. Taş, artık sadece bir Mısır hatırası değil, Roma İmparatorluğu’nun kültürel gücünün de simgesiydi."
+        },
+        {
+          "year": "390",
+          "title": "İstanbul’a Getirildi",
+          "description": "Nihayet İmparator Theodosius döneminde taş, büyük bir mühendislik operasyonuyla İstanbul’a getirildi. Taşıyıcı vinç sistemleriyle Hipodrom’un tam ortasına dikildi. Altına konulan mermer kaide, anıtın Roma kimliğini vurgulamak amacıyla Grekçe ve Latince yazıtlarla donatıldı. Bu an, hem Roma hem de Mısır mirasının İstanbul’da birleştiği tarihti."
+        },
+        {
+          "year": "390",
+          "title": "Kaide Rölyefleri",
+          "description": "Anıtın hemen altındaki kaide, başlı başına bir tarih kitabı gibidir. Kabartmalarda İmparator Theodosius’un Hipodrom’daki gösterileri, seyircilerle selamlaşması, askerî geçit törenleri ve halkla etkileşimi betimlenir. Roma’nın ihtişamı, bu rölyeflerde adeta taşlaşmış bir tiyatro sahnesi gibi karşımıza çıkar."
+        },
+        {
+          "year": "1453",
+          "title": "Osmanlı Koruması",
+          "description": "Fatih Sultan Mehmet’in İstanbul’u fethetmesiyle birlikte Hipodrom’un etrafı büyük ölçüde değişime uğradı, ama Dikilitaş yerinde kaldı. Osmanlılar bu taşın tarihî değerini bildi ve ona dokunmadı. Çevresinde külliyeler, medreseler yükseldi ama o, geçmişin sessiz bir tanığı olarak aynı yerde durmaya devam etti."
+        },
+        {
+          "year": "19. yüzyıl",
+          "title": "Avrupalı Gezginlerin Keşfi",
+          "description": "Tanzimat dönemiyle birlikte İstanbul, Avrupalı seyyahların gözdesi hâline geldi. Gravür ustaları ve ressamlar, Dikilitaş’ı defterlerine çizdi, gazetelere taşıdı. Avrupa’da yayımlanan seyahatnamelerde bu taş, binlerce yıl önceden kalma bir mucize olarak tanıtıldı. Böylece İstanbul’un imparatorluklar arası hafızasında bir Mısır sayfası da yer bulmuş oldu."
+        }
+      ]
+    },
+    {
+      "label": "galata_kulesi",
+      "title": "Galata Kulesi",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "İstanbul’un Simgesi",
+        "description": "Bugün Galata Kulesi, sadece bir yapı değil, bir efsanedir. Geceleri aydınlatıldığında Boğaz’a selam duran bir fener gibi parlar. Gündüzleri ise binlerce yerli ve yabancı ziyaretçiyi zirvesine çeker. Hem tarihî kimliği hem de muhteşem manzarasıyla Galata Kulesi, İstanbul’un kalbinde atan taş bir hafızadır."
+        },
+        {
+          "year": "528",
+          "title": "İlk Kulenin İnşası (Fener Kulesi)",
+          "description": "Bizans döneminde Galata kıyısında, denizciler için bir fener görevi gören ahşap bir kule yükseliyordu. Limanı gözetleyen bu yapı, hem deniz trafiğini izlemek hem de olası saldırılara karşı erken uyarı sağlamak amacıyla inşa edilmişti. Zamanla yıkılmış olsa da, bu yapı Galata Kulesi’nin ruhsal atası sayılır."
+        },
+        {
+          "year": "1348",
+          "title": "Yeni Kule: Christea Turris",
+          "description": "Bugünkü taş yapı, Cenevizliler tarafından 'Christea Turris' yani 'Mesih’in Kulesi' adıyla inşa edildi. Ortaçağ askeri mimarisinin en görkemli örneklerinden biri olan kule, Galata surlarının en sağlam noktasıydı. Hem gözetleme hem de savunma amaçlı kullanılan kule, Haliç’e hâkim konumuyla şehrin kilit noktalarından biri hâline geldi."
+        },
+        {
+          "year": "1453",
+          "title": "Osmanlı Egemenliği",
+          "description": "Fatih Sultan Mehmet’in İstanbul’u fethinden sonra Galata Kulesi, Osmanlı’nın hizmetine girdi. Bir dönem zindan olarak kullanıldı, ardından yangın gözetleme noktası olarak değerlendirildi. Ahşap İstanbul’da yangınlar büyük tehdit oluşturduğundan kule, şehri yukarıdan izleyen stratejik bir göz haline geldi. Adeta İstanbul’un gözcüsüydü."
+        },
+        {
+          "year": "1632",
+          "title": "Hezarfen Ahmet Çelebi Uçuşu",
+          "description": "Evliya Çelebi’nin efsanevî anlatısına göre Hezarfen Ahmet Çelebi, kendi geliştirdiği kanatlarla Galata Kulesi’nden havalanıp Boğaz’ı geçerek Üsküdar’a iniş yaptı. Bu olay sadece Osmanlı tarihinde değil, dünya havacılık tarihinde de eşi benzeri olmayan bir girişim olarak kayda geçti. Kule, o günden sonra hayallerin ve cesaretin simgesi oldu."
+        },
+        {
+          "year": "1794",
+          "title": "Yangın Felaketi",
+          "description": "Kulenin ahşap yapıları büyük bir yangın sonucu ağır hasar gördü. Bu olay, kule tarihinde bir dönüm noktasıydı. Ardından yapılan onarımlarla kule yeniden işlevsel hale getirildi ve gözetleme faaliyetleri sürdürüldü. Ancak bu olay, kulenin ne kadar hassas bir denge üzerinde durduğunu da gözler önüne serdi."
+        },
+        {
+          "year": "1831",
+          "title": "İkinci Yangın ve Restorasyon",
+          "description": "İkinci büyük yangında kule bir kez daha harap oldu. II. Mahmud döneminde, Osmanlı estetik anlayışına uygun olarak yenilendi. Kubbesi yeniden tasarlandı, daha zarif ve dikkat çekici bir form kazandı. Böylece Galata Kulesi, sadece bir gözetleme noktası değil; aynı zamanda siluetiyle şehre estetik bir dokunuş yapan bir yapı hâline geldi."
+        },
+        {
+          "year": "1967",
+          "title": "Modern Restorasyon",
+          "description": "Cumhuriyet döneminde Galata Kulesi kapsamlı bir restorasyonla yeniden ayağa kaldırıldı. İçerisine asansör yerleştirildi, katları müze ve kafe olarak düzenlendi. En üstteki seyir terası ise, ziyaretçilerine İstanbul’u 360 derece izleme fırsatı sundu. Artık kule, hem geçmişin hem günümüzün bir yıldızıydı."
+        },
+        {
+          "year": "2020",
+          "title": "Müze Olarak Yeniden Açıldı",
+          "description": "Kültür ve Turizm Bakanlığı tarafından gerçekleştirilen restorasyonun ardından kule, müze işleviyle yeniden halka açıldı. İçeride Galata ve İstanbul tarihiyle ilgili sergiler yer aldı. Böylece ziyaretçiler kuleye sadece manzara için değil, geçmişi keşfetmek için de çıkmaya başladı."
+        }
+      ]
+    },
+    {
+      "label": "kadikoy_boga_heykeli",
+      "title": "Kadıköy Boğa Heykeli",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Kadıköy’ün Kalbi",
+        "description": "Boğa Heykeli bugün hâlâ aynı yerde, **başını eğmiş ama dimdik** duruyor. Kimi onun meydan okuduğunu söyler, kimi davetkâr olduğunu. Kimine göre bir eylem çağrısıdır, kimine göre geçmişe özlem. Ama bir gerçek var ki: Kadıköy’ün kalbi, onun etrafında atıyor. Her gün binlerce insan onun yanından geçiyor, bazısı fotoğraf çekiyor, bazısı bir dosta sarılıyor. Boğa, artık bu şehrin yaşayan ruhlarından biri."
+        },
+        {
+          "year": "1864",
+          "title": "Fransa’da Yapıldı",
+          "description": "19. yüzyılın önde gelen Fransız heykeltıraşlarından **Isidore Jules Bonheur** tarafından Paris’te bronzdan dökülen Boğa Heykeli, dönemin siyasi atmosferini yansıtan güçlü bir semboldü. Fransa-Prusya geriliminin gölgesinde üretilen bu eser, sadece sanatsal değil, ideolojik bir anlam da taşıyordu. Heykeldeki öfkeyle gerilmiş kaslar, öne eğilmiş baş ve ileriye saldırı pozisyonu, Fransız askerî gücünün simgesel bir dışavurumuydu."
+        },
+        {
+          "year": "1870'ler",
+          "title": "Almanya’ya Götürüldü",
+          "description": "Fransa-Prusya Savaşı’nın galibi olan **Almanya**, bu heykeli bir tür zafer anıtı olarak Berlin’e taşıdı. Boğa artık bir savaş ganimetiydi ve Prusya’nın üstünlüğünü simgeleyen bir hatıra olarak sergileniyordu. O dönemlerde heykelin taşıdığı anlam salt estetik değil; diplomatik bir mesajdı: Güç, kimin elindeyse semboller de ona aittir."
+        },
+        {
+          "year": "1901",
+          "title": "Osmanlı’ya Hediye Edildi",
+          "description": "Alman İmparatoru **II. Wilhelm**, Osmanlı Sultanı **II. Abdülhamid**’e bir dostluk jesti olarak bu heykeli hediye etti. Böylece Avrupa’daki güç mücadelelerinin simgesi olan bu heykel, İstanbul’a gelerek bambaşka bir bağlamda, Doğu-Batı ekseninde yeni bir temsil yüklenmiş oldu. Artık bu boğa, medeniyetler arasında dolaşan bir tarih anlatıcısıydı."
+        },
+        {
+          "year": "1906–1950'ler",
+          "title": "Yıldız Sarayı ve Farklı Mekanlar",
+          "description": "İstanbul’a getirildikten sonra **Yıldız Sarayı**’nın bahçesine yerleştirilen heykel, zamanla Taksim, Hilton Oteli bahçesi ve Harbiye Askeri Müzesi gibi farklı noktalarda konuk edildi. Ancak bu yıllarda halkla pek buluşamadı; daha çok saray çevresi ve seçkin kesimin ilgisini çeken bir sanat objesiydi. Sessizce İstanbul’un sokaklarında geziyordu, tanınmayı bekleyen bir misafir gibiydi."
+        },
+        {
+          "year": "1970'ler",
+          "title": "Kadıköy’e Taşındı",
+          "description": "**Kadıköy Belediyesi**’nin kararıyla heykel, Anadolu Yakası’ndaki **Altıyol Meydanı**na taşındı ve tam yaya yolunun ortasına yerleştirildi. Bu basit karar, zamanla devasa bir dönüşüm başlattı. Boğa artık sadece bir sanat eseri değil, halkın içinde yaşayan bir simge hâline geldi. Kadıköy’ün kalbinde duran bu figür, buluşmaların, bekleyişlerin, kutlamaların, protestoların tam merkezindeydi."
+        },
+        {
+          "year": "1990–2000'ler",
+          "title": "Popüler Kültürde Yükselişi",
+          "description": "**Boğa’da buluşalım** cümlesi bir neslin sloganı hâline geldi. Fotoğraf karelerine fon oldu, kartpostallarda yer aldı, sosyal medya etiketlerine dönüştü. Artık Boğa Heykeli, Kadıköy’ü anlatan bir kelime gibiydi. Özellikle gençler için hem bir başlangıç noktasıydı hem de bir aidiyet göstergesiydi."
+        },
+        {
+          "year": "2013",
+          "title": "Gezi Direnişi ve Siyasi Protestolar",
+          "description": "**Taksim Gezi Parkı** protestoları sırasında Anadolu Yakası’nın en büyük toplama alanlarından biri haline gelen Kadıköy’de, Boğa Heykeli protestocuların merkezi oldu. Etrafı pankartlarla, sloganlarla donatıldı. Bu anıt artık bir seyirlik değil, halkın sesini yükselttiği bir sahneydi. Sessiz duruşuyla bile toplumsal belleğin bir parçasına dönüştü."
+        },
+        {
+          "year": "2020’ler",
+          "title": "Toplumsal Olaylara Tanıklık",
+          "description": "Boğa, pandemi döneminde yapılan **sessiz protestolar**, **kadın hakları yürüyüşleri**, **LGBTQ+ etkinlikleri**, **iklim farkındalığı** gibi sayısız toplumsal harekete tanıklık etti. Aktivistler, sanatçılar ve öğrenciler, Boğa’nın çevresini adeta açık hava forumuna dönüştürdü. Herkes için farklı bir anlam ifade eden bu heykel, artık bir ‘kamusal hafıza nesnesi’ydi."
+        }
+      ]
+    },
+    {
+      "label": "kiz_kulesi",
+      "title": "Kız Kulesi",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "İstanbul’un Mitlerle Örülü Simgesi",
+        "description": "Bugün Kız Kulesi, İstanbul’un en mistik simgelerinden biri. Birçok efsaneye ev sahipliği yapıyor: En meşhuru, kızını yılan sokmasın diye kuleye kapatan Bizans kralının trajik hikâyesi. Bir diğerinde, kulede bekleyen sevgilisine kavuşamayan âşığın gözyaşlarının Boğaz’a karıştığı anlatılır. Kimine göre kule bir yalnızlığın sembolüdür, kimine göre sonsuz bekleyişin. Ama bir gerçek var: Her bakanın içine işleyen bir tarafı vardır. Gündüz güneşte parlayan, gece ise ay ışığında rüya gibi görünen Kız Kulesi, İstanbul’un yüreğidir – hem geçmişin hem hayalin durağı."
+        },
+        {
+          "year": "408 BC",
+          "title": "İlk Yapı – Antik Dönem",
+          "description": "Kız Kulesi’nin bilinen ilk formu, M.Ö. 408 yılında Atinalı komutan **Alkibiades** tarafından Boğaz girişini kontrol etmek amacıyla inşa edilen küçük bir kale yapısıydı. Üsküdar kıyısından kuleye kadar uzanan zincir sistemiyle geçişler kontrol altına alınıyordu. Bu yapı hem askeri bir karakoldu hem de ticaret yollarını gözetleyen bir sınır taşıydı. Bugün gözümüze romantik görünen bu kule, o dönemde adeta Boğaz’ın dişli bir bekçisiydi."
+        },
+        {
+          "year": "12. yüzyıl",
+          "title": "Bizans Dönemi Gözetleme Kulesi",
+          "description": "Bizanslılar döneminde kule, taş temeller üzerine yeniden inşa edilerek gözetleme ve işaret kulesi olarak kullanılmaya başlandı. Deniz trafiğini denetleyen kule, Boğaz’dan geçen gemilere haberci görevi görüyordu. Halk arasında o yıllarda kulenin gece yanıp sönen ışıkları, bir 'gizemli göz' gibi anlatılırdı. Kule hem koruyucu bir gözlemciydi hem de şehre yaklaşan tehlikelerin habercisiydi."
+        },
+        {
+          "year": "1453",
+          "title": "Osmanlı’ya Geçiş",
+          "description": "Fatih Sultan Mehmet'in İstanbul’u fethiyle birlikte kule Osmanlı topraklarına katıldı. Osmanlı, bu stratejik noktayı hemen yeniden yapılandırdı. Kule bir süre karakol olarak kullanıldı. Kuleye giden askerlerin, İstanbul siluetini ilk kez burada gördüklerinde ettiği dualar hâlâ anlatılır. Çünkü burası, şehre girişin ilk tanıklık noktasıydı. Boğaz’ın orta yerinde tek başına duran bu yapı, artık hem doğu hem batının gözdesi olmuştu."
+        },
+        {
+          "year": "18. yüzyıl",
+          "title": "Veba Karantina Merkezi",
+          "description": "İstanbul’da baş gösteren veba salgını sırasında kule, izole konumu sayesinde bir **karantina merkezi**ne dönüştürüldü. Hasta olanlar buraya taşınarak şehirden uzak tutuldu. Adeta bir 'ölümle yaşam arasındaki sınır' olarak görülüyordu. O yıllarda Boğaz’dan geçen tekneler, Kız Kulesi’ne korkuyla bakar, rüzgârın taşıdığı dualarla iç geçirenler olurdu. Bir tarafta salgın, bir tarafta umut; kule yine zamanın tanığıydı."
+        },
+        {
+          "year": "1830'lar",
+          "title": "Deniz Fenerine Dönüştürüldü",
+          "description": "19. yüzyılda denizcilik faaliyetlerinin artmasıyla kuleye fener sistemi yerleştirildi. Artık yalnızca bir gözetleme noktası değil, gemilere yol gösteren bir ışık kaynağıydı. Karanlık suların ortasında parlayan bu kule, hem hayat kurtarıyor hem de geceleri Boğaz'a bakanlara hayal kurduruyordu. Denizciler arasında şöyle denirdi: 'Kız Kulesi’ni gören yolunu bulur.'"
+        },
+        {
+          "year": "1940’lar",
+          "title": "Askerî Amaçlarla Kullanım",
+          "description": "II. Dünya Savaşı sırasında kule, tekrar askerî amaçlarla kullanıldı. Boğaz’ın geçişleri bu kuleden izleniyor, stratejik raporlamalar burada tutuluyordu. Birçok İstanbul hikâyesinde 'denizin ortasında nöbet tutmak' deyimi, işte bu döneme gönderme yapar. Soğuk gecelerde kulede görev yapan askerlerin yazdığı şiirler, kuleye duyulan sevdanın bir başka yönüdür."
+        },
+        {
+          "year": "1995",
+          "title": "Restorasyon ve Turistik Açılım",
+          "description": "1995 yılında kapsamlı bir restorasyonla kule yeniden hayat buldu. Kafe ve restoran olarak halka açıldı; ama yalnızca bir turistik mekân değil, aynı zamanda bir tarihî müze hâline geldi. Sevgililer, dostlar, yolcular kuleye vapurlarla gelmeye başladı. Kulenin içi kadar, manzarası da dillerdeydi. Kız Kulesi artık bir 'İstanbul hatırası'na dönüşmüştü."
+        },
+        {
+          "year": "2021–2023",
+          "title": "Restorasyon ve Yeniden Açılış",
+          "description": "Kültür ve Turizm Bakanlığı’nın denetiminde, kulenin en özgün hâline kavuşturulması hedeflendi. Bilimsel yöntemlerle güçlendirilen yapı, tarihe saygı anlayışıyla restore edildi. Her bir taşına ayrı ayrı bakıldı, orijinal dokusuna sadık kalındı. Ziyaretçiler artık kuleye yalnızca çıkmıyor; onu yeniden keşfediyor."
+        }
+      ]
+    },
+    {
+      "label": "medusa",
+      "title": "Yerebatan Sarnıcı – Medusa",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Zamanın Ötesinden Gelen Bir Yeraltı Harikası",
+        "description": "Bugün Yerebatan Sarnıcı, İstanbul’un en etkileyici yapılarından biridir. İçeri girdiğinizde sizi ilk karşılayan şey sessizliktir. Ardından yankılanan bir su damlası, taşların arasında süzülen zaman gibidir. Medusa ise orada, başı yana dönük, her gün binlerce kişiye bakar ama kimseye doğrudan bakmaz. Belki de bizi değil, ardımızdaki geçmişi izliyordur. Bu sarnıç, sadece su değil; zaman, efsane ve insanlık tarihinin en gizli katmanlarını taşır."
+        },
+        {
+          "year": "532",
+          "title": "İnşa Edildi",
+          "description": "İmparator **I. Justinianus** tarafından Bizans döneminde inşa edilen Yerebatan Sarnıcı, antik İstanbul’un en büyük yeraltı su depolama yapısıydı. 336 mermer sütunla desteklenen bu devasa yapı, adını suyla dolu olduğu hâlde ayakta kalmasından alır: Yere batsa da çökmeyen, 'Yerebatan'. Görkemli mimarisi ve yeraltındaki ihtişamıyla, antik çağ mühendisliğinin bir şaheseri olarak kabul edilir. Sarnıç, sadece su değil; imparatorluğun güvenini de taşırdı."
+        },
+        {
+          "year": "6–10. yüzyıllar",
+          "title": "Bizans’ta Su Deposu Olarak Kullanım",
+          "description": "Sarnıç, Ayasofya’nın da içinde yer aldığı saray kompleksinin ve çevresindeki kamusal alanların su ihtiyacını karşılamak üzere aktif biçimde kullanıldı. **Belgrad Ormanı’ndan** gelen su, kemerler ve yeraltı kanalları ile bu büyük hazneye ulaştırılıyordu. Bizans halkı bu dev yapının varlığını pek bilmezdi; çünkü o, görünmeyen ama hayatı ayakta tutan bir altyapı kahramanıydı."
+        },
+        {
+          "year": "1453",
+          "title": "Osmanlı Dönemi – Unutuluş ve Yeniden Keşif",
+          "description": "İstanbul’un fethinden sonra Osmanlılar başlangıçta sarnıcın farkında değildi. Fakat zamanla halk, evlerinin altına inip kovalara su çekerken bu gizli dünyanın kapılarını yeniden araladı. Bu keşif, sarnıcın tekrar gündeme gelmesini sağladı. Lakin o dönemde resmi olarak kullanılmadığı için karanlıkta ve sessizlikte, suyun içindeki sütunlar arasında gizemli bir uykudaydı."
+        },
+        {
+          "year": "1545",
+          "title": "Seyyahların Keşfi",
+          "description": "Batılı seyyah **Petrus Gyllius**, İstanbul’a geldiğinde halkın evlerinin altından su çektiğini öğrenince bu gizemi araştırdı. Kayıkla sarnıca inip sütunlar arasında ilerledi. Not defterine şu satırları yazdı: 'Yeraltında bir orman, sessizliğin içinde yankılanan damlalar… ve taşlara oyulmuş dev bir yüz – Medusa.' Gyllius’un yazdıkları, sarnıcın efsanevi atmosferini Avrupa’ya taşıdı."
+        },
+        {
+          "year": "Medusa – Belirsiz Tarih",
+          "title": "Medusa Başlarının Yerleştirilmesi",
+          "description": "Sarnıcın en gizemli köşesinde yer alan iki dev **Medusa** başı, geçmişin mitleriyle günümüzün merakını birleştirir. Roma dönemine ait olduğu düşünülen bu başlar, muhtemelen eski bir tapınağın yıkımından sonra buraya taşındı. Biri yana yatırılmış, diğeri ise tamamen ters yerleştirilmiş. Kimine göre bu, 'şeytani bakışları' etkisiz hâle getirmek için yapıldı; kimine göre ise sanatçının Tanrıçalarla, iktidarla ya da geçmişle bir hesaplaşmasıydı. İstanbul halkı arasında ise şöyle denir: 'Kime aşkla bakarsa Medusa, onu geçmişe çeker.'"
+        },
+        {
+          "year": "1987",
+          "title": "Restorasyon ve Ziyarete Açılış",
+          "description": "**İstanbul Belediyesi** tarafından başlatılan kapsamlı bir restorasyon çalışmasıyla sarnıç temizlendi, yürüyüş yolları döşendi, özel aydınlatmalarla atmosferi güçlendirildi. Ziyarete açılmasıyla birlikte Medusa başları birer şehir efsanesine dönüştü. İnsanlar dilek tutup başların önünde fısıldamaya başladı. Bazısı fotoğraf çekerken dua ederdi; kimisi de başına bakmaktan çekinirdi."
+        },
+        {
+          "year": "2017–2022",
+          "title": "Modern Restorasyon",
+          "description": "Zamanla yıpranan yapının deprem güçlendirmesi ve su izolasyonu gerçekleştirildi. Işık ve ses efektleriyle birlikte, ziyaretçilerin tarihi neredeyse 'dokunur gibi' hissetmesi sağlandı. Her bir sütun, birer tarih tanığı gibi aydınlatıldı. Ziyaretçiler artık yalnızca suya değil, tarihin derinliğine bakar hâle geldi."
+        }
+      ]
+    },
+    {
+      "label": "ortakoy_cami",
+      "title": "Ortaköy Camii",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Boğaz’ın İncisi",
+        "description": "Bugün Ortaköy Camii, İstanbul’un en çok fotoğraflanan, en çok izlenen ve belki de en çok âşık olunan yapılarından biridir. Camiden içeri adım atanlar, sadece bir ibadethaneye değil; zamanın zarafetine, taşın işçiliğine ve ışığın mimariye kattığı ahenge tanıklık eder. Avlusundan Boğaz’ı seyretmek, martıların çığlıkları arasında dua etmek... İşte tam da bu yüzden, halk ona 'Boğaz’ın İncisi' der – çünkü hem göze hem kalbe hitap eder."
+        },
+        {
+          "year": "1853",
+          "title": "Yapımına Başlandı",
+          "description": "Osmanlı Padişahı **Sultan Abdülmecid**’in emriyle, Boğaz’ın en güzel kıyılarından birine bir cami yapılması kararlaştırıldı. Bu kutsal görevi, dönemin en ünlü mimarları olan **Balyan ailesinden Garabet ve Nigoğos Balyan** üstlendi. Yapının denize nazır yerleşimi tesadüf değildi: Ortaköy Camii, hem manevi bir merkez hem de şehrin estetik yüzü olacaktı. Efsaneye göre padişah, burada sabah namazı kıldıktan sonra Boğaz’ı seyrederken halkla aynı manzarayı paylaşmak istemişti."
+        },
+        {
+          "year": "1856",
+          "title": "İbadete Açıldı",
+          "description": "Cami tamamlandığında tam anlamıyla bir **Osmanlı Barok mimarisi şaheseri** ortaya çıkmıştı. Büyük kubbesi, incecik minareleri, içerdeki zarif kalem işleri ve dev yuvarlak pencereleriyle ışıkla dans eden bir yapıydı. Cami sadece bir ibadet mekânı değil; İstanbul’un zarafetini yansıtan mimari bir mücevherdi. Denize doğru eğilmiş gibi duran duruşuyla sanki dua eden bir siluet gibiydi."
+        },
+        {
+          "year": "1894",
+          "title": "İstanbul Depremi ve Onarım",
+          "description": "**1894 İstanbul Depremi** Ortaköy Camii’ni de etkiledi. Minarelerinde çatlaklar oluştu, kubbede küçük hasarlar meydana geldi. **II. Abdülhamid** döneminde, hızlıca restorasyon başlatıldı. O yıllarda halk arasında şu söz yaygındı: 'Cami eğilir ama yıkılmaz, çünkü deniz onu tutar.' Bu söz, Ortaköy Camii’nin hem fiziksel hem de manevi dayanıklılığını anlatıyordu."
+        },
+        {
+          "year": "1960'lar",
+          "title": "Restorasyon ve Işıklandırma",
+          "description": "Boğaz Köprüsü’nün inşasıyla birlikte Ortaköy semti büyük bir ilgi odağı haline geldi. Camii çevresi düzenlendi, iç mekân aydınlatması iyileştirildi. Geceleri camiden süzülen ışık, Boğaz’ın sularında yumuşak bir yansıma yaratıyor, bu da onu sadece bir mimari yapı değil, bir manzara unsuruna dönüştürüyordu. Bu dönemde cami, kartpostalların vazgeçilmez yüzü hâline geldi."
+        },
+        {
+          "year": "1984",
+          "title": "Vakıflar Genel Müdürlüğü Restorasyonu",
+          "description": "**Vakıflar Genel Müdürlüğü**, camiyi yeniden ele alarak kalem işlerinden kubbesine kadar detaylı bir restorasyon gerçekleştirdi. İnce taş işçiliği, renkli cam süslemeleri ve iç mekândaki zarif detaylar tekrar canlandırıldı. Böylece cami, sadece bir ibadet alanı değil, yerli ve yabancı turistler için bir çekim merkezi haline geldi."
+        },
+        {
+          "year": "2014–2016",
+          "title": "Kapsamlı Restorasyon",
+          "description": "Bu dönemde yapılan restorasyon, taş işçiliği ve pencere süslemelerini ön plana çıkardı. Özellikle yapının denizle olan ilişkisi, mimari bütünlüğü bozulmadan korundu. Her bir işlem, Ortaköy Camii’nin zarafetini gelecek yüzyıllara da taşıyabilmesi için özenle yapıldı. Restorasyon sırasında caminin minarelerinde çalışan ustaların, sabah ilk ışıkta Boğaz’a selam durmaları dilden dile anlatılır."
+        }
+      ]
+    },
+    {
+      "label": "sultanahmet",
+      "title": "Sultanahmet Camii",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "İstanbul’un Ruhunu Taşıyan Mabed",
+        "description": "Bugün **Sultanahmet Camii**, yalnızca İstanbul’un değil, tüm İslam dünyasının simgelerinden biridir. Kubbesine vuran ışık, mavi çinilerde yankılanan dua ve içeri adım atan her ziyaretçinin içini titreten o sessiz ihtişam… İşte tam da bu yüzden, buraya gelenler şöyle der: 'İstanbul’u anlamak istiyorsan Sultanahmet’te bir vakit geçir.'"
+        },
+        {
+          "year": "1609",
+          "title": "Yapımına Başlandı",
+          "description": "Henüz 19 yaşında tahta çıkan **I. Ahmed**, Osmanlı’nın gücünü ve maneviyatını yansıtan görkemli bir eser bırakmak istedi. Cami inşası için dönemin en yetkin ismi, **Sedefkâr Mehmed Ağa** görevlendirildi. Temel, Ayasofya’nın tam karşısına atıldı. Bu tercih bilinçliydi: Osmanlı’nın İslam sanatıyla Bizans'ın mirası karşı karşıya geliyordu. O dönem halk arasında şöyle bir söz dolaşırdı: 'Sultan Ahmed, kubbeyle göğe dokunmak istedi.'"
+        },
+        {
+          "year": "1616",
+          "title": "İbadete Açıldı",
+          "description": "Yedi yıl süren titiz çalışmaların ardından cami tamamlandı. **Altı minaresiyle** dikkat çeken yapı, bu yönüyle Mekke’deki **Mescid-i Haram** ile eşit minare sayısına sahip olduğu için tartışmalara neden olmuştu. Bu durumun önüne geçmek adına, Mekke’ye yedinci bir minare eklendi. Caminin içi, İznik çinilerinin göz alıcı mavisiyle süslenmişti. Gökyüzüne uzanan kubbe ve göğü kıskandıran süslemelerle cami, İstanbul'un kalbine manevi bir ağırlık getirmişti."
+        },
+        {
+          "year": "17. yüzyıl",
+          "title": "İmparatorluğun Kalbi",
+          "description": "Sultanahmet Camii, yalnızca bir ibadethane değil, bir **külliye**ydi: medrese, imarethane, hamam, çeşmeler ve türbeden oluşan büyük bir kompleks. Cami, İstanbul’un sosyal, kültürel ve dini merkezine dönüştü. Halk sabah namazına bu mabede gelmeden işe başlamaz; akşam ezanıyla camiden çıkanlar Boğaz’a yönelerek dualarını suya fısıldardı."
+        },
+        {
+          "year": "19. yüzyıl",
+          "title": "Yabancı Seyyahların İlgisi",
+          "description": "Avrupa’dan gelen seyyahlar bu yapıya hayran kalmış, özellikle iç mekânın mavi tonlarıyla bezeli çinileri nedeniyle ona 'Blue Mosque – Mavi Cami' adını vermişlerdir. İstanbul'a gelen ilk turistlerin anlattığına göre, caminin içindeki atmosfer 'sanki gökyüzü yere inmiş gibi' hissettiriyordu. Ve bu ad, günümüzde hâlâ tüm dünyada bilinen unvanı oldu."
+        },
+        {
+          "year": "1940–1950",
+          "title": "Restorasyon Çalışmaları",
+          "description": "II. Dünya Savaşı sonrası dönemde, yapının minareleri, çatısı ve iç süslemeleri zarar görmeye başlamıştı. Bu süreçte camide önemli restorasyon çalışmaları yapıldı. Özellikle **çinilerin korunması**, gelecek nesillere bu eşsiz sanat mirasının aktarılması açısından büyük bir adım oldu."
+        },
+        {
+          "year": "2000’ler",
+          "title": "Aydınlatma ve Akustik İyileştirmeleri",
+          "description": "Gelişen teknoloji ile camideki **aydınlatma sistemleri** ve **akustik yapısı** iyileştirildi. Bu düzenlemeler sayesinde hem ibadet edenler için huzurlu bir ortam yaratıldı hem de camiyi ziyaret eden turistler için anlatımlar ve dualar daha berrak bir hâl aldı. Ayetlerin yankısı artık duvarlardan değil, yüreklerden geçiyordu."
+        },
+        {
+          "year": "2017–2023",
+          "title": "Kapsamlı Restorasyon",
+          "description": "Bu dönemde yürütülen kapsamlı restorasyon çalışmalarında, **kubbe kalem işleri**, çiniler, ahşap panolar ve tarihi halılar büyük titizlikle elden geçirildi. İlginç olan ise bu restorasyonlar sırasında cami **hiçbir zaman tamamen kapatılmadı**. Dualar susmadı, ziyaretçiler eksilmedi. İstanbul’un ruhunu taşıyan bu mabed, adeta kendini yenilerken ibadet edenlerin huzurunu da korudu."
+        }
+      ]
+    },
+    {
+      "label": "taksim_cumhuriyet_aniti",
+      "title": "Taksim Cumhuriyet Anıtı",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Modern Cumhuriyet’in Taşlaşmış Simgesi",
+        "description": "Bugün **Taksim Cumhuriyet Anıtı**, Türkiye Cumhuriyeti’nin hem tarihî bir dönüm noktası hem de toplumsal hafızanın sembollerinden biri olarak duruyor. Yalnızca geçmişi değil, günümüzün düşüncelerini ve mücadelelerini de temsil ediyor. İstanbul’u gezen herkesin durup önünde düşündüğü, saygı duruşuna geçtiği ya da bir fotoğrafla anı dondurduğu bir yer: Taksim’in kalbi, Cumhuriyet’in anıtı."
+        },
+        {
+          "year": "1925",
+          "title": "Yapım Kararı Alındı",
+          "description": "Cumhuriyet’in ilanının ardından, genç Türkiye’nin modern yüzünü yansıtacak bir anıt yapılması kararlaştırıldı. İstanbul Belediye Başkanı **Haydar Bey** öncülüğünde başlatılan bu girişimle, halkın en yoğun kullandığı ve şehir merkezinin kalbi sayılan **Taksim Meydanı** seçildi. Bu meydan, artık yalnızca bir geçiş noktası değil; Cumhuriyet fikrinin vücut bulacağı bir alan olacaktı."
+        },
+        {
+          "year": "1926",
+          "title": "İtalyan Heykeltıraş Pietro Canonica ile Anlaşıldı",
+          "description": "Anıtın tasarımı için dönemin saygın sanatçılarından, İtalyan heykeltıraş **Pietro Canonica** ile anlaşma yapıldı. Canonica, Atatürk’ü hem **askerî üniformasıyla** hem de **sivil kıyafetiyle** tasvir ederek, Türkiye’nin hem Kurtuluş Savaşı'nı hem de Cumhuriyet inkılaplarını simgeleyen iki yönünü aynı yapıda birleştirdi. Döküm işlemleri Roma’da yapıldı ve ardından İstanbul’a getirildi."
+        },
+        {
+          "year": "8 Ağustos 1928",
+          "title": "Anıt Açılışı",
+          "description": "Törenle açılışı yapılan anıta **Mustafa Kemal Atatürk** bizzat katıldı. Anıtın iki yüzü vardır: biri **Kurtuluş Savaşı**'nı, diğeri **Cumhuriyet’in ilanı ve inkılaplarını** simgeler. Anıtın üzerinde Atatürk’ün yanı sıra **İsmet İnönü**, **Fevzi Çakmak** gibi önemli isimler de yer alır. Bu anıt, genç Cumhuriyet’in kararlılığını granit taşlara kazınmış bir irade olarak simgeler."
+        },
+        {
+          "year": "1930'lar–1950'ler",
+          "title": "Tören Meydanı Olarak Kullanımı",
+          "description": "Anıt, kısa sürede ulusal bayramların ve resmî törenlerin merkezi hâline geldi. **Cumhuriyet Bayramı**, **19 Mayıs**, **30 Ağustos** gibi özel günlerde halk bu meydanda toplandı, çelenkler bırakıldı, marşlar söylendi. Taksim Anıtı, yalnızca bir anıt değil; kolektif hafızanın canlı bir sahnesi oldu."
+        },
+        {
+          "year": "1970'ler–2000'ler",
+          "title": "Simgesel Değerinin Artışı",
+          "description": "Taksim Meydanı'nın çevresinde gelişen **ulaşım ağları**, **metro projeleri** ve **modernleşme çalışmaları**, Cumhuriyet Anıtı’nın görünürlüğünü artırdı. Artık o, sadece bir tarihî yapı değil, şehrin kültürel kimliğini taşıyan bir simgeydi. Kartpostallarda, filmlerde, hatıra fotoğraflarında onun bir köşesi hep vardı."
+        },
+        {
+          "year": "2010–Günümüz",
+          "title": "Koruma ve Onarım Çalışmaları",
+          "description": "Kültürel miras olarak tescillenen anıtta, zamanla oluşan yıpranmalar için periyodik bakım ve çevre düzenlemeleri yapıldı. Tören alanı genişletildi, zemin düzenlemeleri ve bilgilendirici tabelalar eklendi. Böylece anıt, daha erişilebilir ve anlatılabilir bir miras noktası hâline geldi."
+        },
+        {
+          "year": "2013",
+          "title": "Gezi Parkı Direnişi",
+          "description": "**2013 Gezi Parkı Direnişi**, sadece bir çevre hareketi değil, bir neslin kendini ifade biçimiydi. Taksim Cumhuriyet Anıtı bu sürecin simgesel merkezlerinden biri oldu. Etrafı pankartlarla sarıldı, önüne notlar bırakıldı, insanlar burada buluştu, düşündü, konuştu. Anıt, bu dönemde sessiz bir tanık gibi durdu; üzerine çıkıldı, etrafında oturuldu ama hep saygıyla... O günlerde halk arasında şöyle denirdi: 'Anıt konuşsa, ne çok şey anlatırdı.'"
+        }
+      ]
+    },
+    {
+      "label": "topkapi_sarayi",
+      "title": "Topkapı Sarayı",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Yaşayan Tarih",
+        "description": "Bugün **Topkapı Sarayı**, ziyaretçilerini yalnızca bilgilendirmiyor – onları tarihin içine çekiyor. Gözlerinizi Harem’in dar koridorlarında gezdirirken sultanın adımlarını hayal edebilir, Arz Odası’nda bir elçinin titreyen sesini duyuyor gibi olabilirsiniz. Bu saray anlatmaz, yaşatır. Her avlusu bir zaman geçidi, her detay bir Osmanlı şiiridir."
+        },
+        {
+          "year": "1459",
+          "title": "Yapım Kararı Alındı",
+          "description": "İstanbul’un fethinden kısa bir süre sonra, **Fatih Sultan Mehmet**, şehri yalnızca fethetmekle kalmadı; ona yeni bir idari kalp armağan etmek istedi. Bizans akropol alanı olan **Sarayburnu**, hem Haliç’e hem Marmara’ya hâkim konumuyla idealdi. Buraya inşa edilecek saray, yalnızca bir konut değil, Osmanlı’nın iradesini yansıtan bir yönetim merkezi olacaktı. Halk arasında söylenti yayılmıştı: 'Yeni şehir, yeni devlet, yeni saray.'"
+        },
+        {
+          "year": "1478",
+          "title": "Saray Tamamlandı",
+          "description": "**Topkapı Sarayı**, dört büyük avlu ve yüzlerce odadan oluşan görkemli bir kompleks hâline geldi. İçinde **harem**, **mutfaklar**, **divan salonları**, **kütüphaneler**, **kutsal emanetler** ve **hazineler** barındırıyordu. Burası yalnızca hanedanın yaşadığı yer değil; dünyanın dört bir yanından gelen elçilerin diz çöktüğü, padişah fermanlarının yazıldığı Osmanlı'nın sinir merkeziydi. Sarayın her köşesi bir devlet sırrını, bir aşk hikâyesini veya bir ihtişamı saklıyordu."
+        },
+        {
+          "year": "1520–1566",
+          "title": "Kanuni Sultan Süleyman Dönemi",
+          "description": "**Kanuni Sultan Süleyman** döneminde saray, adeta altın çağını yaşadı. **Mimar Sinan**’ın dokunuşlarıyla yeni yapılar eklendi, özellikle Harem bölümü genişletildi. Devletin en kritik kararları burada alınıyor, elçiler burada ağırlanıyor, fetihler burada planlanıyordu. Harem, yalnızca bir yaşam alanı değil; kadınların eğitildiği, politik nüfuz kazandığı karmaşık bir dünyaydı. Sarayın duvarları, sessizce birçok aşkı, entrikayı ve iktidar oyununu kayda geçiriyordu."
+        },
+        {
+          "year": "1600'ler",
+          "title": "İhtişamın Simgesi",
+          "description": "Topkapı Sarayı artık sadece Osmanlı’nın değil, tüm dünyanın saygı duyduğu bir güç merkeziydi. Saray mutfağında her gün **binlerce kişiye yemek pişiyor**, saray koleksiyonlarında **kutsal emanetler** ve **mücevherlerle bezeli tahtlar** saklanıyordu. Saraya giren herkes, yalnızca padişahın değil, tarihin ve kudretin huzuruna çıktığını hissederdi. Ziyaretçilerin dediği gibi: 'Burası saray değil, Osmanlı'nın kalbidir.'"
+        },
+        {
+          "year": "18. yüzyıl",
+          "title": "Padişahların Dolmabahçe’ye Geçişi",
+          "description": "**Lale Devri**’yle birlikte padişahlar, Boğaz kıyısındaki Dolmabahçe ve Beylerbeyi gibi saraylara yönelmeye başladı. Ancak Topkapı Sarayı, sembolik gücünü kaybetmedi. Her tahta çıkan padişah, cülus törenini önce burada yapar; **Kutsal Emanetler Dairesi’nde** dua ederdi. Topkapı, artık 'tahtta oturanın' değil, 'devleti temsil edenin' mekânıydı."
+        },
+        {
+          "year": "3 Nisan 1924",
+          "title": "Müze Olarak Açıldı",
+          "description": "Cumhuriyet’in ilanından sonra alınan kararla saray müze hâline getirildi. Bu, Türkiye’deki ilk büyük müze örneğiydi. Yüzyıllarca halktan gizlenen bölümler – **Harem dairesi**, **altın taht**, **kaşıkçı elması**, **Hz. Muhammed’in Sakal-ı Şerifi** – artık herkesin görebileceği kutsal ve tarihî birer değer oldu. İnsanlar ilk kez sarayın taşlarına dokunur gibi geçmişe yaklaştı."
+        },
+        {
+          "year": "1950–2000",
+          "title": "Uluslararası İlgi",
+          "description": "Yıllar içinde Topkapı Sarayı, yalnızca Türklerin değil, tüm dünyanın hayranlıkla ziyaret ettiği bir tarih müzesi hâline geldi. Krallar, başkanlar, tarihçiler ve sanatçılar burayı görmek için İstanbul’a geldi. **Sarayın girişi**, pasaporttaki damga gibi bir İstanbul hatırası oldu. Rehberler anlatırken şu sözle başlardı: 'Buradan sadece padişahlar değil, zaman yürür.'"
+        },
+        {
+          "year": "2014–2023",
+          "title": "Kapsamlı Restorasyonlar",
+          "description": "**Harem Dairesi**, **Çinili Köşk**, **Silahlar Dairesi** gibi bölümler detaylı restorasyonlara alındı. Yapının özgün dokusunu koruyarak, dijital rehber sistemleriyle ziyaret deneyimi geliştirildi. Deprem güçlendirmeleriyle yapı korundu; böylece geçmişin ihtişamı, geleceğe güvenle taşındı."
+        }
+      ]
+    },
+    {
+      "label": "yilanli_sutun",
+      "title": "Yılanlı Sütun",
+      "history": [
+        {
+        "year": "Giriş",
+        "title": "Tarihin En Eski Tanıklarından Biri",
+        "description": "Bugün **Yılanlı Sütun**, yaklaşık **2500 yıllık geçmişiyle**, İstanbul’un en eski yapılarından biridir. Hipodrom’un göbeğinde, dikkatle bakılınca hâlâ döne döne yükselen bronz gövdesi seçilir. Kimi onu bir pagan kalıntısı olarak görür, kimi mistik bir koruyucu... Ama herkes şunu bilir: Bu ince ve sade görünümlü yapı, savaşların, tanrıların, imparatorlukların ve efsanelerin canlı tanığıdır. Ve hâlâ dimdik ayakta durarak bir zamanlar üç başıyla tüm şehri gözetlediğini fısıldar gibi..."
+        },
+        {
+          "year": "479 BC",
+          "title": "Delphi'de Yapıldı",
+          "description": "**Plataia Savaşı**’nda Pers İmparatorluğu’na karşı zafer kazanan **Yunan şehir devletleri**, bu başarıyı ölümsüzleştirmek için **Delphi’deki Apollon Tapınağı**’nın önüne bir zafer anıtı diktiler. Üç yılanın birbirine sarılarak yukarı yükseldiği, bronzdan dökülmüş bu eşsiz sütun, **31 şehir devletinin** ortak katkısıyla yapıldı. Kaidesine her bir devletin adı özenle kazındı. Bu sütun yalnızca bir sanat eseri değil, kolektif bir direnişin ve dayanışmanın sembolüydü."
+        },
+        {
+          "year": "330",
+          "title": "İstanbul’a Getirilme Kararı",
+          "description": "Roma İmparatoru **I. Konstantin**, yeni başkent **Konstantinopolis**’i antik dünyanın kültürel mirasıyla donatmak istedi. Pagan geçmişin görkemli kalıntılarını Hristiyanlığın yükselen merkezine taşımak, yeni başkente tarihî bir derinlik kazandıracaktı. Yılanlı Sütun, bu kültürel taşınmanın en sembolik parçalarından biri olarak seçildi ve **Delphi’den Hipodrom’a** uzun bir yolculuğa çıktı."
+        },
+        {
+          "year": "4. yüzyıl",
+          "title": "Hipodrom’a Dikildi",
+          "description": "Sütun, şehrin kalbi olan **Hipodrom**’un ortasına, **Dikilitaş** ve **Örme Sütun**’un yanına yerleştirildi. Burada yalnızca bir süsleme unsuru değil, Roma ve Bizans’ın klasik kültür mirasını sahiplenme iradesinin bir sembolüydü. Aynı zamanda Hipodrom’daki yarış ve törenlere tanıklık eden kutsal bir göz gibi konumlandırıldı."
+        },
+        {
+          "year": "Medieval Period",
+          "title": "Efsanelerin Başlaması",
+          "description": "Zamanla halk arasında sütuna dair çeşitli efsaneler yayılmaya başladı. En bilineni, **sütunun şehri yılanlardan ve kötülükten koruduğuna** dair olanıydı. Özellikle geceleri sütunun çevresinde garip sesler duyulduğu, içinden gelen uğultularla insanlara uyarılar verdiği anlatılırdı. Bazı anlatılara göre, başlar göz göze gelince kötülükler geri püskürtülürdü. Bu nedenle, anıt halk arasında 'büyülü' olarak anılmaya başlandı."
+        },
+        {
+          "year": "1700’ler",
+          "title": "Yılan Başlarının Kaybolması",
+          "description": "Orijinalde üç başlı yılan figürünün yukarısında bir **altın kazan** taşıdığı bilinmektedir. Ancak zamanla bu kazan kayboldu, başlar ise çeşitli nedenlerle zarar gördü. Rivayetlerden biri, **Yeniçerilerden birinin başlardan birine kılıçla vurduğu** yönündedir. Diğer bir anlatıya göre, başlardan biri geceleri hırlamaya başlayınca halk panikle onu düşürmüştür. Bugün yılan başlarından birinin parçaları **İstanbul Arkeoloji Müzesi**’nde sergilenmektedir."
+        },
+        {
+          "year": "19. yüzyıl",
+          "title": "Avrupalı Araştırmacıların Dikkati",
+          "description": "İstanbul’u ziyaret eden **Batılı seyyahlar ve arkeologlar**, sütunun üzerindeki yazıtları ortaya çıkardı. Bu yazıtlar sayesinde sütunun kökeni Delphi’ye kadar takip edildi ve Plataia’daki büyük zaferin bir hatırası olduğu netlik kazandı. Bu dönemden sonra Yılanlı Sütun, antik çağ tarihi için bilimsel bir kaynak hâline geldi."
+        },
+        {
+          "year": "1980–2000’ler",
+          "title": "Koruma Altına Alınması",
+          "description": "Yapılan analizlerde sütunun yüzeyindeki **bronz alaşımın oksidasyona** uğradığı tespit edildi. Koruma çalışmaları kapsamında etrafı bariyerlerle çevrildi ve ziyaretçilerin doğrudan temas etmesi engellendi. Ancak sütun, her zaman göz teması kuracak kadar yakın bırakıldı — çünkü bu, efsanelere göre hâlâ şehri korumakla görevli bir varlıktı."
+        }
+      ]
+    }
 ]

@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5835F1D72DB2EFC500DD01D1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5835F1D62DB2EFC500DD01D1 /* FirebaseAnalytics */; };
+		5835F1D92DB2EFC500DD01D1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5835F1D82DB2EFC500DD01D1 /* FirebaseAuth */; };
+		5835F1DB2DB2EFC500DD01D1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5835F1DA2DB2EFC500DD01D1 /* FirebaseFirestore */; };
+		5835F1DD2DB2EFC500DD01D1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5835F1DC2DB2EFC500DD01D1 /* FirebaseStorage */; };
+		58D3A9392DAD8B3B008E4460 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 58D3A9382DAD8B3B008E4460 /* Lottie */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		58DED3402D7DE27C0020808B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +37,59 @@
 		58DED3492D7DE27C0020808B /* TravelGuideAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelGuideAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		587741342DAAC93D00D02D85 /* Exceptions for "TravelGuideApp" folder in "TravelGuideAppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Asset/countries_and_cities.json,
+				Asset/historical_places.json,
+				Asset/loadingAnimation.json,
+				Asset/place_info.json,
+				Asset/recognitionSuccess.json,
+				Asset/test_deneme,
+				Firebase/ArrayChunked.swift,
+				Firebase/AuthService.swift,
+				"Firebase/GoogleService-Info.plist",
+				Firebase/ProfileStatsProvider.swift,
+			);
+			target = 58DED33E2D7DE27C0020808B /* TravelGuideAppTests */;
+		};
+		587741352DAAC93D00D02D85 /* Exceptions for "TravelGuideApp" folder in "TravelGuideAppUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Asset/countries_and_cities.json,
+				Asset/historical_places.json,
+				Asset/loadingAnimation.json,
+				Asset/place_info.json,
+				Asset/recognitionSuccess.json,
+				Asset/test_deneme,
+				Firebase/ArrayChunked.swift,
+				Firebase/AuthService.swift,
+				"Firebase/GoogleService-Info.plist",
+				Firebase/ProfileStatsProvider.swift,
+			);
+			target = 58DED3482D7DE27C0020808B /* TravelGuideAppUITests */;
+		};
+		587741F12DAB154200D02D85 /* Exceptions for "TravelGuideApp" folder in "TravelGuideApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 58DED32E2D7DE27B0020808B /* TravelGuideApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		58DED3312D7DE27B0020808B /* TravelGuideApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				587741F12DAB154200D02D85 /* Exceptions for "TravelGuideApp" folder in "TravelGuideApp" target */,
+				587741342DAAC93D00D02D85 /* Exceptions for "TravelGuideApp" folder in "TravelGuideAppTests" target */,
+				587741352DAAC93D00D02D85 /* Exceptions for "TravelGuideApp" folder in "TravelGuideAppUITests" target */,
+			);
+			explicitFolders = (
+				Asset/test_deneme,
+			);
 			path = TravelGuideApp;
 			sourceTree = "<group>";
 		};
@@ -52,6 +110,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5835F1D72DB2EFC500DD01D1 /* FirebaseAnalytics in Frameworks */,
+				5835F1DB2DB2EFC500DD01D1 /* FirebaseFirestore in Frameworks */,
+				5835F1D92DB2EFC500DD01D1 /* FirebaseAuth in Frameworks */,
+				5835F1DD2DB2EFC500DD01D1 /* FirebaseStorage in Frameworks */,
+				58D3A9392DAD8B3B008E4460 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +175,11 @@
 			);
 			name = TravelGuideApp;
 			packageProductDependencies = (
+				58D3A9382DAD8B3B008E4460 /* Lottie */,
+				5835F1D62DB2EFC500DD01D1 /* FirebaseAnalytics */,
+				5835F1D82DB2EFC500DD01D1 /* FirebaseAuth */,
+				5835F1DA2DB2EFC500DD01D1 /* FirebaseFirestore */,
+				5835F1DC2DB2EFC500DD01D1 /* FirebaseStorage */,
 			);
 			productName = TravelGuideApp;
 			productReference = 58DED32F2D7DE27B0020808B /* TravelGuideApp.app */;
@@ -195,6 +263,10 @@
 			);
 			mainGroup = 58DED3262D7DE27B0020808B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				58D3A9372DAD8B3B008E4460 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				5835F1D52DB2EFC500DD01D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 58DED3302D7DE27B0020808B /* Products */;
 			projectDirPath = "";
@@ -399,8 +471,10 @@
 				DEVELOPMENT_TEAM = VKV48VRAFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelGuideApp/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Bu uygulama, fotoğraf çekme ve kamera erişimi için izninizi gerektirir.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Bu uygulama çektiğiniz fotoğrafları galerinize kaydetmek için izin ister.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -430,8 +504,10 @@
 				DEVELOPMENT_TEAM = VKV48VRAFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelGuideApp/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Bu uygulama, fotoğraf çekme ve kamera erişimi için izninizi gerektirir.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Bu uygulama çektiğiniz fotoğrafları galerinize kaydetmek için izin ister.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -558,6 +634,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5835F1D52DB2EFC500DD01D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.11.0;
+			};
+		};
+		58D3A9372DAD8B3B008E4460 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5835F1D62DB2EFC500DD01D1 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5835F1D52DB2EFC500DD01D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5835F1D82DB2EFC500DD01D1 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5835F1D52DB2EFC500DD01D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5835F1DA2DB2EFC500DD01D1 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5835F1D52DB2EFC500DD01D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5835F1DC2DB2EFC500DD01D1 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5835F1D52DB2EFC500DD01D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		58D3A9382DAD8B3B008E4460 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58D3A9372DAD8B3B008E4460 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 58DED3272D7DE27B0020808B /* Project object */;
 }

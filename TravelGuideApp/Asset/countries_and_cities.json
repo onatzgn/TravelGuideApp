@@ -5,43 +5,81 @@
     "cities": [
       {
         "city_key": "istanbul",
-        "city_name": "İstanbul"
+        "city_name": "İstanbul",
+        "latitude": 41.0082,
+        "longitude": 28.9784
       },
       {
         "city_key": "ankara",
-        "city_name": "Ankara"
+        "city_name": "Ankara",
+        "latitude": 39.9334,
+        "longitude": 32.8597
       },
       {
         "city_key": "izmir",
-        "city_name": "İzmir"
+        "city_name": "İzmir",
+        "latitude": 38.4192,
+        "longitude": 27.1287
       },
       {
         "city_key": "bursa",
-        "city_name": "Bursa"
+        "city_name": "Bursa",
+        "latitude": 40.1826,
+        "longitude": 29.0610
       },
       {
         "city_key": "antalya",
-        "city_name": "Antalya"
+        "city_name": "Antalya",
+        "latitude": 36.8969,
+        "longitude": 30.7133
       },
       {
         "city_key": "konya",
-        "city_name": "Konya"
+        "city_name": "Konya",
+        "latitude": 37.8739,
+        "longitude": 32.4846
       },
       {
         "city_key": "adana",
-        "city_name": "Adana"
+        "city_name": "Adana",
+        "latitude": 37.0017,
+        "longitude": 35.3213
       },
       {
         "city_key": "trabzon",
-        "city_name": "Trabzon"
+        "city_name": "Trabzon",
+        "latitude": 41.0019,
+        "longitude": 39.7208
       },
       {
         "city_key": "gaziantep",
-        "city_name": "Gaziantep"
+        "city_name": "Gaziantep",
+        "latitude": 37.0662,
+        "longitude": 37.3833
       },
       {
         "city_key": "eskisehir",
-        "city_name": "Eskişehir"
+        "city_name": "Eskişehir",
+        "latitude": 39.7768,
+        "longitude": 30.5206
+      },
+      {
+        "city_key": "mersin",
+        "city_name": "Mersin",
+        "latitude": 36.8004,
+        "longitude": 34.6408
+      },
+      {
+        "city_key": "kayseri",
+        "city_name": "Kayseri",
+        "latitude": 38.7322,
+        "longitude": 35.4800
+      },
+      {
+        "city_key": "samsun",
+        "city_name": "Samsun",
+        "latitude": 41.2866,
+        "longitude": 36.33
       }
     ]
   },
@@ -51,23 +89,45 @@
     "cities": [
       {
         "city_key": "brussels",
-        "city_name": "Brüksel"
+        "city_name": "Brüksel",
+        "latitude": 50.8503,
+        "longitude": 4.3517
       },
       {
         "city_key": "antwerp",
-        "city_name": "Anvers"
+        "city_name": "Anvers",
+        "latitude": 51.2211,
+        "longitude": 4.3997
       },
       {
         "city_key": "ghent",
-        "city_name": "Gent"
+        "city_name": "Gent",
+        "latitude": 51.0543,
+        "longitude": 3.7174
       },
       {
         "city_key": "bruges",
-        "city_name": "Brugge"
+        "city_name": "Brugge",
+        "latitude": 51.2093,
+        "longitude": 3.2247
       },
       {
         "city_key": "leuven",
-        "city_name": "Leuven"
+        "city_name": "Leuven",
+        "latitude": 50.8798,
+        "longitude": 4.7009
+      },
+      {
+        "city_key": "namur",
+        "city_name": "Namur",
+        "latitude": 50.4670,
+        "longitude": 4.8722
+      },
+      {
+        "city_key": "charleroi",
+        "city_name": "Charleroi",
+        "latitude": 50.4119,
+        "longitude": 4.4444
       }
     ]
   },
@@ -77,35 +137,63 @@
     "cities": [
       {
         "city_key": "paris",
-        "city_name": "Paris"
+        "city_name": "Paris",
+        "latitude": 48.8566,
+        "longitude": 2.3522
       },
       {
         "city_key": "lyon",
-        "city_name": "Lyon"
+        "city_name": "Lyon",
+        "latitude": 45.7640,
+        "longitude": 4.8357
       },
       {
         "city_key": "marseille",
-        "city_name": "Marsilya"
+        "city_name": "Marsilya",
+        "latitude": 43.2965,
+        "longitude": 5.3698
       },
       {
         "city_key": "nice",
-        "city_name": "Nice"
+        "city_name": "Nice",
+        "latitude": 43.7102,
+        "longitude": 7.2620
       },
       {
         "city_key": "lille",
-        "city_name": "Lille"
+        "city_name": "Lille",
+        "latitude": 50.6292,
+        "longitude": 3.0573
       },
       {
         "city_key": "toulouse",
-        "city_name": "Toulouse"
+        "city_name": "Toulouse",
+        "latitude": 43.6045,
+        "longitude": 1.4442
       },
       {
         "city_key": "strasbourg",
-        "city_name": "Strazburg"
+        "city_name": "Strazburg",
+        "latitude": 48.5734,
+        "longitude": 7.7521
       },
       {
         "city_key": "bordeaux",
-        "city_name": "Bordeaux"
+        "city_name": "Bordeaux",
+        "latitude": 44.8378,
+        "longitude": -0.5792
+      },
+      {
+        "city_key": "nantes",
+        "city_name": "Nantes",
+        "latitude": 47.2184,
+        "longitude": -1.5536
+      },
+      {
+        "city_key": "dijon",
+        "city_name": "Dijon",
+        "latitude": 47.3220,
+        "longitude": 5.0415
       }
     ]
   },
@@ -115,27 +203,51 @@
     "cities": [
       {
         "city_key": "amsterdam",
-        "city_name": "Amsterdam"
+        "city_name": "Amsterdam",
+        "latitude": 52.3676,
+        "longitude": 4.9041
       },
       {
         "city_key": "rotterdam",
-        "city_name": "Rotterdam"
+        "city_name": "Rotterdam",
+        "latitude": 51.9225,
+        "longitude": 4.4792
       },
       {
         "city_key": "the_hague",
-        "city_name": "Lahey"
+        "city_name": "Lahey",
+        "latitude": 52.0705,
+        "longitude": 4.3007
       },
       {
         "city_key": "utrecht",
-        "city_name": "Utrecht"
+        "city_name": "Utrecht",
+        "latitude": 52.0907,
+        "longitude": 5.1214
       },
       {
         "city_key": "eindhoven",
-        "city_name": "Eindhoven"
+        "city_name": "Eindhoven",
+        "latitude": 51.4416,
+        "longitude": 5.4697
       },
       {
         "city_key": "groningen",
-        "city_name": "Groningen"
+        "city_name": "Groningen",
+        "latitude": 53.2194,
+        "longitude": 6.5665
+      },
+      {
+        "city_key": "maastricht",
+        "city_name": "Maastricht",
+        "latitude": 50.8514,
+        "longitude": 5.6909
+      },
+      {
+        "city_key": "tilburg",
+        "city_name": "Tilburg",
+        "latitude": 51.5853,
+        "longitude": 5.0564
       }
     ]
   },
@@ -145,27 +257,123 @@
     "cities": [
       {
         "city_key": "zurich",
-        "city_name": "Zürih"
+        "city_name": "Zürih",
+        "latitude": 47.3769,
+        "longitude": 8.5417
       },
       {
         "city_key": "geneva",
-        "city_name": "Cenevre"
+        "city_name": "Cenevre",
+        "latitude": 46.2044,
+        "longitude": 6.1432
       },
       {
         "city_key": "basel",
-        "city_name": "Basel"
+        "city_name": "Basel",
+        "latitude": 47.5596,
+        "longitude": 7.5886
       },
       {
         "city_key": "bern",
-        "city_name": "Bern"
+        "city_name": "Bern",
+        "latitude": 46.9480,
+        "longitude": 7.4474
       },
       {
         "city_key": "lausanne",
-        "city_name": "Lozan"
+        "city_name": "Lozan",
+        "latitude": 46.6034,
+        "longitude": 6.6299
       },
       {
         "city_key": "lucerne",
-        "city_name": "Luzern"
+        "city_name": "Luzern",
+        "latitude": 47.0502,
+        "longitude": 8.3093
+      },
+      {
+        "city_key": "winterthur",
+        "city_name": "Winterthur",
+        "latitude": 47.4992,
+        "longitude": 8.7241
+      },
+      {
+        "city_key": "st_gallen",
+        "city_name": "St. Gallen",
+        "latitude": 47.4234,
+        "longitude": 9.3767
+      }
+    ]
+  },
+  {
+    "country_key": "germany",
+    "country_name": "Almanya",
+    "cities": [
+      {
+        "city_key": "berlin",
+        "city_name": "Berlin",
+        "latitude": 52.5200,
+        "longitude": 13.4050
+      },
+      {
+        "city_key": "munich",
+        "city_name": "Münih",
+        "latitude": 48.1351,
+        "longitude": 11.5820
+      },
+      {
+        "city_key": "hamburg",
+        "city_name": "Hamburg",
+        "latitude": 53.5511,
+        "longitude": 9.9937
+      },
+      {
+        "city_key": "frankfurt",
+        "city_name": "Frankfurt",
+        "latitude": 50.1109,
+        "longitude": 8.6821
+      },
+      {
+        "city_key": "cologne",
+        "city_name": "Köln",
+        "latitude": 50.9375,
+        "longitude": 6.9603
+      }
+    ]
+  },
+  {
+    "country_key": "italy",
+    "country_name": "İtalya",
+    "cities": [
+      {
+        "city_key": "rome",
+        "city_name": "Roma",
+        "latitude": 41.9028,
+        "longitude": 12.4964
+      },
+      {
+        "city_key": "milan",
+        "city_name": "Milano",
+        "latitude": 45.4642,
+        "longitude": 9.1900
+      },
+      {
+        "city_key": "naples",
+        "city_name": "Napoli",
+        "latitude": 40.8518,
+        "longitude": 14.2681
+      },
+      {
+        "city_key": "florence",
+        "city_name": "Firenze",
+        "latitude": 43.7696,
+        "longitude": 11.2558
+      },
+      {
+        "city_key": "venice",
+        "city_name": "Venedik",
+        "latitude": 45.4408,
+        "longitude": 12.3155
       }
     ]
   }

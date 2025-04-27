@@ -2,99 +2,155 @@
     {
         "label": "alman_cesmesi",
         "title": "Alman Çeşmesi",
-        "latitude": 41.0075,
-        "longitude": 28.9768,
-        "description": "II. Wilhelm'in hediyesi olan tarihi çeşme."
+        "latitude": 41.007089,
+        "longitude": 28.976688,
+        "description": "Tarihi dokunun ortasında, zarif mimarisiyle büyüleyen II. Wilhelm'in bu eşsiz hediyesi seni zamanda yolculuğa çıkaracak.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Fatih"
     },
     {
         "label": "ayasofya",
         "title": "Ayasofya",
-        "latitude": 41.0085,
-        "longitude": 28.9802,
-        "description": "Bizans ve Osmanlı'nın en görkemli yapılarından biri."
+        "latitude": 41.008573,
+        "longitude": 28.980153,
+        "description": "Bin yıllık sırlarıyla hem bir kilise hem cami olmuş, tarihin görkemini iliklerine kadar hissedeceğin büyüleyici bir yapı.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Fatih"
     },
     {
         "label": "bozdogan_kemeri",
         "title": "Bozdoğan Kemeri",
-        "latitude": 41.0133,
-        "longitude": 28.9515,
-        "description": "Roma döneminden kalma su kemeri."
+        "latitude": 41.015965,
+        "longitude": 28.955814,
+        "description": "Roma'nın İstanbul'daki izlerini taşıyan bu anıtsal su kemeri, seni antik zamanların kalbine götürecek.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Fatih"
     },
     {
         "label": "cemberlitas",
         "title": "Çemberlitaş",
-        "latitude": 41.0082,
-        "longitude": 28.9717,
-        "description": "Konstantin Sütunu olarak da bilinir."
+        "latitude": 41.008540,
+        "longitude": 28.971285,
+        "description": "İstanbul’un kalbinde yükselen bu tarihi sütun, seni Bizans’tan Osmanlı’ya uzanan bir zaman tüneline davet ediyor.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Fatih"
     },
     {
         "label": "dikilitas",
         "title": "Dikilitaş",
-        "latitude": 41.0059,
-        "longitude": 28.9768,
-        "description": "Mısır’dan getirilen antik dikilitaş."
+        "latitude": 41.005647,
+        "longitude": 28.975108,
+        "description": "Binlerce yıl öncesinden, Mısır’dan İstanbul’a taşınmış bu anıtsal dikilitaş, geçmişin gizemini keşfetmen için seni bekliyor.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Fatih"
     },
     {
         "label": "galata_kulesi",
         "title": "Galata Kulesi",
-        "latitude": 41.0256,
-        "longitude": 28.9744,
-        "description": "İstanbul'un panoramik manzarasını sunar."
+        "latitude": 41.025619,
+        "longitude": 28.974255,
+        "description": "İstanbul’u kuşbakışı izleyebileceğin bu tarihi kulede, manzaraya karşı geçmişin hikâyelerini dinler gibi olacaksın.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Beyoğlu"
     },
     {
         "label": "kadikoy_boga_heykeli",
         "title": "Kadıköy Boğa Heykeli",
-        "latitude": 40.9904,
-        "longitude": 29.0272,
-        "description": "Kadıköy’ün sembolik buluşma noktası."
+        "latitude": 40.990446,
+        "longitude": 29.029167,
+        "description": "Kadıköy’ün canlı ruhunu simgeleyen bu ikonik heykelin etrafında şehrin enerjisini hissetmeye hazır mısın?",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Kadıköy"
     },
     {
         "label": "kiz_kulesi",
         "title": "Kız Kulesi",
-        "latitude": 41.0211,
-        "longitude": 29.0049,
-        "description": "Boğaz'ın ortasında yer alan tarihi yapı."
+        "latitude": 41.021135,
+        "longitude": 29.004140,
+        "description": "Boğaz’ın ortasında, efsanelerle çevrili bu eşsiz yapı, hem romantik hem tarihi bir kaçamak için ideal bir durak.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Üsküdar"
     },
     {
         "label": "medusa",
         "title": "Yerebatan Sarnıcı - Medusa",
-        "latitude": 41.0084,
-        "longitude": 28.9779,
-        "description": "Ters duran Medusa başı ile ünlü."
+        "latitude": 41.008381,
+        "longitude": 28.977927,
+        "description": "Yerebatan Sarnıcı’nın serin karanlığında ters duran Medusa başına bakarken, mitolojiyle tarihin buluşmasına tanıklık edeceksin.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Fatih"
     },
     {
         "label": "ortakoy_cami",
         "title": "Ortaköy Camii",
-        "latitude": 41.0472,
-        "longitude": 29.0271,
-        "description": "Boğaz'ın incisi olarak bilinir."
+        "latitude": 41.047281,
+        "longitude": 29.026903,
+        "description": "Boğaz’ın kıyısında fotoğraflık güzelliğiyle göz kamaştıran bu cami, huzur ve estetik arayanlar için mükemmel bir keşif.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Beşiktaş"
     },
     {
         "label": "sultanahmet",
         "title": "Sultanahmet Camii",
-        "latitude": 41.0055,
-        "longitude": 28.9768,
-        "description": "Mavi Camii olarak da bilinir."
+        "latitude": 41.005269,
+        "longitude": 28.977138,
+        "description": "Gökyüzüne uzanan minareleri ve içindeki mavi çinileriyle bu cami, seni zarafet ve maneviyatla buluşturacak.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Fatih"
     },
     {
         "label": "taksim_cumhuriyet_aniti",
         "title": "Taksim Cumhuriyet Anıtı",
-        "latitude": 41.0369,
-        "longitude": 28.9863,
-        "description": "Cumhuriyet’in simgesi olan anıt."
+        "latitude": 41.036976,
+        "longitude": 28.985131,
+        "description": "Cumhuriyet’in kalbindeki bu anıtsal yapı, geçmişin izlerini ve bağımsızlık ruhunu hissetmek için ideal bir başlangıç noktası.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Beyoğlu"
     },
     {
         "label": "topkapi_sarayi",
         "title": "Topkapı Sarayı",
-        "latitude": 41.0115,
-        "longitude": 28.9833,
-        "description": "Osmanlı padişahlarının evi."
+        "latitude": 41.011400,
+        "longitude": 28.983240,
+        "description": "Osmanlı padişahlarının ihtişamlı hayatına tanıklık etmek, sarayın her köşesinde bir sır keşfetmek ister misin?",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Fatih"
     },
     {
         "label": "yilanli_sutun",
         "title": "Yılanlı Sütun",
-        "latitude": 41.0056,
-        "longitude": 28.9769,
-        "description": "Delphi’den getirilen bronz sütun."
+        "latitude": 41.005524,
+        "longitude": 28.975019,
+        "description": "Mitolojik kökenleri ve esrarengiz havasıyla bu bronz sütun, seni antik dünyanın gizemleriyle yüzleştirecek.",
+        "country": "Türkiye",
+        "city": "İstanbul",
+        "city_key": "istanbul",
+        "district": "Fatih"
     }
 ]
