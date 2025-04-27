@@ -1,0 +1,100 @@
+[
+    {
+        "label": "alman_cesmesi",
+        "title": "Alman Çeşmesi",
+        "latitude": 41.0075,
+        "longitude": 28.9768,
+        "description": "II. Wilhelm'in hediyesi olan tarihi çeşme."
+    },
+    {
+        "label": "ayasofya",
+        "title": "Ayasofya",
+        "latitude": 41.0085,
+        "longitude": 28.9802,
+        "description": "Bizans ve Osmanlı'nın en görkemli yapılarından biri."
+    },
+    {
+        "label": "bozdogan_kemeri",
+        "title": "Bozdoğan Kemeri",
+        "latitude": 41.0133,
+        "longitude": 28.9515,
+        "description": "Roma döneminden kalma su kemeri."
+    },
+    {
+        "label": "cemberlitas",
+        "title": "Çemberlitaş",
+        "latitude": 41.0082,
+        "longitude": 28.9717,
+        "description": "Konstantin Sütunu olarak da bilinir."
+    },
+    {
+        "label": "dikilitas",
+        "title": "Dikilitaş",
+        "latitude": 41.0059,
+        "longitude": 28.9768,
+        "description": "Mısır’dan getirilen antik dikilitaş."
+    },
+    {
+        "label": "galata_kulesi",
+        "title": "Galata Kulesi",
+        "latitude": 41.0256,
+        "longitude": 28.9744,
+        "description": "İstanbul'un panoramik manzarasını sunar."
+    },
+    {
+        "label": "kadikoy_boga_heykeli",
+        "title": "Kadıköy Boğa Heykeli",
+        "latitude": 40.9904,
+        "longitude": 29.0272,
+        "description": "Kadıköy’ün sembolik buluşma noktası."
+    },
+    {
+        "label": "kiz_kulesi",
+        "title": "Kız Kulesi",
+        "latitude": 41.0211,
+        "longitude": 29.0049,
+        "description": "Boğaz'ın ortasında yer alan tarihi yapı."
+    },
+    {
+        "label": "medusa",
+        "title": "Yerebatan Sarnıcı - Medusa",
+        "latitude": 41.0084,
+        "longitude": 28.9779,
+        "description": "Ters duran Medusa başı ile ünlü."
+    },
+    {
+        "label": "ortakoy_cami",
+        "title": "Ortaköy Camii",
+        "latitude": 41.0472,
+        "longitude": 29.0271,
+        "description": "Boğaz'ın incisi olarak bilinir."
+    },
+    {
+        "label": "sultanahmet",
+        "title": "Sultanahmet Camii",
+        "latitude": 41.0055,
+        "longitude": 28.9768,
+        "description": "Mavi Camii olarak da bilinir."
+    },
+    {
+        "label": "taksim_cumhuriyet_aniti",
+        "title": "Taksim Cumhuriyet Anıtı",
+        "latitude": 41.0369,
+        "longitude": 28.9863,
+        "description": "Cumhuriyet’in simgesi olan anıt."
+    },
+    {
+        "label": "topkapi_sarayi",
+        "title": "Topkapı Sarayı",
+        "latitude": 41.0115,
+        "longitude": 28.9833,
+        "description": "Osmanlı padişahlarının evi."
+    },
+    {
+        "label": "yilanli_sutun",
+        "title": "Yılanlı Sütun",
+        "latitude": 41.0056,
+        "longitude": 28.9769,
+        "description": "Delphi’den getirilen bronz sütun."
+    }
+]

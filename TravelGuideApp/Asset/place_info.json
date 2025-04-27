@@ -1,0 +1,181 @@
+[
+  {
+    "label": "alman_cesmesi",
+    "title": "Alman Çeşmesi",
+    "history": [
+      {
+        "year": "1901",
+        "title": "Hediye Edildi",
+        "description": "Alman İmparatoru II. Wilhelm tarafından Osmanlı’ya hediye edilmiştir."
+      }
+    ]
+  },
+  {
+    "label": "ayasofya",
+    "title": "Ayasofya",
+    "history": [
+      {
+        "year": "537",
+        "title": "İnşa Edildi",
+        "description": "Doğu Roma İmparatoru I. Justinianus tarafından kilise olarak inşa edildi."
+      },
+      {
+        "year": "1453",
+        "title": "Camiye Dönüştürüldü",
+        "description": "İstanbul’un fethinden sonra cami olarak kullanılmaya başlandı."
+      },
+      {
+        "year": "1935",
+        "title": "Müze Oldu",
+        "description": "Atatürk’ün emriyle müzeye dönüştürüldü."
+      },
+      {
+        "year": "2020",
+        "title": "Tekrar Cami",
+        "description": "2020 yılında tekrar cami olarak ibadete açıldı."
+      }
+    ]
+  },
+  {
+    "label": "bozdogan_kemeri",
+    "title": "Bozdoğan Kemeri",
+    "history": [
+      {
+        "year": "375",
+        "title": "İnşa Edildi",
+        "description": "Roma İmparatorluğu döneminde su kemeri olarak inşa edildi."
+      }
+    ]
+  },
+  {
+    "label": "cemberlitas",
+    "title": "Çemberlitaş",
+    "history": [
+      {
+        "year": "330",
+        "title": "Konstantin Sütunu",
+        "description": "İmparator I. Konstantin tarafından dikilmiştir."
+      }
+    ]
+  },
+  {
+    "label": "dikilitas",
+    "title": "Dikilitaş",
+    "history": [
+      {
+        "year": "1450 BC",
+        "title": "Mısır’da Yapıldı",
+        "description": "III. Tutmosis adına Mısır’da yapılmış ve sonra İstanbul’a getirilmiştir."
+      }
+    ]
+  },
+  {
+    "label": "galata_kulesi",
+    "title": "Galata Kulesi",
+    "history": [
+      {
+        "year": "1348",
+        "title": "İnşa Edildi",
+        "description": "Cenevizliler tarafından savunma kulesi olarak inşa edildi."
+      },
+      {
+        "year": "1632",
+        "title": "Hezarfen Uçuşu",
+        "description": "Hezarfen Ahmet Çelebi kuleden Üsküdar’a kadar uçmuştur."
+      }
+    ]
+  },
+  {
+    "label": "kadikoy_boga_heykeli",
+    "title": "Kadıköy Boğa Heykeli",
+    "history": [
+      {
+        "year": "1864",
+        "title": "Fransa’da Yapıldı",
+        "description": "Heykel Fransa’da yapıldı ve sonradan Türkiye’ye getirildi."
+      }
+    ]
+  },
+  {
+    "label": "kiz_kulesi",
+    "title": "Kız Kulesi",
+    "history": [
+      {
+        "year": "408 BC",
+        "title": "İlk Kullanım",
+        "description": "Gümrük istasyonu ve deniz feneri olarak kullanılmıştır."
+      }
+    ]
+  },
+  {
+    "label": "medusa",
+    "title": "Yerebatan Sarnıcı - Medusa",
+    "history": [
+      {
+        "year": "6. yy",
+        "title": "İnşa Edildi",
+        "description": "Bizans döneminde büyük su sarnıcı olarak yapılmıştır. Medusa başları taban taşlarında yer alır."
+      }
+    ]
+  },
+  {
+    "label": "ortakoy_cami",
+    "title": "Ortaköy Camii",
+    "history": [
+      {
+        "year": "1856",
+        "title": "İnşa Edildi",
+        "description": "Abdülmecid döneminde Nigoğos Balyan tarafından yapılmıştır."
+      }
+    ]
+  },
+  {
+    "label": "sultanahmet",
+    "title": "Sultanahmet Camii",
+    "history": [
+      {
+        "year": "1616",
+        "title": "İbadete Açıldı",
+        "description": "Sedefkâr Mehmet Ağa tarafından tamamlanmıştır. 6 minareli olması ile ünlüdür."
+      }
+    ]
+  },
+  {
+    "label": "taksim_cumhuriyet_aniti",
+    "title": "Taksim Cumhuriyet Anıtı",
+    "history": [
+      {
+        "year": "1928",
+        "title": "Tamamlandı",
+        "description": "Cumhuriyetin ilanını simgeleyen anıt Pietro Canonica tarafından yapılmıştır."
+      }
+    ]
+  },
+  {
+    "label": "topkapi_sarayi",
+    "title": "Topkapı Sarayı",
+    "history": [
+      {
+        "year": "1478",
+        "title": "Kullanıma Açıldı",
+        "description": "Fatih Sultan Mehmet tarafından yaptırılmıştır, Osmanlı’nın idare merkezi olmuştur."
+      },
+      {
+        "year": "1924",
+        "title": "Müze Oldu",
+        "description": "Cumhuriyet döneminde müze olarak açılmıştır."
+      }
+    ]
+  },
+  {
+    "label": "yilanli_sutun",
+    "title": "Yılanlı Sütun",
+    "history": [
+      {
+        "year": "479 BC",
+        "title": "Delphi Anıtı",
+        "description": "Perslere karşı kazanılan zaferi simgeleyen antik Yunan anıtıdır. İstanbul'a Bizans döneminde getirilmiştir."
+      }
+    ]
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "country_key": "turkey",
+    "country_name": "Türkiye",
+    "cities": [
+      {
+        "city_key": "istanbul",
+        "city_name": "İstanbul"
+      },
+      {
+        "city_key": "ankara",
+        "city_name": "Ankara"
+      },
+      {
+        "city_key": "izmir",
+        "city_name": "İzmir"
+      },
+      {
+        "city_key": "bursa",
+        "city_name": "Bursa"
+      },
+      {
+        "city_key": "antalya",
+        "city_name": "Antalya"
+      },
+      {
+        "city_key": "konya",
+        "city_name": "Konya"
+      },
+      {
+        "city_key": "adana",
+        "city_name": "Adana"
+      },
+      {
+        "city_key": "trabzon",
+        "city_name": "Trabzon"
+      },
+      {
+        "city_key": "gaziantep",
+        "city_name": "Gaziantep"
+      },
+      {
+        "city_key": "eskisehir",
+        "city_name": "Eskişehir"
+      }
+    ]
+  },
+  {
+    "country_key": "belgium",
+    "country_name": "Belçika",
+    "cities": [
+      {
+        "city_key": "brussels",
+        "city_name": "Brüksel"
+      },
+      {
+        "city_key": "antwerp",
+        "city_name": "Anvers"
+      },
+      {
+        "city_key": "ghent",
+        "city_name": "Gent"
+      },
+      {
+        "city_key": "bruges",
+        "city_name": "Brugge"
+      },
+      {
+        "city_key": "leuven",
+        "city_name": "Leuven"
+      }
+    ]
+  },
+  {
+    "country_key": "france",
+    "country_name": "Fransa",
+    "cities": [
+      {
+        "city_key": "paris",
+        "city_name": "Paris"
+      },
+      {
+        "city_key": "lyon",
+        "city_name": "Lyon"
+      },
+      {
+        "city_key": "marseille",
+        "city_name": "Marsilya"
+      },
+      {
+        "city_key": "nice",
+        "city_name": "Nice"
+      },
+      {
+        "city_key": "lille",
+        "city_name": "Lille"
+      },
+      {
+        "city_key": "toulouse",
+        "city_name": "Toulouse"
+      },
+      {
+        "city_key": "strasbourg",
+        "city_name": "Strazburg"
+      },
+      {
+        "city_key": "bordeaux",
+        "city_name": "Bordeaux"
+      }
+    ]
+  },
+  {
+    "country_key": "netherlands",
+    "country_name": "Hollanda",
+    "cities": [
+      {
+        "city_key": "amsterdam",
+        "city_name": "Amsterdam"
+      },
+      {
+        "city_key": "rotterdam",
+        "city_name": "Rotterdam"
+      },
+      {
+        "city_key": "the_hague",
+        "city_name": "Lahey"
+      },
+      {
+        "city_key": "utrecht",
+        "city_name": "Utrecht"
+      },
+      {
+        "city_key": "eindhoven",
+        "city_name": "Eindhoven"
+      },
+      {
+        "city_key": "groningen",
+        "city_name": "Groningen"
+      }
+    ]
+  },
+  {
+    "country_key": "switzerland",
+    "country_name": "İsviçre",
+    "cities": [
+      {
+        "city_key": "zurich",
+        "city_name": "Zürih"
+      },
+      {
+        "city_key": "geneva",
+        "city_name": "Cenevre"
+      },
+      {
+        "city_key": "basel",
+        "city_name": "Basel"
+      },
+      {
+        "city_key": "bern",
+        "city_name": "Bern"
+      },
+      {
+        "city_key": "lausanne",
+        "city_name": "Lozan"
+      },
+      {
+        "city_key": "lucerne",
+        "city_name": "Luzern"
+      }
+    ]
+  }
+]
