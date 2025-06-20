@@ -2,23 +2,19 @@ import AVFoundation
 import UIKit
 
 class BasicCameraViewModel: NSObject, ObservableObject {
-    // MARK: - Capture session
     let session = AVCaptureSession()
     var previewLayer: AVCaptureVideoPreviewLayer!
     
     private let photoOutput = AVCapturePhotoOutput()
-    /// Aktif kameranın konumu (.back / .front)
     private var currentPosition: AVCaptureDevice.Position = .back
     
-    /// Çekilen fotoğrafı çağıran görünüme göndermek için opsiyonel closure
     var onPhotoCaptured: ((UIImage) -> Void)?
     
     override init() {
         super.init()
         configureSession()
     }
-    
-    // MARK: - Session config (yalnızca çekim, sınıflandırma yok)
+
     private func configureSession() {
         session.sessionPreset = .photo
         
@@ -36,7 +32,6 @@ class BasicCameraViewModel: NSObject, ObservableObject {
         }
     }
     
-    // MARK: - Public controls
     func startSession() { if !session.isRunning { session.startRunning() } }
     func stopSession()  { if  session.isRunning { session.stopRunning()  } }
     
@@ -46,14 +41,12 @@ class BasicCameraViewModel: NSObject, ObservableObject {
         photoOutput.capturePhoto(with: settings, delegate: self)
     }
     
-    /// Arka ↔︎ Ön kamera arasında geçiş yap
     func switchCamera() {
         guard let currentInput = session.inputs.first as? AVCaptureDeviceInput else { return }
         
         session.beginConfiguration()
         session.removeInput(currentInput)
         
-        // Yeni pozisyonu belirle
         currentPosition = (currentInput.device.position == .back) ? .front : .back
         
         if let newDevice = AVCaptureDevice.default(.builtInWideAngleCamera,
@@ -71,7 +64,6 @@ class BasicCameraViewModel: NSObject, ObservableObject {
     }
 }
 
-// MARK: - AVCapturePhotoCaptureDelegate
 extension BasicCameraViewModel: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput,
                      didFinishProcessingPhoto photo: AVCapturePhoto,
@@ -82,9 +74,7 @@ extension BasicCameraViewModel: AVCapturePhotoCaptureDelegate {
             let image = UIImage(data: data)
         else { return }
         
-        // 1️⃣  Fotoğrafı Film Rulosu’na orijinal hâliyle kaydet
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        // Görünümde ön‑izleme gösterebilmek için çağır
         DispatchQueue.main.async {
             self.onPhotoCaptured?(image)
         }

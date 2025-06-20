@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58069D032DE5B00B00BC08B8 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 58069D022DE5B00B00BC08B8 /* FirebaseCrashlytics */; };
+		58069D052DE5B00B00BC08B8 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 58069D042DE5B00B00BC08B8 /* FirebasePerformance */; };
 		5835F1D72DB2EFC500DD01D1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5835F1D62DB2EFC500DD01D1 /* FirebaseAnalytics */; };
 		5835F1D92DB2EFC500DD01D1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5835F1D82DB2EFC500DD01D1 /* FirebaseAuth */; };
 		5835F1DB2DB2EFC500DD01D1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5835F1DA2DB2EFC500DD01D1 /* FirebaseFirestore */; };
@@ -49,6 +51,7 @@
 				Asset/test_deneme,
 				Firebase/ArrayChunked.swift,
 				Firebase/AuthService.swift,
+				Firebase/FirebaseCrashReporter.swift,
 				"Firebase/GoogleService-Info.plist",
 				Firebase/ProfileStatsProvider.swift,
 			);
@@ -65,6 +68,7 @@
 				Asset/test_deneme,
 				Firebase/ArrayChunked.swift,
 				Firebase/AuthService.swift,
+				Firebase/FirebaseCrashReporter.swift,
 				"Firebase/GoogleService-Info.plist",
 				Firebase/ProfileStatsProvider.swift,
 			);
@@ -110,9 +114,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58069D052DE5B00B00BC08B8 /* FirebasePerformance in Frameworks */,
 				5835F1D72DB2EFC500DD01D1 /* FirebaseAnalytics in Frameworks */,
 				5835F1DB2DB2EFC500DD01D1 /* FirebaseFirestore in Frameworks */,
 				5835F1D92DB2EFC500DD01D1 /* FirebaseAuth in Frameworks */,
+				58069D032DE5B00B00BC08B8 /* FirebaseCrashlytics in Frameworks */,
 				5835F1DD2DB2EFC500DD01D1 /* FirebaseStorage in Frameworks */,
 				58D3A9392DAD8B3B008E4460 /* Lottie in Frameworks */,
 			);
@@ -180,6 +186,8 @@
 				5835F1D82DB2EFC500DD01D1 /* FirebaseAuth */,
 				5835F1DA2DB2EFC500DD01D1 /* FirebaseFirestore */,
 				5835F1DC2DB2EFC500DD01D1 /* FirebaseStorage */,
+				58069D022DE5B00B00BC08B8 /* FirebaseCrashlytics */,
+				58069D042DE5B00B00BC08B8 /* FirebasePerformance */,
 			);
 			productName = TravelGuideApp;
 			productReference = 58DED32F2D7DE27B0020808B /* TravelGuideApp.app */;
@@ -655,6 +663,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		58069D022DE5B00B00BC08B8 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5835F1D52DB2EFC500DD01D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		58069D042DE5B00B00BC08B8 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5835F1D52DB2EFC500DD01D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
 		5835F1D62DB2EFC500DD01D1 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5835F1D52DB2EFC500DD01D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

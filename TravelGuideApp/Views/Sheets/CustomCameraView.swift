@@ -1,31 +1,33 @@
 import SwiftUI
+import CoreLocation
 
 struct CustomCameraView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var camera = CameraViewModel()
+    @StateObject private var verifier = LocationVerifier()
+    @State private var showDistanceAlert = false
+    @State private var notCloseEnoughLabel: String?
     @State private var predictedLabel: String = ""
     @State private var showPlaceInfo: Bool = false
     @State private var isLoading: Bool = false
     @State private var showSuccessAnimation: Bool = false
     @State private var recognitionFailed: Bool = false
-    // Sosyal paylaşımlar (örnek veri – Firestore’dan doldurulabilir)
-    @State private var shares: [SocialShare] = []        // Firestore’dan dinamık yüklenir
-    @State private var showPhotoSheet: Bool = false     // Modal kamera görünür mü?
+
+    @State private var shares: [SocialShare] = []
+    @State private var showPhotoSheet: Bool = false
     @State private var showSharedPhotoSheet: Bool = false
-    /// Yorum yazma sayfası sheet'i
+
     @State private var showCommentSheet: Bool = false
     @State private var selectedShare: SocialShare? = nil
     @State private var showCommentDetail = false
 
-    /// Seçilen mekan için yorumları Firestore’dan çeker
-    /// Seçilen mekan için yorumları Firestore’dan çeker
-    /// Seçilen mekan için yorumları Firestore’dan çeker
+ 
     @MainActor
     private func loadComments(for place: String) {
         Task {
             let items = await auth.comments(for: place)
             print("DEBUG loaded", items.count, "comments for", place)
-            self.shares = items                       // UI güncellenir
+            self.shares = items
         }
     }
     @MainActor
@@ -40,11 +42,11 @@ struct CustomCameraView: View {
     
     var body: some View {
         ZStack {
-            // 1) Kamera önizlemesi
+       
             CameraPreview(camera: camera)
                 .ignoresSafeArea()
             
-            if recognitionFailed {
+            if recognitionFailed || showDistanceAlert {
                 Color.red
                     .opacity(0.05)
                     .ignoresSafeArea()
@@ -57,7 +59,7 @@ struct CustomCameraView: View {
                 }
                 Spacer()
                 
-                // 3) Alttaki Fotoğraf Çekme Butonu
+                
                 if !showPlaceInfo && !recognitionFailed {
                     Button(action: {
                         isLoading = true
@@ -83,7 +85,7 @@ struct CustomCameraView: View {
                     
                     Spacer()
                     
-                    // Paylaşımlar (sağa kaydırılabilir)
+                    
                     PlaceSocialSharings(shares: shares) { share in
                         selectedShare = share
                         if share.kind == .comment {
@@ -93,13 +95,13 @@ struct CustomCameraView: View {
                         }
                     }
                     
-                    // Alt sosyal etkileşim paneli
+                   
                     SocialInteractionPanel(
                         onAddComment: {
-                            showCommentSheet = true   // Yorum sheet'ini göster
+                            showCommentSheet = true
                         },
                         onTakePhoto: {
-                            showPhotoSheet = true      // ▶️  Modal kamera aç
+                            showPhotoSheet = true
                         }
                     )
                 }
@@ -136,16 +138,16 @@ struct CustomCameraView: View {
                 }
             }
             
-            if recognitionFailed {
+            if recognitionFailed || showDistanceAlert {
                 VStack(spacing: 12) {
                     Spacer()
                     VStack(spacing: 8) {
-                        Text("Mekan Tanınamadı")
+                        Text("Mekan Doğrulanamadı")
                             .foregroundColor(.white)
                             .font(.title2)
                             .bold()
                             .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)
-                        Text("Lütfen mekanı daha net bir açıdan tekrar çekmeyi deneyin")
+                        Text("Lütfen konuma yaklaşın veya mekanı daha net bir açıdan tekrar çekmeyi deneyin")
                             .foregroundColor(.secondary)
                             .font(.subheadline)
                             .multilineTextAlignment(.center)
@@ -155,22 +157,22 @@ struct CustomCameraView: View {
                     Spacer()
                 }
                 .onAppear {
-                    // Otomatik gizlemeden sonra buton görünür olacak
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        recognitionFailed = false
+                        if recognitionFailed { recognitionFailed = false }
+                        if showDistanceAlert { showDistanceAlert = false }
                     }
                 }
             }
         }
         .sheet(isPresented: $showCommentSheet) {
             CommentModal(placeLabel: predictedLabel) {
-                loadComments(for: predictedLabel)      // yeni yorum sonrası tazele
+                loadComments(for: predictedLabel)
             }
             .environmentObject(auth)
         }
         .sheet(isPresented: $showPhotoSheet) {
             PhotoCaptureModal(predictedLabel: predictedLabel)
-                .environmentObject(auth)     // Yeni modal kamera
+                .environmentObject(auth)
         }
         .sheet(isPresented: $showCommentDetail) {
             if let share = selectedShare {
@@ -183,31 +185,49 @@ struct CustomCameraView: View {
             }
         }
         .onAppear {
-            // Ekrana gelince kamerayı başlat
+           
+            AppEnvironment.isTest = false
+            AppEnvironment.manualLocation = CLLocationCoordinate2D(
+                latitude: 41.008573,
+                longitude: 28.980153
+            )
             camera.startSession()
+            verifier.start()
             camera.onClassificationResult = { label in
                 isLoading = false
+         
+                if let loc = verifier.currentLocation {
+                    print("📍 Current location at capture: \(loc.coordinate.latitude), \(loc.coordinate.longitude)")
+                } else if let testLoc = AppEnvironment.manualLocation {
+                    print("📍 Test location at capture: \(testLoc.latitude), \(testLoc.longitude)")
+                } else {
+                    print("📍 Location unavailable at capture")
+                }
                 if label == "unknown" {
                     recognitionFailed = true
-                } else {
-                    // Hatıra para ekle
+                } else if let place = loadHistoricPlaces()
+                            .first(where: { $0.label.lowercased() == label.lowercased() }),
+                          verifier.isWithin(of: place) {
                     Task { await auth.addCoin(label) }
                     predictedLabel = label
-                    loadShares(for: label)              // Yorum + fotoğraf getir
+                    loadShares(for: label)
                     showSuccessAnimation = true
-                    // Delay before showing place info
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                         withAnimation {
                             showSuccessAnimation = false
                             showPlaceInfo = true
                         }
                     }
+                } else {
+                    notCloseEnoughLabel = label
+                    showDistanceAlert = true
                 }
             }
         }
         .onDisappear {
-            // Sayfadan çıkınca durdur
+            
             camera.stopSession()
+            verifier.stop()
         }
     }
 }

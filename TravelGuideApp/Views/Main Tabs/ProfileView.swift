@@ -1,13 +1,11 @@
-
 import SwiftUI
 import FirebaseFirestore
 
-/// Sheet payload that carries the prepared user list
 enum FollowSheet: Identifiable {
     case followers([TGUser])
     case following([TGUser])
 
-    var id: String {            // Identifiable conformance
+    var id: String {
         switch self {
         case .followers:  return "followers"
         case .following:  return "following"
@@ -18,14 +16,29 @@ enum FollowSheet: Identifiable {
 struct ProfileView: View {
     @EnvironmentObject private var auth: AuthService   // 🔸
     @State private var navigateToSettings = false
-    @State private var showAddUserSheet = false
+    @State private var navigateToAddUser = false
     @State private var followers = 0
     @State private var following = 0
     @State private var activeSheet: FollowSheet?
+    @State private var showSavedGuides = false
+    @State private var savedGuides: [GuideSummary] = []
+    @State private var showCreateGuide = false
+    @State private var guides: [GuideSummary] = []
+    @State private var selectedGuide: GuideSummary? = nil
+    @State private var stops: [Stop] = []
+    private func refreshGuides() async {
+        guard let uid = auth.user?.id else { return }
+        let ownGuides = await auth.fetchGuidesOfUser(
+            id: uid,
+            username: auth.user?.username ?? "-",
+            photoURL: auth.user?.photoURL
+        )
+        await MainActor.run { guides = ownGuides }
+    }
 
     var body: some View {
-        NavigationView {           // iOS 16+  ➜ NavigationView kullanıyorsan onu bırakabilirsin
-            ZStack(alignment: .trailing) {
+        NavigationStack {
+            ZStack(alignment: .bottomTrailing) {
                 ScrollView {
                     VStack(spacing: 0) {
                         ProfileHeadPanel(
@@ -36,7 +49,7 @@ struct ProfileView: View {
                             isFollowed: false,
                             onEdit: { print("Düzenle") },
                             onHamburgerTapped: { navigateToSettings = true },
-                            onAddFriendTapped: { showAddUserSheet = true },
+                            onAddFriendTapped: { navigateToAddUser = true },
                             onFollowersTapped: {
                                 Task {
                                     guard let uid = auth.user?.id else { return }
@@ -56,35 +69,54 @@ struct ProfileView: View {
                                         activeSheet = .following(users)
                                     }
                                 }
-                            }
-                        )
-                        LandmarkCoinSection(coins: auth.coins)
-                            .padding(.top, 24)          // Coin bölümü biraz aşağıda
-                            .task {
-                                if let uid = auth.user?.id {
-                                    do {
-                                        try await auth.fetchUser(uid: uid)
-                                    } catch {
-                                        print("Kullanıcı verisi yenilenemedi: \(error.localizedDescription)")
+                            },
+                            onSavedTapped: {
+                                Task {
+                                    let fetched = await auth.fetchSavedGuides()
+                                    await MainActor.run {
+                                        savedGuides = fetched
+                                        showSavedGuides = true
                                     }
                                 }
                             }
+                        )
+                        .padding(.top, 50)
+                        LandmarkCoinSection(coins: auth.coins)
+                            .padding(.top, 24)
+                        if !guides.isEmpty {
+                            Text("Seyahat Rehberleri")
+                                .font(.title3.bold())
+                                .padding([.horizontal, .top])
+
+                            VStack(spacing: 12) {
+                                ForEach(guides) { guide in
+                                    GuideCardView(guide: guide) {
+                                        selectedGuide = guide
+                                        stops = []
+                                        Task {
+                                            stops = await auth.fetchStops(forGuide: guide)
+                                        }
+                                    }
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                        
                         Spacer(minLength: 0)
                     }
                 }
+                FloatingPlusButton {
+                    showCreateGuide = true
+                }
+                .padding([.trailing, .bottom], 24)
                 
                 NavigationLink("", destination: SettingsView(), isActive: $navigateToSettings)
                     .opacity(0)
+                NavigationLink(destination: AddUserView().environmentObject(auth), isActive: $navigateToAddUser) {
+                    EmptyView()
+                }
             }
-            .navigationTitle("Profil")              // Başlığın boyutu/hizası default
-            .toolbarBackground(Color(UIColor.main),
-                                for: .navigationBar)
-            .toolbarBackground(.visible,
-                                for: .navigationBar)
-        }
-        .sheet(isPresented: $showAddUserSheet) {
-            AddUserView()
-                .environmentObject(auth)
+            .navigationTitle("Profil")
         }
         .sheet(item: $activeSheet) { sheet in
             switch sheet {
@@ -94,11 +126,32 @@ struct ProfileView: View {
                 FollowListView(title: "Takip Edilenler", users: users)
             }
         }
+        .sheet(isPresented: $showCreateGuide, onDismiss: {
+            Task { await refreshGuides() }
+        }) {
+            CreateGuideView()
+        }
+        .sheet(isPresented: $showSavedGuides) {
+            SavedGuidesListView(isPresented: $showSavedGuides) { guide in
+                selectedGuide = guide
+                Task { stops = await auth.fetchStops(forGuide: guide) }
+            }
+        }
+        .sheet(item: $selectedGuide) { guide in
+            GuideDetailSheetView(guide: guide, stops: stops)
+                .presentationDetents([.medium, .large])
+        }
         .task {
             guard let uid = auth.user?.id else { return }
-            // Sayıları
+            await refreshGuides()
             followers  = await auth.followersCount(of: uid)
             following  = await auth.followingCount(of: uid)
+            let ownGuides = await auth.fetchGuidesOfUser(
+                id: auth.user?.id,
+                username: auth.user?.username ?? "-",
+                photoURL: auth.user?.photoURL
+            )
+            guides = ownGuides
         }
         .onReceive(auth.$followingIds) { ids in
             following = ids.count
@@ -109,44 +162,5 @@ struct ProfileView: View {
     }
 }
 
-#Preview { ProfileView() }
-/*
-import SwiftUI
-
-struct ProfileView: View {
-    @EnvironmentObject private var auth: AuthService   // 🔸
-    @State private var navigateToSettings = false
-    @State private var showAddUserSheet = false
-
-    var body: some View {
-        NavigationView {           // iOS 16+  ➜ NavigationView kullanıyorsan onu bırakabilirsin
-            ZStack(alignment: .trailing) {
-                ScrollView {
-                    VStack(spacing: 0) {
-                        ProfileHeadPanel(
-                            onHamburgerTapped: { navigateToSettings = true },
-                            onAddFriend: { showUserSearch = true }
-                        )
-                        Text("Profil İçeriği")
-                            .padding()
-                        Spacer(minLength: 0)
-                    }
-                }
-                .sheet(isPresented: $showAddUserSheet) {
-                    AddUserView()
-                }
-                
-                NavigationLink("", destination: SettingsView(), isActive: $navigateToSettings)
-                    .opacity(0)
-            }
-            .navigationTitle("Profil")              // Başlığın boyutu/hizası default
-            .toolbarBackground(Color(UIColor.main),
-                                for: .navigationBar)
-            .toolbarBackground(.visible,
-                                for: .navigationBar)
-        }
-    }
-}
 
 #Preview { ProfileView() }
-*/

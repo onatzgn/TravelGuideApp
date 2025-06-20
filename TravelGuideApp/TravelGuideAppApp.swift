@@ -7,11 +7,11 @@
 
 import SwiftUI
 import FirebaseCore
-import FirebaseAuth        // ekle
-import FirebaseFirestore   // ekle
+import FirebaseAuth
+import FirebaseFirestore
 import FirebaseStorage
 
-let db = Firestore.firestore(database: "travelguidedb")     // shared Firestore instance
+let db = Firestore.firestore(database: "travelguidedb")
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -24,8 +24,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 private func quickTest() {
     Task {
         do {
-            // (A) Geçici çözüm: oturum açmadan dene
-            // let _ = Auth.auth().currentUser   // nil de olsa sorun değil
 
             try await db.collection("test").addDocument(data: ["created": Date()])
             print("Firebase çalışıyor 🎉")
@@ -38,8 +36,8 @@ private func quickTest() {
 
 @main
 struct TravelGuideAppApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate   // <-- ekli
-    @StateObject private var auth = AuthService.shared        // 🔸
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var auth = AuthService.shared
     @State private var isLoading = true
 
 

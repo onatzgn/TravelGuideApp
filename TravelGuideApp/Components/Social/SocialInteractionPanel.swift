@@ -1,6 +1,5 @@
 import SwiftUI
 
-/// Alttaki iki yuvarlak-köşeli buton
 struct SocialInteractionPanel: View {
     var onAddComment: () -> Void
     var onTakePhoto:  () -> Void
@@ -19,11 +18,10 @@ struct SocialInteractionPanel: View {
             )
         }
         .padding(.horizontal, 24)
-        .padding(.bottom, 8)                 // güvenli alan için
+        .padding(.bottom, 8)
     }
 }
 
-/// Ortak buton görünümü
 private struct InteractionButton: View {
     let title: String
     let systemImage: String

@@ -1,14 +1,13 @@
 import SwiftUI
 
-/// Örnek veri modeli (istersen Firestore’dan doldur)
 struct SocialShare: Identifiable {
     enum Kind { case comment, photo }
     
-    var id:    String            // Firestore belge ID’si
+    var id:    String
     var userId: String
-    var username: String     // <-- Burası yeni
+    var username: String
     var userPhotoURL: String?
-    var text:  String? = nil     // ⬅️ yorum içeriği
+    var text:  String? = nil
     var kind:  Kind
     var createdAt: Date
 }
@@ -23,7 +22,7 @@ struct PlaceSocialSharings: View {
                 ForEach(shares) { share in
                     ShareBubble(share: share)
                         .onTapGesture {
-                            onSelect(share) // 👈🏻 Tıklanınca iletişim kur
+                            onSelect(share)
                         }
                 }
             }
@@ -36,7 +35,6 @@ struct PlaceSocialSharings: View {
 private struct ShareBubble: View {
     let share: SocialShare
     
-    /// Hangi ikon gösterilecek?
     private var overlayIcon: String {
         switch share.kind {
         case .comment: return "text.bubble"
@@ -45,16 +43,14 @@ private struct ShareBubble: View {
     }
     
     var body: some View {
-        VStack(spacing: -10) {               //  Negatif spacing → üst üste binerler
-            // Balon – şapkanın üstünde
+        VStack(spacing: -10) {
             Image(systemName: overlayIcon)
                 .foregroundColor(.white)
                 .font(.system(size: 14, weight: .bold))
                 .padding(6)
                 .background(Circle().fill(Color.black.opacity(0.75)))
-                .zIndex(1)                   //  Profil fotoğrafından önde dursun
+                .zIndex(1)
             
-            // Profil fotoğrafı
             ProfileImageView(photoURL: share.userPhotoURL, size: 64)
         }
     }

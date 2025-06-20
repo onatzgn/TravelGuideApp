@@ -7,13 +7,13 @@ struct ExploreBottomPanel: View {
     
     var body: some View {
         ZStack {
-            // Panel background
+            
             RoundedRectangle(cornerRadius: 24)
                 .fill(Color(UIColor.bottomPanel))
                 .shadow(radius: 5)
             
             // Two buttons in a vertical stack
-            VStack(spacing: 24) {
+                /*
                 Button(action: {
                     showRoutes = true
                 }) {
@@ -23,7 +23,7 @@ struct ExploreBottomPanel: View {
                         .frame(width: 24, height: 24)
                         .foregroundColor(Color(UIColor.main))
                 }
-
+*/
                 Button(action: {
                     showSearch = true
                 }) {
@@ -34,11 +34,11 @@ struct ExploreBottomPanel: View {
                         .foregroundColor(Color(UIColor.main))
                 }
 
-            }
+
             .padding(5)
         }
-        // Panel size
-        .frame(width: 60, height: 120)
+        
+        .frame(width: 60, height: 60)
     }
 }
 struct ExploreBottomPanel_Previews: PreviewProvider {

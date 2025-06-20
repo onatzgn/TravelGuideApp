@@ -15,7 +15,7 @@ struct EditProfileView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 24) {
-                // Profil Fotoğrafı
+
                 Button {
                     showPicker = true
                 } label: {
@@ -39,7 +39,7 @@ struct EditProfileView: View {
                 .shadow(radius: 4)
                 .padding(.top, 24)
 
-                // Bilgi Alanları
+           
                 IconTextField(icon: "person", placeholder: "Kullanıcı Adı", text: $username, type: .normal)
                 IconTextField(icon: "flag", placeholder: "Ülke", text: $country, type: .normal)
 

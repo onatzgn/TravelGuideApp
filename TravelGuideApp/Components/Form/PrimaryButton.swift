@@ -28,7 +28,7 @@ struct PrimaryButton: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 12)
-                    .fill(Color(UIColor.main))        // <‑‑ sadece bu satır değişti
+                    .fill(Color(UIColor.main))      
             )
         }
     }

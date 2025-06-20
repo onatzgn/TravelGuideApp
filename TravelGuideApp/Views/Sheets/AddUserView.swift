@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct AddUserView: View {
@@ -12,9 +11,7 @@ struct AddUserView: View {
         NavigationStack {
             List {
                 ForEach(results) { user in
-                    Button(action: {
-                        selectedUser = user
-                    }) {
+                    NavigationLink(destination: OtherUserProfileView(user: user)) {
                         HStack {
                             Group {
                                 if let urlString = user.photoURL,
@@ -68,10 +65,8 @@ struct AddUserView: View {
             .onChange(of: searchText) { newValue in
                 let trimmed = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
                 if trimmed.isEmpty {
-                    // Arama çubuğu boşsa listeyi temizle
                     results = []
                 } else {
-                    // Değilse Firestore’dan ara
                     Task {
                         let fetched = await auth.searchUsers(nickname: trimmed)
                         await MainActor.run {
@@ -81,14 +76,6 @@ struct AddUserView: View {
                 }
             }
             .navigationTitle("Arkadaş Ekle")
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Kapat") { dismiss() }
-                }
-            }
-            .fullScreenCover(item: $selectedUser) { user in
-                OtherUserProfileView(user: user)
-            }
         }
     }
 }

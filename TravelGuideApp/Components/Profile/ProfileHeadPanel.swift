@@ -26,7 +26,7 @@ struct ProfileHeadPanel: View {
     let isCurrentUser: Bool
     let followers: Int
     let following: Int
-    let isFollowed: Bool                // 🔸 yeni
+    let isFollowed: Bool
     var onToggleFollow: () -> Void = {}
     var onEdit: () -> Void = {}
     var onFollow: () -> Void = {}
@@ -34,50 +34,36 @@ struct ProfileHeadPanel: View {
     var onBack: () -> Void = {}
     var onHamburgerTapped: () -> Void = {}
     var onAddFriendTapped: () -> Void = {}
-    // Takip listesi aksiyonları
     var onFollowersTapped: () -> Void = {}
     var onFollowingTapped: () -> Void = {}
-
+    var onSavedTapped: () -> Void = {}
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
 
-            // Arka plan
-            BottomRoundedRectangle(radius: 36)
-                .fill(Color(UIColor.main))
-                .frame(height: 220)
-                .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 3)
-
-            // İçerik
+ 
             HStack(alignment: .top) {
 
-                // Sol: profil foto
+         
                 ZStack(alignment: .bottom) {
                     VStack{
                         ProfileImageView(photoURL: user.photoURL, size: 110)
                     }
 
-                    Text("99")
-                        .font(.caption.weight(.bold))
-                        .foregroundColor(.white)
-                        .padding(6)
-                        .background(
-                            Capsule().fill(Color.orange)
-                                .shadow(radius: 1)
-                        )
                         .offset(y: 14)
                 }
                 .padding(.leading, 24)
                 .padding(.trailing, 8)
                 .padding(.bottom,90)
-                // Orta: isim‑ülke‑düzenle‑takipçi sayıları
+     
                 VStack(alignment: .leading, spacing: 6) {
                     VStack(alignment: .leading, spacing: 0) {
                         Text(user.username)
                             .font(.title.weight(.bold))
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         Text(user.country)
                             .font(.subheadline)
-                            .foregroundColor(.white.opacity(0.9))
+                            .foregroundColor(.black.opacity(0.8))
                     }
 
                     if isCurrentUser {
@@ -93,7 +79,7 @@ struct ProfileHeadPanel: View {
                                 showEditSheet = true
                             }
                     } else {
-                        // 🔸 Takip düğmesi
+              
                         Text(isFollowed ? "Takip Edildi" : "Takip Et")
                             .font(.caption.weight(.semibold))
                             .padding(.horizontal, 12)
@@ -117,29 +103,17 @@ struct ProfileHeadPanel: View {
 
                 Spacer(minLength: 0)
 
-                // Sağ: ikon sütunu
+            
                 if isCurrentUser {
                     VStack(spacing: 18) {
                         IconCircleButton(systemName: "line.3.horizontal", action: onHamburgerTapped)
                         IconCircleButton(systemName: "person.crop.circle.badge.plus", action: onAddFriendTapped)
-                        IconCircleButton(systemName: "bookmark")
+                        IconCircleButton(systemName: "bookmark", action: onSavedTapped)
                     }
                     .padding(.trailing, 20)
                 }
             }
             .padding(.top, -20)
-            HStack {
-                Spacer()
-                Button(action: {
-                }) {
-                    Image("personalMapButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 96, height: 96)
-                }
-                .padding(.trailing, 52)
-                .padding(.bottom, -48)
-            }
         }
         .sheet(isPresented: $showEditSheet) {
             EditProfileView()

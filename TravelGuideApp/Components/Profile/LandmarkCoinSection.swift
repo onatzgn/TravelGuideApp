@@ -12,7 +12,7 @@ struct LandmarkCoinSection: View {
             ScrollView(.horizontal) {
                 LazyHStack(alignment: .top, spacing: 16) {
                     ForEach(coins, id: \.self) { label in
-                        Image(label)          // Xcode Asset’te “galata_kulesi.png” vs.
+                        Image(label)
                             .resizable()
                             .interpolation(.high)
                             .scaledToFill()

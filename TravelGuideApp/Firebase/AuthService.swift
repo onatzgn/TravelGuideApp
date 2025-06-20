@@ -1,3 +1,14 @@
+// MARK: - Guide Summary Model
+struct GuideSummary: Identifiable {
+    let id: String
+    let title: String
+    let description: String
+    let coverURL: String
+    let username: String
+    let userPhotoURL: String?
+    let city: String
+}
+
 //
 //  AuthService.swift
 //  TravelGuideApp
@@ -10,37 +21,66 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
 import SwiftUI
+import CoreLocation
+import MapKit
+import FirebaseAnalytics
 
 struct AppError: Identifiable {
     var id: String { message }
     let message: String
 }
-// MARK: - Place Comments
 extension AuthService {
+    func printFirebaseToken() {
+        guard let user = Auth.auth().currentUser else {
+            print("Henüz oturum açılmadı, token yok.")
+            return
+        }
+
+        user.getIDToken { token, error in
+            if let error = error {
+                print("Token alınamadı: \(error.localizedDescription)")
+                return
+            }
+            if let token = token {
+                print(" Firebase ID Token: \(token)")
+            }
+        }
+    }
     // MARK: - Place Photos
     func addPhotoShare(place: String, image: UIImage) async throws {
-        guard let me = user else { return }
+        let tracer = PerformanceTracer(name: "addPhotoShare_trace")
+        do {
+            guard let me = user else { return }
 
-        // 1. Storage’a yükle
-        let imageID = UUID().uuidString
-        let imageRef = storage.child("places/\(place)/\(imageID).jpg")
-        guard let data = image.jpegData(compressionQuality: 0.8) else { return }
-        _ = try await imageRef.putDataAsync(data)
-        let url = try await imageRef.downloadURL()
+            // 1. storage’a yükleme
+            let imageID = UUID().uuidString
+            let imageRef = storage.child("places/\(place)/\(imageID).jpg")
+            guard let data = image.jpegData(compressionQuality: 0.8) else { return }
+            _ = try await imageRef.putDataAsync(data)
+            let url = try await imageRef.downloadURL()
 
-        // 2. Firestore’a belge ekle
-        let docData: [String: Any] = [
-            "userId": me.id ?? "",
-            "username": me.username,
-            "photoURL": me.photoURL ?? NSNull(),
-            "imageURL": url.absoluteString,
-            "createdAt": Timestamp(date: .now)
-        ]
+            // 2. firestore’a belge ekleme
+            let docData: [String: Any] = [
+                "userId": me.id ?? "",
+                "username": me.username,
+                "photoURL": me.photoURL ?? NSNull(),
+                "imageURL": url.absoluteString,
+                "createdAt": Timestamp(date: .now)
+            ]
 
-        try await db.collection("places")
-            .document(place)
-            .collection("photos")
-            .addDocument(data: docData)
+            try await db.collection("places")
+                .document(place)
+                .collection("photos")
+                .addDocument(data: docData)
+            Analytics.logEvent("photo_shared", parameters: [
+                "place": place
+            ])
+            tracer.stop()
+        } catch {
+            CrashReporter.log("⚠️ Fotoğraf paylaşımı sırasında hata oluştu")
+            CrashReporter.record(error, context: "addPhotoShare place=\\(place)")
+            throw error
+        }
     }
 
     func photoShares(for place: String) async -> [SocialShare] {
@@ -66,7 +106,7 @@ extension AuthService {
                         userId: data["userId"] as? String ?? "",
                         username: data["username"] as? String ?? "",
                         userPhotoURL: data["photoURL"] as? String,
-                        text: data["imageURL"] as? String, // imageURL'yi 'text' alanına koyacağız
+                        text: data["imageURL"] as? String,
                         kind: .photo,
                         createdAt: (data["createdAt"] as? Timestamp)?.dateValue() ?? .distantPast
                     )
@@ -84,36 +124,246 @@ extension AuthService {
         }
         return items
     }
-    /// Yorum ekle
-    func addComment(place: String, text: String) async throws {
+    // MARK: - Guide Paylaşımı (şehir bazlı)
+    func shareGuide(city: String,
+                    title: String,
+                    description: String,
+                    coverImage: UIImage,
+                    stops: [Stop]) async throws {
         guard let me = user else { return }
-        
-        let data: [String: Any] = [
-            "userId"    : me.id ?? "",
-            "username"  : me.username,
-            "photoURL"  : me.photoURL ?? NSNull(),
-            "text"      : text,
-            "createdAt" : Timestamp(date: .now)
-        ]
-        try await db.collection("places")
-            .document(place)
-            .collection("comments")
-            .addDocument(data: data)
+
+        let tracer = PerformanceTracer(name: "shareGuide_trace")
+
+        do {
+            do {
+                // cover görselini Storage'a yükleme
+                let guideId  = UUID().uuidString
+                let imageRef = storage.child("guides/\(city)/\(guideId)/cover.jpg")
+                guard let imageData = coverImage.jpegData(compressionQuality: 0.8) else { return }
+                _ = try await imageRef.putDataAsync(imageData)
+                let imageURL = try await imageRef.downloadURL()
+
+                // durak verilerini JSON hâline getirme
+                let stopsData: [[String: Any]] = stops.map { stop in
+                    [
+                        "order"     : stop.order,
+                        "placeName" : stop.place?.name ?? "",
+                        "latitude"  : stop.place?.placemark.coordinate.latitude ?? 0,
+                        "longitude" : stop.place?.placemark.coordinate.longitude ?? 0,
+                        "categories": stop.categories.map { $0.title },
+                        "note"      : stop.note
+                    ]
+                }
+
+                // firestore'a rehber verisini ekle
+                let guideData: [String: Any] = [
+                    "userId"     : me.id ?? "",
+                    "username"   : me.username,
+                    "photoURL"   : me.photoURL ?? NSNull(),
+                    "city"       : city,
+                    "title"      : title,
+                    "description": description,
+                    "coverURL"   : imageURL.absoluteString,
+                    "stops"      : stopsData,
+                    "createdAt"  : Timestamp(date: Date())
+                ]
+
+                try await db.collection("guides")
+                    .document(city)
+                    .collection("items")
+                    .document(guideId)
+                    .setData(guideData)
+
+                // aynı rehberi kullanıcının guides alt koleksiyonuna kaydetme
+                let userGuideRef = db.collection("users")
+                                     .document(me.id ?? "")
+                                     .collection("guides")
+                                     .document(guideId)
+
+                try await userGuideRef.setData([
+                    "city"       : city,
+                    "title"      : title,
+                    "description": description,
+                    "coverURL"   : imageURL.absoluteString,
+                    "createdAt"  : Timestamp(date: Date())
+                ])
+                Analytics.logEvent("guide_shared", parameters: [
+                    "city": city,
+                    "stop_count": stops.count
+                ])
+                tracer.stop()
+            } catch {
+                CrashReporter.log("⚠️ Rehber paylaşımı sırasında hata oluştu")
+                CrashReporter.record(error, context: "shareGuide city=\\(city)")
+                throw error
+            }
+        }
+    }
+
+    // MARK: - Guide Listeleme
+    func fetchGuides(for city: String) async -> [GuideSummary] {
+        let tracer = PerformanceTracer(name: "fetchGuides_trace")
+        do {
+            let snapshot = try await db.collection("guides")
+                .document(city.lowercased())
+                .collection("items")
+                .getDocuments()
+
+            let items = snapshot.documents.compactMap { doc -> GuideSummary? in
+                let data = doc.data()
+                guard let title = data["title"] as? String,
+                      let description = data["description"] as? String,
+                      let coverURL = data["coverURL"] as? String,
+                      let username = data["username"] as? String,
+                      let city = data["city"] as? String else { return nil }
+
+                let photoURL = data["photoURL"] as? String
+
+                return GuideSummary(
+                    id: doc.documentID,
+                    title: title,
+                    description: description,
+                    coverURL: coverURL,
+                    username: username,
+                    userPhotoURL: photoURL,
+                    city: city
+                )
+            }
+
+            Analytics.logEvent("guides_fetched", parameters: [
+                "city": city
+            ])
+            tracer.stop()
+            return items
+        } catch {
+            print("Guideler çekilemedi: \(error.localizedDescription)")
+            return []
+        }
+    }
+
+    // MARK: - guide Duraklarını Getirme
+    func fetchStops(forGuide guide: GuideSummary) async -> [Stop] {
+        let tracer = PerformanceTracer(name: "fetchStops_trace")
+        do {
+            let doc = try await db.collection("guides")
+                .document(guide.city.lowercased())
+                .collection("items")
+                .document(guide.id)
+                .getDocument()
+
+            guard let data = doc.data(),
+                  let stopsData = data["stops"] as? [[String: Any]] else { tracer.stop(); return [] }
+
+            let stops = stopsData.enumerated().map { (idx, dict) in
+                let categories = (dict["categories"] as? [String] ?? []).compactMap { title in
+                    Stop.Category.allCases.first { $0.title == title }
+                }
+
+                let coord = CLLocationCoordinate2D(
+                    latitude: dict["latitude"] as? CLLocationDegrees ?? 0,
+                    longitude: dict["longitude"] as? CLLocationDegrees ?? 0
+                )
+
+                let placemark = MKPlacemark(coordinate: coord)
+                let item = MKMapItem(placemark: placemark)
+                item.name = dict["placeName"] as? String
+
+                return Stop(
+                    order: dict["order"] as? Int ?? idx + 1,
+                    place: item,
+                    categories: Set(categories),
+                    note: dict["note"] as? String ?? ""
+                )
+            }
+            Analytics.logEvent("stops_fetched", parameters: [
+                "guide_id": guide.id,
+                "city": guide.city
+            ])
+            tracer.stop()
+            return stops
+        } catch {
+            CrashReporter.log("⚠️ Duraklar alınırken hata oluştu")
+            CrashReporter.record(error, context: "fetchStops guide=\\(guide.id)")
+            print("Duraklar alınamadı: \(error)")
+            return []
+        }
     }
     
-    /// Takip ettiklerim + kendim → yorum listesi
+    // MARK: - Kullanıcının Rehberleri
+    func fetchGuidesOfUser(id: String?, username: String, photoURL: String?) async -> [GuideSummary] {
+        let tracer = PerformanceTracer(name: "fetchGuidesOfUser_trace")
+        guard let uid = id else { return [] }
+        do {
+            let snap = try await db.collection("users")
+                .document(uid)
+                .collection("guides")
+                .order(by: "createdAt", descending: true)
+                .getDocuments()
+
+            let guides: [GuideSummary] = snap.documents.compactMap { doc in
+                let d = doc.data()
+                guard let title = d["title"] as? String,
+                      let descr = d["description"] as? String,
+                      let cover = d["coverURL"] as? String,
+                      let city  = d["city"] as? String else { return nil }
+
+                return GuideSummary(
+                    id: doc.documentID,
+                    title: title,
+                    description: descr,
+                    coverURL: cover,
+                    username: username,
+                    userPhotoURL: photoURL,
+                    city: city
+                )
+            }
+            Analytics.logEvent("user_guides_fetched", parameters: [
+                "user_id": id ?? "nil"
+            ])
+            tracer.stop()
+            return guides
+        } catch {
+            CrashReporter.log("⚠️ Profil rehberleri alınamadı")
+            CrashReporter.record(error, context: "fetchGuidesOfUser id=\\(id ?? \"nil\")")
+            print("Profil rehberleri alınamadı:", error.localizedDescription)
+            return []
+        }
+    }
+    // Yorum ekleme
+    func addComment(place: String, text: String) async throws {
+        do {
+            guard let me = user else { return }
+            
+            let data: [String: Any] = [
+                "userId"    : me.id ?? "",
+                "username"  : me.username,
+                "photoURL"  : me.photoURL ?? NSNull(),
+                "text"      : text,
+                "createdAt" : Timestamp(date: .now)
+            ]
+            try await db.collection("places")
+                .document(place)
+                .collection("comments")
+                .addDocument(data: data)
+        } catch {
+            CrashReporter.log("⚠️ Yorum eklenemedi")
+            CrashReporter.record(error, context: "addComment place=\\(place)")
+            throw error
+        }
+    }
+    
+    // Takip ettiklerim + kendim → yorum listesi
     func comments(for place: String) async -> [SocialShare] {
         guard let meId = user?.id else { return [] }
 
         let allowed = followingIds + [meId]
-        print("DEBUG allowed ids =", allowed)          // 🐞 takip listesi boş mu?
+        print("DEBUG allowed ids =", allowed)
 
         guard !allowed.isEmpty else { return [] }
 
         var items: [SocialShare] = []
 
-        // Firestore “in” filtresi + sıralama => index gerekir.
-        // İndeks oluşturmadıysan order-by satırını KALDIR ya da try/catch ile yakala:
+        // firestore “in” filtresi + sıralama => index
         let chunks = allowed.chunked(into: 10)
         for ch in chunks {
             do {
@@ -121,8 +371,6 @@ extension AuthService {
                           .document(place)
                           .collection("comments")
                           .whereField("userId", in: ch)
-
-                // ❌  Index hatasından kaçınmak için geçici olarak yorum satırını kapat
                 //     .order(by: "createdAt", descending: true)
 
                 let snap = try await q.getDocuments()
@@ -134,7 +382,7 @@ extension AuthService {
                     return SocialShare(
                         id: d.documentID,
                         userId: data["userId"] as? String ?? "",
-                        username: data["username"] as? String ?? "",   // <-- Bunu ekle
+                        username: data["username"] as? String ?? "",
                         userPhotoURL: data["photoURL"] as? String,
                         text: data["text"] as? String,
                         kind: .comment,
@@ -149,15 +397,73 @@ extension AuthService {
             }
         }
 
-        // Yerel sıralama (order-by kaldırdıysan)
         items.sort { $0.createdAt > $1.createdAt }
 
-        // Kendi yorumunu ilk sıraya koy
+        // kendi yorumumuz ilk sıraya
         if let idx = items.firstIndex(where: { $0.userId == meId }) {
             let mine = items.remove(at: idx)
             items.insert(mine, at: 0)
         }
         return items
+    }
+    
+    // MARK: - Guide Likes
+
+    //unlike guide
+    func unlikeGuide(guide: GuideSummary, by userId: String) async {
+        let ref = db.collection("guides")
+            .document(guide.city.lowercased())
+            .collection("items")
+            .document(guide.id)
+            .collection("likes")
+            .document(userId)
+
+        do {
+            try await ref.delete()
+        } catch {
+            print("Beğeni kaldırılamadı: \(error.localizedDescription)")
+        }
+    }
+
+    //check if the current user has liked a guide
+    func hasLikedGuide(_ guide: GuideSummary) async -> Bool {
+        guard let userId = user?.id else { return false }
+
+        let doc = try? await db.collection("guides")
+            .document(guide.city.lowercased())
+            .collection("items")
+            .document(guide.id)
+            .collection("likes")
+            .document(userId)
+            .getDocument()
+        return doc?.exists == true
+    }
+
+    //get like count for a guide
+    func fetchLikeCount(for guide: GuideSummary) async -> Int {
+        let snap = try? await db.collection("guides")
+            .document(guide.city.lowercased())
+            .collection("items")
+            .document(guide.id)
+            .collection("likes")
+            .getDocuments()
+        return snap?.count ?? 0
+    }
+
+    //like a guide
+    func likeGuide(guide: GuideSummary, by userId: String) async {
+        let ref = db.collection("guides")
+            .document(guide.city.lowercased())
+            .collection("items")
+            .document(guide.id)
+            .collection("likes")
+            .document(userId)
+
+        do {
+            try await ref.setData(["likedAt": Timestamp(date: Date())])
+        } catch {
+            print("Beğeni eklenemedi: \(error.localizedDescription)")
+        }
     }
 }
 // MARK: - Batch User Fetch
@@ -169,7 +475,6 @@ extension AuthService {
 
         var result: [TGUser] = []
 
-        // Firestore “in” filtresi en fazla 10 öğe alır
         let chunks = ids.chunked(into: 10)
 
         for chunk in chunks {
@@ -197,7 +502,7 @@ extension AuthService {
         return result
     }
 
-    // MARK: - Followers / Following ID helpers
+    // MARK: - followers / following id helpers
     @MainActor
     func followersIds(of uid: String) async -> [String] {
         (try? await db.collection("users")
@@ -216,25 +521,22 @@ extension AuthService {
 @MainActor
 final class AuthService: ObservableObject {
 
-    // MARK: - Singleton
     static let shared = AuthService()
     private init() {}
 
-    // MARK: - Published properties
     @Published var user: TGUser?
     @Published var errorMessage: AppError?
     @Published var profileImage: UIImage?
     @Published var isLoading: Bool = false
     @Published private(set) var followingIds: [String] = []
     @Published private(set) var followersIds: [String] = []
-    /// Mekan rozetleri (hatıra paralar)
     @Published private(set) var coins: [String] = []
 
     private var followingListener: ListenerRegistration?
 
     private let storage = Storage.storage().reference()
 
-    // MARK: - Register
+    // MARK: - register kısmı
     func register(username: String,
                   country:  String,
                   email:    String,
@@ -267,7 +569,7 @@ final class AuthService: ObservableObject {
         ]
         try await db.collection("users").document(uid).setData(userData)
 
-        // 4) Local model
+        // local model
         let tgUser = TGUser(id: uid,
                             username: username,
                             country:  country,
@@ -279,7 +581,7 @@ final class AuthService: ObservableObject {
         self.startFollowingListener()
     }
 
-    // MARK: - Login
+    // MARK: - kogin kısmı
     func login(email: String, password: String) async throws {
         do {
             isLoading = true
@@ -295,7 +597,7 @@ final class AuthService: ObservableObject {
         }
     }
 
-    // MARK: - Fetch
+    // MARK: - fetch
     func fetchUser(uid: String) async throws {
         let snap = try await db.collection("users").document(uid).getDocument()
         guard let data = snap.data() else { return }
@@ -306,20 +608,21 @@ final class AuthService: ObservableObject {
             country:   data["country"]  as? String ?? "",
             email:     data["email"]    as? String ?? "",
             photoURL:  data["photoURL"] as? String,
-            coins:     data["coins"]    as? [String] ?? []
+            coins:     data["coins"]    as? [String] ?? [],
+            savedGuides: data["savedGuides"] as? [String] ?? []
         )
         self.user = tgUser
         self.coins = tgUser.coins
     }
 
-    // MARK: - Logout
+    // MARK: - logout
     func signOut() throws {
         try Auth.auth().signOut()
         stopListeners()
         self.user = nil
     }
     
-    // MARK: - Session Restore
+    // MARK: - session restore
     func restoreSession() async {
         if let user = Auth.auth().currentUser {
             do {
@@ -333,7 +636,7 @@ final class AuthService: ObservableObject {
         }
     }
     
-    // MARK: - Preload Profile Image
+    // MARK: - preload the profile image
     private func preloadProfileImage(from urlString: String?) async {
         guard let urlString = urlString,
               let url = URL(string: urlString) else { return }
@@ -346,8 +649,7 @@ final class AuthService: ObservableObject {
         }
     }
 
-    // MARK: - Search Users
-    // Nickname ile users içinde arama
+    // MARK: - search users
     @MainActor
     func searchUsers(nickname: String) async -> [TGUser] {
         do {
@@ -373,7 +675,7 @@ final class AuthService: ObservableObject {
         }
     }
     
-    // MARK: - Update Profile
+    // MARK: - update profil
     func updateProfile(username: String,
                        country: String,
                        image: UIImage?) async throws {
@@ -384,7 +686,7 @@ final class AuthService: ObservableObject {
 
         var updatedPhotoURL = user?.photoURL
 
-        // 1. Yeni fotoğraf varsa storage’a yükle
+        // yeni fotoğraf varsa storage’a yüklemece
         if let image = image,
            let data = image.jpegData(compressionQuality: 0.8) {
             let ref = storage.child("avatars/\(uid).jpg")
@@ -392,7 +694,7 @@ final class AuthService: ObservableObject {
             updatedPhotoURL = try await ref.downloadURL().absoluteString
         }
 
-        // 2. Firestore güncelle
+        // firestore u güncelle
         let updateData: [String: Any] = [
             "username":       username,
             "username_lower": username.lowercased(),
@@ -401,7 +703,7 @@ final class AuthService: ObservableObject {
         ]
         try await db.collection("users").document(uid).updateData(updateData)
 
-        // 3. Local user modelini güncelle
+        // local user modelini güncelle
         let updatedUser = TGUser(id: uid,
                                  username: username,
                                  country:  country,
@@ -411,8 +713,7 @@ final class AuthService: ObservableObject {
         try await preloadProfileImage(from: updatedPhotoURL)
     }
     
-    // MARK: - Coins
-    /// Kullanıcının koleksiyonuna yeni bir hatıra para etiketi ekler.
+    // MARK: - coins
     func addCoin(_ label: String) async {
         guard let uid = user?.id else { return }
         do {
@@ -429,7 +730,7 @@ final class AuthService: ObservableObject {
         }
     }
 
-    // MARK: - Follow / Unfollow
+    // MARK: - follow ve unnfollow
     func follow(userId targetUid: String) async throws {
         guard let currentUid = user?.id, currentUid != targetUid else { return }
 
@@ -505,11 +806,152 @@ final class AuthService: ObservableObject {
 }
 
 // MARK: - TGUser modeli
-struct TGUser: Identifiable {
+struct TGUser: Identifiable, Hashable {
     var id: String?
     var username: String
     var country:  String
     var email:    String
     var photoURL: String?
     var coins:    [String] = []
+    var savedGuides: [String] = []
+
+    static func == (lhs: TGUser, rhs: TGUser) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+// MARK: - guide kaydetme
+extension AuthService {
+
+    func saveGuide(_ guide: GuideSummary) async {
+        guard let uid = user?.id else { return }
+
+        let entry: [String: Any] = [
+            "id"  : guide.id,
+            "city": guide.city.lowercased()
+        ]
+        try? await db.collection("users")
+            .document(uid)
+            .updateData([
+                "savedGuides": FieldValue.arrayUnion([entry])
+            ])
+    }
+
+    func unsaveGuide(_ guide: GuideSummary) async {
+        guard let uid = user?.id else { return }
+        let ref = db.collection("users").document(uid)
+
+        let mapEntry: [String: Any] = ["id": guide.id,
+                                       "city": guide.city.lowercased()]
+        let strEntry = guide.id
+
+
+        try? await ref.updateData([
+            "savedGuides": FieldValue.arrayRemove([mapEntry, strEntry])
+        ])
+    }
+
+    // check if the user has saved a given guide
+    func hasSavedGuide(_ guide: GuideSummary) async -> Bool {
+        guard let uid = user?.id else { return false }
+
+        let doc = try? await db.collection("users").document(uid).getDocument()
+        let raw = doc?.data()?["savedGuides"] as? [Any] ?? []
+
+        for item in raw {
+            if let idStr = item as? String, idStr == guide.id { return true }
+
+            if let dict = item as? [String: Any],
+               let id   = dict["id"] as? String,
+               id == guide.id { return true }
+        }
+        return false
+    }
+    // MARK: - fetch saved guides
+    func fetchSavedGuides() async -> [GuideSummary] {
+        guard let uid = user?.id else { return [] }
+
+        do {
+            // kullanıcının savedGuides alanını alma
+            let userDoc = try await db.collection("users")
+                                      .document(uid)
+                                      .getDocument()
+            let raw = userDoc.data()?["savedGuides"] as? [Any] ?? []
+
+            //  (id, city?) çiftleri
+            var pairs: [(id: String, city: String?)] = []
+
+            for item in raw {
+                if let idStr = item as? String {
+                    pairs.append((idStr, nil))
+                }
+                else if let dict = item as? [String: Any],
+                        let id   = dict["id"]   as? String {
+                    let city = (dict["city"] as? String)?.lowercased()
+                    pairs.append((id, city))
+                }
+            }
+
+            guard !pairs.isEmpty else { return [] }
+
+
+            var guides: [GuideSummary] = []
+
+            for (id, cityOpt) in pairs where cityOpt != nil {
+                let city = cityOpt!
+                let doc  = try await db.collection("guides")
+                                       .document(city)
+                                       .collection("items")
+                                       .document(id)
+                                       .getDocument()
+                if let g = guideFrom(doc: doc, overrideCity: city) { guides.append(g) }
+            }
+
+            let unknownIds = pairs.filter { $0.city == nil }.map { $0.id }
+            if !unknownIds.isEmpty {
+                let citySnaps = try await db.collection("guides").getDocuments()
+                for cDoc in citySnaps.documents {
+                    let city = cDoc.documentID
+                    let items = try await db.collection("guides")
+                                            .document(city)
+                                            .collection("items")
+                                            .whereField(FieldPath.documentID(),
+                                                        in: unknownIds)
+                                            .getDocuments()
+                    for d in items.documents {
+                        if let g = guideFrom(doc: d, overrideCity: city) {
+                            guides.append(g)
+                        }
+                    }
+                }
+            }
+            return guides
+        } catch {
+            print("Kaydedilen rehberler alınamadı:", error.localizedDescription)
+            return []
+        }
+    }
+
+    private func guideFrom(doc: DocumentSnapshot,
+                           overrideCity city: String) -> GuideSummary? {
+        guard let data = doc.data(),
+              let title = data["title"]       as? String,
+              let descr = data["description"] as? String,
+              let cover = data["coverURL"]    as? String,
+              let user  = data["username"]    as? String else { return nil }
+
+        return GuideSummary(
+            id: doc.documentID,
+            title: title,
+            description: descr,
+            coverURL: cover,
+            username: user,
+            userPhotoURL: data["photoURL"] as? String,
+            city: city   
+        )
+    }
 }

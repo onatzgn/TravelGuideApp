@@ -12,6 +12,9 @@ struct OtherUserProfileView: View {
     @State private var showFollowers = false
     @State private var showFollowing = false
     @State private var listUsers: [TGUser] = []     // Takip listesi için hazır kullanıcılar
+    @State private var guides: [GuideSummary] = []
+    @State private var selectedGuide: GuideSummary? = nil
+    @State private var stops: [Stop] = []
     var body: some View {
         ZStack(alignment: .top) {
             
@@ -43,8 +46,27 @@ struct OtherUserProfileView: View {
                             }
                         }
                     )
+                    .padding(.top, 50)
                     LandmarkCoinSection(coins: coins)
                         .padding(.top, 24)          // Coin bölümü biraz aşağıda
+                    if !guides.isEmpty {
+                        Text("Seyahat Rehberleri")
+                            .font(.title3.bold())
+                            .padding([.horizontal, .top])
+
+                        VStack(spacing: 12) {
+                            ForEach(guides) { guide in
+                                GuideCardView(guide: guide) {
+                                    selectedGuide = guide
+                                    stops = []
+                                    Task {
+                                        stops = await auth.fetchStops(forGuide: guide)
+                                    }
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
                     Spacer(minLength: 0)
                 }
             }
@@ -57,27 +79,12 @@ struct OtherUserProfileView: View {
             .sheet(isPresented: $showFollowing) {
                 FollowListView(title: "Takip Edilenler", users: listUsers)
             }
-
-            // Üstteki geri ve bildir butonları
-            HStack {
-                Button(action: { dismiss() }) {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Circle().fill(Color.black.opacity(0.3)))
-                }
-                Spacer()
-                Button(action: { print("Bildirildi") }) {
-                    Image(systemName: "nosign")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Circle().fill(Color.black.opacity(0.3)))
-                }
+            .sheet(item: $selectedGuide) { guide in
+                GuideDetailSheetView(guide: guide, stops: stops)
+                    .presentationDetents([.medium, .large])
             }
-            .padding(.horizontal)
-            .padding(.top, 10)
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
         .task {
             guard let uid = user.id else { return }
             
@@ -95,6 +102,7 @@ struct OtherUserProfileView: View {
                     coins = snap.data()?["coins"] as? [String] ?? []
                 }
             }
+            guides = await auth.fetchGuidesOfUser(id: user.id, username: user.username, photoURL: user.photoURL)
         }
     }
     

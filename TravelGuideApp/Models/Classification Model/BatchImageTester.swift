@@ -8,7 +8,7 @@ class BatchImageTester {
     func evaluateDataset(at folderURL: URL) {
         let fileManager = FileManager.default
         guard let classFolders = try? fileManager.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles) else {
-            print("❌ Sınıf klasörleri okunamadı.")
+            print(" Sınıf klasörleri okunamadı.")
             return
         }
 
@@ -25,7 +25,7 @@ class BatchImageTester {
 
             for imageURL in imageFiles where ["jpg", "png"].contains(imageURL.pathExtension.lowercased()) {
                 guard let image = UIImage(contentsOfFile: imageURL.path) else {
-                    print("⚠️ Görsel yüklenemedi: \(imageURL.lastPathComponent)")
+                    print(" Görsel yüklenemedi: \(imageURL.lastPathComponent)")
                     continue
                 }
 
@@ -37,7 +37,7 @@ class BatchImageTester {
                     let result = predicted == className
                     if result { correct += 1 }
 
-                    print("📷 \(imageURL.lastPathComponent): Tahmin = \(predicted), Gerçek = \(className) \(result ? "✅" : "❌")")
+                    print(" \(imageURL.lastPathComponent): Tahmin = \(predicted), Gerçek = \(className) \(result ? "true" : "false")")
                     dispatchGroup.leave()
                 }
             }
@@ -45,8 +45,8 @@ class BatchImageTester {
 
         dispatchGroup.notify(queue: .main) {
             let accuracy = Double(correct) / Double(total)
-            print("✅ Doğru: \(correct) / \(total)")
-            print("🎯 Accuracy: \(String(format: "%.2f", accuracy * 100))%")
+            print(" Doğru: \(correct) / \(total)")
+            print(" Accuracy: \(String(format: "%.2f", accuracy * 100))%")
         }
     }
 }

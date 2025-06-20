@@ -4,7 +4,7 @@ struct LoginView: View {
     @State private var email        = ""
     @State private var password     = ""
     @State private var showRegister = false
-    @EnvironmentObject private var auth: AuthService   // 🔸
+    @EnvironmentObject private var auth: AuthService
 
     var body: some View {
         NavigationView {
@@ -33,7 +33,6 @@ struct LoginView: View {
                     Task {
                         do {
                             try await auth.login(email: email, password: password)
-                            // auth.user dolunca root view otomatik MainView’e geçer
                         } catch {
                             print(error.localizedDescription)
                         }

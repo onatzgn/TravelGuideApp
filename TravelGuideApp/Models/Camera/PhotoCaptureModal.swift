@@ -1,12 +1,9 @@
 import SwiftUI
 
-/// Fotoğraf çek – ön‑izleme – paylaş akışını yöneten modal sayfa.
-/// Sınıflandırma yapılmaz, görsel tam çözünürlükte kaydedilir.
 struct PhotoCaptureModal: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var camera = BasicCameraViewModel()
     
-    /// Çekilen görsel; nil iken canlı kamera görünür
     @State private var capturedImage: UIImage? = nil
     @EnvironmentObject private var auth: AuthService
     let predictedLabel: String
@@ -14,7 +11,6 @@ struct PhotoCaptureModal: View {
         NavigationStack {
             ZStack {
                 if let image = capturedImage {
-                    // ---------- ÖN İZLEME ----------
                     Color.black.ignoresSafeArea()
                     Image(uiImage: image)
                         .resizable()
@@ -42,14 +38,13 @@ struct PhotoCaptureModal: View {
                     }
                     
                 } else {
-                    // ---------- CANLI KAMERA ----------
                     BasicCameraPreview(camera: camera)
                         .ignoresSafeArea()
                     
                     VStack {
                         Spacer()
                         Button {
-                            camera.takePhoto()              // Çekim
+                            camera.takePhoto()
                         } label: {
                             Image(systemName: "circle.inset.filled")
                                 .font(.system(size: 72))
@@ -60,14 +55,13 @@ struct PhotoCaptureModal: View {
                     }
                 }
             }
-            // Geri butonu – her iki durumda da görünür
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Geri") { dismiss() }
                         .fontWeight(.bold)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    if capturedImage == nil {           // Yalnızca canlı kamera modunda
+                    if capturedImage == nil {
                         Button {
                             camera.switchCamera()
                         } label: {
@@ -79,8 +73,8 @@ struct PhotoCaptureModal: View {
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 camera.onPhotoCaptured = { img in
-                    capturedImage = img          // Ön izlemeye geç
-                    camera.stopSession()         // Enerji tasarrufu
+                    capturedImage = img        
+                    camera.stopSession()
                 }
                 camera.startSession()
             }

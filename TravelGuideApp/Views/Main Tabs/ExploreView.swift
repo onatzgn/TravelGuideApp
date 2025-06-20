@@ -63,7 +63,6 @@ struct ExploreView: View {
                 .padding(.trailing, 16)
                 .padding(.bottom, 30)
             }
-            // Sheet (modal) olarak CameraView'u göster
             .sheet(isPresented: $showCamera) {
                 NavigationView {
                     CustomCameraView()

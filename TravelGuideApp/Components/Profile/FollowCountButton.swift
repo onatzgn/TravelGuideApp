@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FollowCountButton: View {
-    var title: String          // “Takipçiler” / “Takip Edilenler”
+    var title: String      
     var count: Int
     var action: () -> Void = {}
 
@@ -12,7 +12,7 @@ struct FollowCountButton: View {
             Text(title)
                 .font(.footnote.weight(.medium))
         }
-        .foregroundColor(.white)
+        .foregroundColor(.black)
         .onTapGesture { action() }
     }
 }

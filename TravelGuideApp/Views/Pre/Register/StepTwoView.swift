@@ -1,5 +1,5 @@
 import SwiftUI
-import PhotosUI   // ✅ galeri erişimi için eklendi
+import PhotosUI  
 
 struct StepTwoView: View {
     @Binding var selectedImage: UIImage?
@@ -7,7 +7,6 @@ struct StepTwoView: View {
     let onComplete: () -> Void
     let onSkip:     () -> Void
 
-    // ✅ fotoğraf seçici için gerekli state'ler
     @State private var showPicker = false
     @State private var pickerItem: PhotosPickerItem?
 
@@ -27,7 +26,7 @@ struct StepTwoView: View {
                 .font(.headline)
 
             Button {
-                showPicker = true   // ✅ galeri açılacak
+                showPicker = true
             } label: {
                 if let ui = selectedImage {
                     Image(uiImage: ui)
@@ -52,7 +51,6 @@ struct StepTwoView: View {
             .padding(.horizontal)
         }
         .padding(.horizontal)
-        // ✅ galeri bağlantısı
         .photosPicker(isPresented: $showPicker,
                       selection: $pickerItem,
                       matching: .images)

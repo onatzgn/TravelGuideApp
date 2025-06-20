@@ -11,9 +11,14 @@ struct IconCircleButton: View {
                 .foregroundColor(.white)
                 .frame(width: 42, height: 42)
                 .background(
-                    Circle()
-                        .fill(.ultraThinMaterial) // hafif blur‑lu yarı şeffaf
-                        .overlay(Circle().stroke(Color.white.opacity(0.3), lineWidth: 1))
+                    ZStack {
+                        Circle()
+                            .fill(Color.black.opacity(0.5))
+                        Circle()
+                            .fill(.ultraThinMaterial)
+                        Circle()
+                            .stroke(Color.white.opacity(0.3), lineWidth: 1)
+                    }
                 )
         }
     }

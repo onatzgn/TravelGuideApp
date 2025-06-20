@@ -12,7 +12,7 @@ struct CommentDetailSheet: View {
                 Spacer()
             }
             .padding(.horizontal)
-            .padding(.top) // ⬅️ burada üst padding ekleniyor
+            .padding(.top) 
 
             if let text = share.text {
                 Text(text)

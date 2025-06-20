@@ -40,11 +40,11 @@ struct MainView: View {
             UITabBar.appearance().scrollEdgeAppearance = appearance
             /*
             if let folderURL = Bundle.main.url(forResource: "test", withExtension: nil, subdirectory: "test_deneme") {
-                print("📂 Test klasörü bulundu (path yöntemi): \(folderURL)")
+                print(" Test klasörü bulundu (path yöntemi): \(folderURL)")
                 let tester = BatchImageTester()
                 tester.evaluateDataset(at: folderURL)
             } else {
-                print("❌ Test klasörü bulunamadı (path yöntemi).")
+                print(" Test klasörü bulunamadı (path yöntemi).")
             }
 
             */

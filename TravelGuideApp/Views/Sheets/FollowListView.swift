@@ -8,7 +8,7 @@ struct FollowListView: View {
     @State private var selectedUser: TGUser? = nil
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(users) { user in
                 Button {
                     selectedUser = user
@@ -34,7 +34,7 @@ struct FollowListView: View {
                         .foregroundColor(.secondary)
                 }
             }
-            .fullScreenCover(item: $selectedUser) { user in
+            .navigationDestination(item: $selectedUser) { user in
                 OtherUserProfileView(user: user)
             }
         }
