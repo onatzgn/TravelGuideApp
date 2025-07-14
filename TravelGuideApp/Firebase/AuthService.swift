@@ -52,6 +52,12 @@ extension AuthService {
         do {
             guard let me = user else { return }
 
+            // Ensure place is not empty (after trimming whitespace/newlines)
+            guard !place.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                print("⚠️ place parametresi boş veya sadece boşluk içeriyor")
+                return
+            }
+
             // 1. storage’a yükleme
             let imageID = UUID().uuidString
             let imageRef = storage.child("places/\(place)/\(imageID).jpg")
@@ -85,6 +91,10 @@ extension AuthService {
 
     func photoShares(for place: String) async -> [SocialShare] {
         guard let meId = user?.id else { return [] }
+        guard !place.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ place parametresi boş veya sadece boşluk içeriyor")
+            return []
+        }
         let allowed = followingIds + [meId]
         guard !allowed.isEmpty else { return [] }
 
@@ -131,6 +141,10 @@ extension AuthService {
                     coverImage: UIImage,
                     stops: [Stop]) async throws {
         guard let me = user else { return }
+        guard !city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ city parametresi boş veya sadece boşluk içeriyor")
+            return
+        }
 
         let tracer = PerformanceTracer(name: "shareGuide_trace")
 
@@ -202,6 +216,10 @@ extension AuthService {
 
     // MARK: - Guide Listeleme
     func fetchGuides(for city: String) async -> [GuideSummary] {
+        guard !city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ city parametresi boş veya sadece boşluk içeriyor")
+            return []
+        }
         let tracer = PerformanceTracer(name: "fetchGuides_trace")
         do {
             let snapshot = try await db.collection("guides")
@@ -243,6 +261,11 @@ extension AuthService {
 
     // MARK: - guide Duraklarını Getirme
     func fetchStops(forGuide guide: GuideSummary) async -> [Stop] {
+        guard !guide.city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              !guide.id.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ guide.city veya guide.id boş veya sadece boşluk içeriyor")
+            return []
+        }
         let tracer = PerformanceTracer(name: "fetchStops_trace")
         do {
             let doc = try await db.collection("guides")
@@ -331,6 +354,10 @@ extension AuthService {
     }
     // Yorum ekleme
     func addComment(place: String, text: String) async throws {
+        guard !place.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ place parametresi boş veya sadece boşluk içeriyor")
+            return
+        }
         do {
             guard let me = user else { return }
             
@@ -354,6 +381,10 @@ extension AuthService {
     
     // Takip ettiklerim + kendim → yorum listesi
     func comments(for place: String) async -> [SocialShare] {
+        guard !place.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ place parametresi boş veya sadece boşluk içeriyor")
+            return []
+        }
         guard let meId = user?.id else { return [] }
 
         let allowed = followingIds + [meId]
@@ -411,6 +442,11 @@ extension AuthService {
 
     //unlike guide
     func unlikeGuide(guide: GuideSummary, by userId: String) async {
+        guard !guide.city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              !guide.id.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ guide.city veya guide.id boş veya sadece boşluk içeriyor")
+            return
+        }
         let ref = db.collection("guides")
             .document(guide.city.lowercased())
             .collection("items")
@@ -427,6 +463,11 @@ extension AuthService {
 
     //check if the current user has liked a guide
     func hasLikedGuide(_ guide: GuideSummary) async -> Bool {
+        guard !guide.city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              !guide.id.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ guide.city veya guide.id boş veya sadece boşluk içeriyor")
+            return false
+        }
         guard let userId = user?.id else { return false }
 
         let doc = try? await db.collection("guides")
@@ -441,6 +482,11 @@ extension AuthService {
 
     //get like count for a guide
     func fetchLikeCount(for guide: GuideSummary) async -> Int {
+        guard !guide.city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              !guide.id.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ guide.city veya guide.id boş veya sadece boşluk içeriyor")
+            return 0
+        }
         let snap = try? await db.collection("guides")
             .document(guide.city.lowercased())
             .collection("items")
@@ -452,6 +498,11 @@ extension AuthService {
 
     //like a guide
     func likeGuide(guide: GuideSummary, by userId: String) async {
+        guard !guide.city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              !guide.id.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⚠️ guide.city veya guide.id boş veya sadece boşluk içeriyor")
+            return
+        }
         let ref = db.collection("guides")
             .document(guide.city.lowercased())
             .collection("items")
@@ -951,7 +1002,7 @@ extension AuthService {
             coverURL: cover,
             username: user,
             userPhotoURL: data["photoURL"] as? String,
-            city: city   
+            city: city
         )
     }
 }

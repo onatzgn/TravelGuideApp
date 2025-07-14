@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
 
-let db = Firestore.firestore(database: "travelguidedb")
+let db = Firestore.firestore()
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
