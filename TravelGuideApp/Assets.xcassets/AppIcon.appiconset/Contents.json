@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "image.png",
+      "filename" : "logop6.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +13,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "image 1.png",
+      "filename" : "logopd.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
