@@ -60,10 +60,10 @@ struct ProfileHeadPanel: View {
                     VStack(alignment: .leading, spacing: 0) {
                         Text(user.username)
                             .font(.title.weight(.bold))
-                            .foregroundColor(.black)
+                            .foregroundColor(.primary)
                         Text(user.country)
                             .font(.subheadline)
-                            .foregroundColor(.black.opacity(0.8))
+                            .foregroundColor(.primary.opacity(0.8))
                     }
 
                     if isCurrentUser {

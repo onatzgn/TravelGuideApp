@@ -46,9 +46,7 @@ struct TravelGuideAppApp: App {
         WindowGroup {
             Group {
                 if isLoading {
-                    ProgressView("Yükleniyor...")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color(.systemBackground))
+                    LoadingView()
                 } else if auth.user == nil {
                     LoginView()
                         .environmentObject(auth)

@@ -12,7 +12,7 @@ struct FollowCountButton: View {
             Text(title)
                 .font(.footnote.weight(.medium))
         }
-        .foregroundColor(.black)
+        .foregroundColor(.primary)
         .onTapGesture { action() }
     }
 }

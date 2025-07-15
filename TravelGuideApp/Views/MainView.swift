@@ -18,7 +18,22 @@ struct MainView: View {
             
             ExploreView()
                 .tabItem {
-                    Label("Keşfet", systemImage: "globe.europe.africa.fill")
+                    Label("Keşfet", systemImage: "safari.fill")
+                }
+            
+            MapView()
+                .tabItem {
+                    Label("Harita", systemImage: "globe.europe.africa.fill")
+                }
+            
+            CollectionView()
+                .tabItem {
+                    Label("Koleksiyon", systemImage: "square.stack.fill")
+                }
+            
+            SocialView()
+                .tabItem {
+                    Label("Sosyal", systemImage: "person.3.fill")
                 }
             
             ProfileView()

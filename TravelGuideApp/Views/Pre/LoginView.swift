@@ -9,7 +9,7 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 32) {
-                Image("loginLogo")
+                Image("logo")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 140, height: 140)

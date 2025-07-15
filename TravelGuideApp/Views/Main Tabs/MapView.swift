@@ -131,7 +131,7 @@ struct MapView: View {
                         })
                 }
             }
-            .navigationTitle("Keşfet")
+            .navigationTitle("Harita")
             .onAppear {
                 let places = loadHistoricPlaces().filter { $0.city_key == selectedCityKey }
                 historicPlaces = places
