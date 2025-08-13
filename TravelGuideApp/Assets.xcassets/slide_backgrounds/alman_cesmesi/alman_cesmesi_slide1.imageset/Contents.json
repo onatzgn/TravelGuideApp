@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Istanbul_asv2021-11_img36_German_Fountain.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
