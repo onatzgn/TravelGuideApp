@@ -8,7 +8,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Fatih"
+        "district": "Fatih",
+        "main_bg": "alman_cesmesi_main_bg",
+        "slides": [
+          {
+            "title": "Taşların Hikayesi",
+            "description": "Alman İmparatoru II. Wilhelm'in 1898 ziyaretine özel olarak yaptırılan bu çeşme, tarih boyunca pek çok olaya tanıklık etmiştir.",
+            "background": "alman_cesmesi_slide1"
+          },
+          {
+            "title": "Mimari Güzellik",
+            "description": "Neo-Bizans üslubunda inşa edilen yapısı, zarif mozaikleri ve altın kaplamalı kubbesiyle dikkat çeker.",
+            "background": "alman_cesmesi_slide2"
+          },
+          {
+            "title": "Efsaneler ve Rivayetler",
+            "description": "Çeşmenin etrafında, Osmanlı-Alman dostluğuna dair rivayetler ve dönemin hikayeleri dilden dile dolaşır.",
+            "background": "alman_cesmesi_slide3"
+          }
+        ]
     },
     {
         "label": "ayasofya",
@@ -19,7 +37,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Fatih"
+        "district": "Fatih",
+        "main_bg": "ayasofya_main_bg",
+        "slides": [
+          {
+            "title": "İki İnanç Arasında",
+            "description": "Bin yıl boyunca kilise, ardından cami... Ayasofya’nın duvarları, medeniyetlerin izleriyle örülmüş bir tarih kitabı gibi.",
+            "background": "ayasofya_slide1"
+          },
+          {
+            "title": "Kubbenin Altında",
+            "description": "Yüzyıllardır göğe yükselen kubbesi, görkemli mozaikleriyle seni büyülemeye hazır.",
+            "background": "ayasofya_slide2"
+          },
+          {
+            "title": "Gizemli Sırlar",
+            "description": "Ayasofya'nın altında hala çözülememiş efsaneler ve tüneller olduğuna inanılır. Keşfetmeye cesaretin var mı?",
+            "background": "ayasofya_slide3"
+          }
+        ]
     },
     {
         "label": "bozdogan_kemeri",
@@ -30,7 +66,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Fatih"
+        "district": "Fatih",
+        "main_bg": "bozdogan_kemeri_main_bg",
+        "slides": [
+          {
+            "title": "Roma'nın Mirası",
+            "description": "Binlerce yıl önce inşa edilen bu kemer, Roma mühendisliğinin İstanbul’daki eşsiz bir örneği.",
+            "background": "bozdogan_kemeri_slide1"
+          },
+          {
+            "title": "Su Yolunun İzinde",
+            "description": "Şehrin su ihtiyacını karşılayan bu yapı, tarihin akışını hissetmen için seni bekliyor.",
+            "background": "bozdogan_kemeri_slide2"
+          },
+          {
+            "title": "Gizemli Taşlar",
+            "description": "Her bir taşında saklı hikayeler ve antik sırlar var. Bozdoğan Kemeri’ni keşfetmeye ne dersin?",
+            "background": "bozdogan_kemeri_slide3"
+          }
+        ]
     },
     {
         "label": "cemberlitas",
@@ -41,7 +95,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Fatih"
+        "district": "Fatih",
+        "main_bg": "cemberlitas_main_bg",
+        "slides": [
+          {
+            "title": "Zamanın Sütunu",
+            "description": "Çemberlitaş, yüzyılların tanığı olarak şehrin tarihine meydan okuyor.",
+            "background": "cemberlitas_slide1"
+          },
+          {
+            "title": "Efsanelerle Örülü",
+            "description": "Sütunun etrafında dolaşan efsaneler seni geçmişe götürecek.",
+            "background": "cemberlitas_slide2"
+          },
+          {
+            "title": "Şehrin Nabzı",
+            "description": "İstanbul’un kalbinde bu tarihi yapıyı ziyaret ederek şehrin ruhunu hisset.",
+            "background": "cemberlitas_slide3"
+          }
+        ]
     },
     {
         "label": "dikilitas",
@@ -52,7 +124,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Fatih"
+        "district": "Fatih",
+        "main_bg": "dikilitas_main_bg",
+        "slides": [
+          {
+            "title": "Mısır'dan İstanbul'a",
+            "description": "Binlerce yıllık bu dikilitaş, tarihin derinliklerinden günümüze uzanıyor.",
+            "background": "dikilitas_slide1"
+          },
+          {
+            "title": "Gizemli Semboller",
+            "description": "Üzerindeki hiyeroglifler ve işaretler seni eski medeniyetlere götürecek.",
+            "background": "dikilitas_slide2"
+          },
+          {
+            "title": "Tarihin Sessiz Tanığı",
+            "description": "Dikilitaş’ın etrafında dolaşırken geçmişin sırlarını keşfetmeye hazır ol.",
+            "background": "dikilitas_slide3"
+          }
+        ]
     },
     {
         "label": "galata_kulesi",
@@ -63,7 +153,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Beyoğlu"
+        "district": "Beyoğlu",
+        "main_bg": "galata_kulesi_main_bg",
+        "slides": [
+          {
+            "title": "Şehrin Zirvesi",
+            "description": "Galata Kulesi’nden İstanbul’u kuşbakışı izlerken büyülenmeye hazır ol.",
+            "background": "galata_kulesi_slide1"
+          },
+          {
+            "title": "Efsanelerle Dolu",
+            "description": "Kuleyle ilgili anlatılan gizemli hikayeler seni geçmişe götürecek.",
+            "background": "galata_kulesi_slide2"
+          },
+          {
+            "title": "Romantik Anlar",
+            "description": "Gün batımında kuleye çıkarak unutulmaz anılar biriktir.",
+            "background": "galata_kulesi_slide3"
+          }
+        ]
     },
     {
         "label": "kadikoy_boga_heykeli",
@@ -74,7 +182,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Kadıköy"
+        "district": "Kadıköy",
+        "main_bg": "kadikoy_boga_heykeli_main_bg",
+        "slides": [
+          {
+            "title": "Şehrin Kalbi",
+            "description": "Kadıköy Boğa Heykeli, bölgenin enerjisini ve canlılığını yansıtıyor.",
+            "background": "kadikoy_boga_heykeli_slide1"
+          },
+          {
+            "title": "Buluşma Noktası",
+            "description": "Burada buluşan insanlar, şehrin ritmini hissetmeni sağlayacak.",
+            "background": "kadikoy_boga_heykeli_slide2"
+          },
+          {
+            "title": "Sanat ve Tarih",
+            "description": "Heykelin detaylarında, Kadıköy’ün kültürel zenginliğini keşfet.",
+            "background": "kadikoy_boga_heykeli_slide3"
+          }
+        ]
     },
     {
         "label": "kiz_kulesi",
@@ -85,7 +211,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Üsküdar"
+        "district": "Üsküdar",
+        "main_bg": "kiz_kulesi_main_bg",
+        "slides": [
+          {
+            "title": "Efsaneler Adası",
+            "description": "Kız Kulesi, aşk ve gizem dolu hikayeleriyle seni büyüleyecek.",
+            "background": "kiz_kulesi_slide1"
+          },
+          {
+            "title": "Boğaz'ın İncisi",
+            "description": "Boğaz’ın ortasındaki bu kule, eşsiz manzaralar sunuyor.",
+            "background": "kiz_kulesi_slide2"
+          },
+          {
+            "title": "Romantik Kaçamak",
+            "description": "Kuledeki kafede sevdiklerinle unutulmaz anlar yaşa.",
+            "background": "kiz_kulesi_slide3"
+          }
+        ]
     },
     {
         "label": "medusa",
@@ -96,7 +240,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Fatih"
+        "district": "Fatih",
+        "main_bg": "medusa_main_bg",
+        "slides": [
+          {
+            "title": "Yeraltının Gizemi",
+            "description": "Yerebatan Sarnıcı’nın büyüleyici atmosferinde tarihin derinliklerine in.",
+            "background": "medusa_slide1"
+          },
+          {
+            "title": "Medusa'nın Bakışı",
+            "description": "Ters duran Medusa başları, mitolojinin karanlık sırlarını fısıldıyor.",
+            "background": "medusa_slide2"
+          },
+          {
+            "title": "Serin ve Sırlı",
+            "description": "Sarnıcın serinliğinde eski zamanların gizemini keşfetmeye hazır ol.",
+            "background": "medusa_slide3"
+          }
+        ]
     },
     {
         "label": "ortakoy_cami",
@@ -107,7 +269,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Beşiktaş"
+        "district": "Beşiktaş",
+        "main_bg": "ortakoy_cami_main_bg",
+        "slides": [
+          {
+            "title": "Boğaz'ın İncisi",
+            "description": "Ortaköy Camii, eşsiz konumu ve zarif mimarisiyle büyülüyor.",
+            "background": "ortakoy_cami_slide1"
+          },
+          {
+            "title": "Huzur Dolu Anlar",
+            "description": "Camii avlusunda dolaşırken Boğaz’ın sakinliğini hisset.",
+            "background": "ortakoy_cami_slide2"
+          },
+          {
+            "title": "Fotoğraf Tutkunları İçin",
+            "description": "Burada çekilen her kare, unutulmaz bir anıya dönüşecek.",
+            "background": "ortakoy_cami_slide3"
+          }
+        ]
     },
     {
         "label": "sultanahmet",
@@ -118,7 +298,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Fatih"
+        "district": "Fatih",
+        "main_bg": "sultanahmet_main_bg",
+        "slides": [
+          {
+            "title": "Mavi Cennetin Kapısı",
+            "description": "Sultanahmet Camii’nin içindeki mavi çiniler, göz kamaştırıcı bir atmosfer yaratıyor.",
+            "background": "sultanahmet_slide1"
+          },
+          {
+            "title": "Maneviyat ve Huzur",
+            "description": "Burada geçireceğin zaman, ruhunu dinlendirecek.",
+            "background": "sultanahmet_slide2"
+          },
+          {
+            "title": "Tarihin İzinde",
+            "description": "Caminin her köşesi, Osmanlı’nın ihtişamını anlatıyor.",
+            "background": "sultanahmet_slide3"
+          }
+        ]
     },
     {
         "label": "taksim_cumhuriyet_aniti",
@@ -129,7 +327,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Beyoğlu"
+        "district": "Beyoğlu",
+        "main_bg": "taksim_cumhuriyet_aniti_main_bg",
+        "slides": [
+          {
+            "title": "Bağımsızlık Sembolü",
+            "description": "Cumhuriyet Anıtı, Türkiye’nin özgürlük mücadelesinin simgesi.",
+            "background": "taksim_cumhuriyet_aniti_slide1"
+          },
+          {
+            "title": "Taksim Meydanı'nın Kalbi",
+            "description": "Anıtın etrafında dolaşırken şehrin enerjisini hissedeceksin.",
+            "background": "taksim_cumhuriyet_aniti_slide2"
+          },
+          {
+            "title": "Tarih ve Sanat",
+            "description": "Anıtın detaylarında Cumhuriyet’in ilk yıllarını keşfet.",
+            "background": "taksim_cumhuriyet_aniti_slide3"
+          }
+        ]
     },
     {
         "label": "topkapi_sarayi",
@@ -140,7 +356,25 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Fatih"
+        "district": "Fatih",
+        "main_bg": "topkapi_sarayi_main_bg",
+        "slides": [
+          {
+            "title": "Sarayın İhtişamı",
+            "description": "Topkapı Sarayı, Osmanlı’nın görkemli geçmişini gözler önüne seriyor.",
+            "background": "topkapi_sarayi_slide1"
+          },
+          {
+            "title": "Padişahların Dünyası",
+            "description": "Her odasında farklı bir hikaye, her köşesinde tarih saklı.",
+            "background": "topkapi_sarayi_slide2"
+          },
+          {
+            "title": "Gizemli Hazine",
+            "description": "Sarayın hazineleri ve sanat eserleri seni büyüleyecek.",
+            "background": "topkapi_sarayi_slide3"
+          }
+        ]
     },
     {
         "label": "yilanli_sutun",
@@ -151,6 +385,24 @@
         "country": "Türkiye",
         "city": "İstanbul",
         "city_key": "istanbul",
-        "district": "Fatih"
+        "district": "Fatih",
+        "main_bg": "yilanli_sutun_main_bg",
+        "slides": [
+          {
+            "title": "Mitolojinin İzleri",
+            "description": "Yılanlı Sütun, antik dünyanın gizemli hikayelerini anlatıyor.",
+            "background": "yilanli_sutun_slide1"
+          },
+          {
+            "title": "Tarihin Derinlikleri",
+            "description": "Bronz sütunun etrafında dolaşırken eski çağların sırlarını keşfet.",
+            "background": "yilanli_sutun_slide2"
+          },
+          {
+            "title": "Gizemli Atmosfer",
+            "description": "Sütunun mistik havası, seni zamanda yolculuğa çıkaracak.",
+            "background": "yilanli_sutun_slide3"
+          }
+        ]
     }
 ]

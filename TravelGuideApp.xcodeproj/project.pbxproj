@@ -54,6 +54,7 @@
 				Firebase/FirebaseCrashReporter.swift,
 				"Firebase/GoogleService-Info.plist",
 				Firebase/ProfileStatsProvider.swift,
+				"Firebase/TGUser+Mock.swift",
 			);
 			target = 58DED33E2D7DE27C0020808B /* TravelGuideAppTests */;
 		};
@@ -71,6 +72,7 @@
 				Firebase/FirebaseCrashReporter.swift,
 				"Firebase/GoogleService-Info.plist",
 				Firebase/ProfileStatsProvider.swift,
+				"Firebase/TGUser+Mock.swift",
 			);
 			target = 58DED3482D7DE27C0020808B /* TravelGuideAppUITests */;
 		};

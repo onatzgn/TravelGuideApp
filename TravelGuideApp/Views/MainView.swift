@@ -36,10 +36,6 @@ struct MainView: View {
                     Label("Sosyal", systemImage: "person.3.fill")
                 }
             
-            ProfileView()
-                .tabItem {
-                    Label("Profil", systemImage: "person.fill")
-                }
         }
         .accentColor(Color("MainColor"))
         .onAppear {

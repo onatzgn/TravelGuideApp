@@ -1,21 +1,26 @@
-//
-//  SocialView.swift
-//  TravelGuideApp
-//
-//  Created by Onat Özgen on 15.07.2025.
-//
-
 import SwiftUI
 
 struct SocialView: View {
+    @EnvironmentObject private var auth: AuthService
+
     var body: some View {
         NavigationStack {
-            Text("Sosyal Sayfası")
-                .navigationTitle("Sosyal")
+            VStack(alignment: .leading, spacing: 12) {
+
+                // ── Top Bar ────────────────────────────────
+                SocialHeaderView(
+                    user: auth.user ?? TGUser.mock,
+                    friendsBadge: 0,
+                    messagesBadge: 9
+                )
+
+                // ── Feed Section (empty for now) ──────────
+                FeedSectionView()
+
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal)
+            .navigationTitle("Sosyal")
         }
     }
-}
-
-#Preview {
-    SocialView()
 }
