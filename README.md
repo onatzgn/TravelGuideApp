@@ -117,7 +117,7 @@
 -	This route will guide the user along the path they need to follow.
 
 
-## **Landmark Coin:**
+## **Collectible Object:**
 
 <img width="153" alt="Ekran Resmi 2025-03-18 12 12 07" src="https://github.com/user-attachments/assets/d9601544-3cc1-4d98-8c6d-058540f10412" />
 
