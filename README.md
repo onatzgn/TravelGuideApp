@@ -31,11 +31,6 @@
  
 -	Users can point the camera at historical symbols, inscriptions, or motifs on artifacts to learn their meanings.
  
--	Lost or damaged historical structures can be digitally reconstructed and placed back in their original locations using AR technology.
- 
--	Old Ottoman or Latin inscriptions can be scanned with AR and displayed as a digitally translated sign in the modern language.
- 
--	In museums or open spaces, specific artifacts related to the location can be digitally displayed in AR, allowing users to rotate and examine them in 360 degrees. For example, the Kaşıkçı Elması at Topkapı Palace.
 
 
 # **Backend:**
