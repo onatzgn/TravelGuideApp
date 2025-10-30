@@ -123,11 +123,11 @@
 
 ### **Features:**
 
--	When a location is recognized in Exploration Mode, the app will reward the user with a landmark coin.
+-	When a location is recognized in Exploration Mode, the app will reward the user with a badge.
  
--	The landmark coin given to the user will be unique to that location.
+-	The badge given to the user will be unique to that location.
  
--	The landmark coins collected from different places will be displayed on the user’s profile.
+-	The badge collected from different places will be displayed on the user’s profile.
 
 
 ## **Place Info Box:**
